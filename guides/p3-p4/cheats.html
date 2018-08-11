@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<link rel='shortcut icon' href='../../favicon.png' type='image/x-icon'/ >
+<meta charset="utf-8">
+<title>Amicitia - PS2 Cheats Guide</title>
+<link href="../../css/index.css" rel="stylesheet" type="text/css">
+<link href="../../css/waves.css" rel="stylesheet" type="text/css">
+<link href="../../css/guides.css" rel="stylesheet" type="text/css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+<canvas id='bgCanvas'></canvas>
+<script src="../../js/bubbles.js"></script>
+<div class="waves">
+  <div class="wave wave_1"></div>
+  <div class="wave wave_2"></div>
+  <div class="wave wave_3"></div>
+</div>
+<div class="navigation">
+ <i class="fas fa-home"></i> Home
+ <a href="http://amicitia-team.tumblr.com"><i class="fas fa-edit"></i> Blog</a>
+ <a href="http://amicitia-mods.boards.net/"><i class="fa fa-comment" aria-hidden="true"></i> Forum</a>
+ <a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-book" aria-hidden="true"></i> Wiki</a>
+ <a href="https://amicitia.github.io/about"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a>
+ <a href="https://amicitia.github.io/discord"><i class="fab fa-discord" aria-hidden="true"></i> Discord</a>
+</div>
+<div class="logo"><center><a href="https://amicitia.github.io/"><img src="../../images/logo.svg" width="179" height="179"></a></center></div>
+
+<div class="content"><a href="https://amicitia.github.io/index">Home</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="https://amicitia.github.io/guides">Guides</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="../p3-p4">Persona 3 & 4 (PS2)</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <b>PS2 Cheats Guide</b>
+ 
+ <b><h1>Using PNACH Files</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><img src="https://media.discordapp.net/attachments/143149937247387649/423570626389737473/unknown.png?width=895&height=559"></td>
+		<td id="left"><a href="http://pcsx2.net/getting-started.html"><b>Once you have PCSX2 set up</b></a>, 
+		you can use <span style="background-color: #CCE8FF">.pnach files</span> to load cheats. In many cases, "cheats" can be very practical for modding purposes, as they are essentially just patches that change data in the game's memory while it's running. The effects of cheats are non-permanent and harmless (assuming you don't save after modifying things like EXP or time travel, which would of course persist after the cheat is disabled.)
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<br>To create a new cheats file for PCSX2, just navigate to your <span style="background-color: #CCE8FF">Documents\PCSX2\cheats\</span> folder and create a new .txt document.
+			<br>Rename the file extension from <span style="background-color: #CCE8FF">.txt</span> to <span style="background-color: #CCE8FF">.pnach</span> and open it with a text editor, like notepad.
+		</td>
+		<td>
+			<img src="https://i.imgur.com/mlUO72s.png">
+		</td>
+	<tr>
+		<td><img src="https://i.imgur.com/JX9lBwT.png"></td>
+		<td id="left">Get your cheats from wherever you'd like. <a href="http://s15.zetaboards.com/Amicitia/forum/3290119/">there are several pages of them available on the forum.</a>
+			<br>A .pnach format cheat looks like the one on the left. You can copy/paste them into your file and save it.
+			<br>You can label each one by putting two slashes before the name on a separate line. This prevents the emulator from reading that line.
+			<br>In case you want to disable a cheat (but keep it in the file for later), you can put slashes in front of each line of the cheat as well.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			In <b>the System tab</b> in the top left corner of PCSX2,
+			ensure that you have <b>Enable Cheats</b> checked. To see if your cheats were found and applied, go to
+			<b> Misc > Show Console</b> before booting the game.
+			
+		</td>
+		<td>
+			<img src="https://pbs.twimg.com/media/DYmQOfKUQAEl2XO.jpg">
+		</td>
+	</tr>
+	<tr>
+		<td><img src="https://cdn.discordapp.com/attachments/143149937247387649/414930458623737856/unknown.png"></td>
+		<td id="left">While you're there, check the game's CRC at the top of the window. You will need to do this to know what to name your pnach file.
+			<br>A CRC is like a hash of the game's ELF file: it changes whenever the executable is modified, so depending on your region or any mods you have installed, it will be different and <b>your pnach file will have to be renamed.</b>
+		</td>
+	</tr>
+</table>
+
+</div>
+
+<br><br>
+<div class="footer">ShrineFox © 2016-2018</div>
+
+</body>
+</html>

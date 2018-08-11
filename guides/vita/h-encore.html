@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+<link rel='shortcut icon' href='../../../favicon.png' type='image/x-icon'/ >
+<meta charset="utf-8">
+<title>Amicitia - h-encore Guide</title>
+<link href="../../css/index.css" rel="stylesheet" type="text/css">
+<link href="../../css/waves.css" rel="stylesheet" type="text/css">
+<link href="../../css/guides.css" rel="stylesheet" type="text/css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+<canvas id='bgCanvas'></canvas>
+<script src="../../js/bubbles.js"></script>
+<div class="waves">
+  <div class="wave wave_1"></div>
+  <div class="wave wave_2"></div>
+  <div class="wave wave_3"></div>
+</div>
+<div class="navigation">
+ <i class="fas fa-home"></i> Home
+ <a href="http://amicitia-team.tumblr.com"><i class="fas fa-edit"></i> Blog</a>
+ <a href="http://amicitia-mods.boards.net/"><i class="fa fa-comment" aria-hidden="true"></i> Forum</a>
+ <a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-book" aria-hidden="true"></i> Wiki</a>
+ <a href="https://amicitia.github.io/about"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a>
+ <a href="https://amicitia.github.io/discord"><i class="fab fa-discord" aria-hidden="true"></i> Discord</a>
+</div>
+<div class="logo"><center><a href="https://amicitia.github.io/"><img src="../../images/logo.svg" width="179" height="179"></a></center></div>
+
+<div class="content"><a href="https://amicitia.github.io/index">Home</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="https://amicitia.github.io/guides">Guides</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ PSVita <i class="fa fa-angle-double-right" aria-hidden="true"></i> <b>h-encore</b>
+ 
+ <b><h1>Exploiting a 3.67/3.68 Vita</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><img src="https://i.imgur.com/1rgbA0b.png"></td>
+		<td id="left"><h2>What's Henkaku?</h2>
+			The Playstation Vita's first native exploit, <b><a href="https://henkaku.xyz/">Henkaku</a></b>, was first made available for <b>firmware 3.60</b>. With it, you could install <b>Vitashell</b> (a powerful homebrew app for installing other homebrew and managing the filesystem). You could also install <a href="https://enso.henkaku.xyz/"><b>Henkaku Enso</b></a>, a bootloader exploit that runs henkaku at startup automatically. At the time of writing, the latest firmware is <b>3.68</b>.
+		</td>
+	</tr>
+	<tr>
+		<td><h2>What's h-encore?</h2>
+			If your Vita is on <span style="background-color: #CCE8FF">3.65, 3.67 or 3.68</span>, you can make use of TheFloW's latest <a href="https://github.com/TheOfficialFloW/h-encore">h-encore exploit</a>. This will install a bubble on your livearea that will load <b>Henkaku</b> whenever you run it. Unfortunately, <span style="background-color: #FFCECE">Henkaku Enso will only work on 3.65</span> using <a href="https://github.com/TheOfficialFloW/enso/releases">this</a>. On the plus side, all homebrew and plugins that don't require Enso still work, and you can play games that require a newer firmware.
+		</td>
+		<td>
+			<img src="https://i.imgur.com/slZT2i6.png">
+		</td>
+	</tr>
+	<tr>
+		<td><img src="https://i.imgur.com/5l7Vwdu.png"></td>
+		<td id="left"><h2>Choosing the right firmware</h2>
+			In the event that a firmware <span style="background-color: #FFCECE">higher than 3.68 is released, <b>do NOT update</b></span>. It's extremely likely that all currently available homebrew-enabling exploits will be patched, and you will have no alternatives for the forseeable future.
+			<br>In this case, you may want to buy another system. It's unlikely that a new unit will ship with the very latest firmware, so you'll be able to <a href="http://wololo.net/2016/08/09/manually-update-ps-vita-firmware-3-60/">follow these directions</a> to update to the one of your choice.
+			<br>If you want <a href="https://enso.henkaku.xyz/"><b>Henkaku Enso</b></a>, go with either <span style="background-color: #CCE8FF">3.60 or 3.65</span> and use the regular <b><a href="https://henkaku.xyz/">Henkaku</a></b> exploit to install it. Or, <span style="background-color: #CCE8FF">update to 3.68 and follow the rest of this guide on setting up h-encore.</span>
+ 		</td>
+	</tr>
+</table>
+</div>
+
+<div class="content">
+ <b><h1>Installing h-encore</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td>
+			Download <a href="https://github.com/noahc3/auto-h-encore/releases">auto h-encore</a> and extract the ZIP. <br>Also <a href="https://codestation.github.io/qcma/">install and set up QCMA</a> on your computer. <br><br>This is an open-source alternative for Sony's <b>Content Manager Assistant</b> app, which forces you to update to the latest firmware to use. Since we want to remain on our desired firmware, this will provide only the functionality that we need. Once it's installed, <span style="background-color: #CCE8FF">connect your Vita to your PC</span> (with ethernet if it's a PSTV, or the USB cord it comes with if it's a portable model). <span style="background-color: #CCE8FF"><b>You may also connect with Wi-fi</b> if you're on 3.68 and if it's still the latest firmware</span> (which it is at the time of writing). Otherwise you may need to look into <a href="https://github.com/iAmGhost/VitaUpdateBlocker">other ways to block the firmware update prompt</a>.
+			<br>
+			<br>The first time you run QCMA, the settings window will automatically open. You should configure it like the screenshot on the right.
+		</td>
+		<td>
+			<img src="https://i.imgur.com/tWTgDC9.png">
+		</td>
+	<tr>
+		<td><img src="https://i.imgur.com/nACaMyz.png"></td>
+		<td id="left">When you connect to your PC for the first time, it should prompt you to enter a PIN as it appears on your screen. Once you're connected, on your Vita navigate to <span style="background-color: #CCE8FF">Content Manager > Copy Content > System to PC > Applications</span>. There's a chance you may get an error message (C0-14258-0), in which case fully rebooting the Vita and starting over usually resolves the issue.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			If you manage to reach this screen, feel free to back out of the Content Manager app for now and go back to your PC. We don't actually need to transfer a file yet, but we did need to generate a folder with your Account ID. The latest version of the auto h-encore installer should be able to locate this automatically if you did the previous steps.
+		</td>
+		<td>
+			<img src="https://i.imgur.com/b8OEj7i.png">
+		</td>
+	</tr>
+	<tr>
+		<td><img src="https://i.imgur.com/xtdEmcW.png"></td>
+		<td id="left">Press Start and wait for it to automatically setup a h-encore application that will work on your account.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			 When the process is complete, a window will pop up with directions for you to follow. This time, let's transfer the application <b>from our PC to the Vita</b> using the Content Manager. Before we do so, find the QCMA icon in your taskbar, right click it, and choose Refresh Database so that the Vita can find the new files. 
+		</td>
+		<td>
+			<img src="https://i.imgur.com/cfsWQtZ.png">
+		</td>
+	</tr>
+	<tr>
+		<td><img src="https://i.imgur.com/hzzB26l.png"></td>
+		<td id="left">If you followed all of the steps correctly, the h-encore bubble should transfer to the Vita live area with no issues! If not, go back and make sure your account ID is correct or try rebooting. As long as you <span style="background-color: #FFCECE"><b>do NOT update past 3.68</b></span>, you will be able to launch this bubble anytime you want in order to enable homebrew. It will persist until the next time you reboot, in which case you have to run the h-encore bubble again. Still, it's very quick and painless to do each time.
+		</td>
+	</tr>
+</table>
+
+</div>
+
+<div class="content">
+ 
+ <b><h1>What you can do with h-encore</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td>
+			Right away, you have the option to install Vitashell from the h-encore bubble, and it's highly recommended that you do so. Vitashell is your ticket to installing homebrew (VPK files downloaded from the internet), transferring files over Wi-fi or ethernet using FTP (file transfer protocol using a program like Filezilla-- no need for the content manager anymore!), or installing plugins.
+			<br>Press Select while in Vitashell to start the FTP server. Enter the IP and port on PC and you'll be able to send files to and from both ends of the server!
+		</td>
+		<td>
+			<img src="https://i.imgur.com/cLNawou.png">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="https://i.imgur.com/nMkftHM.png">
+		</td>
+		<td id="left">
+			If you're interested in <b>backing up, decrypting (for editing), or transferring save files</b> from another system, I recommend installing <a href="https://github.com/d3m3vilurr/vita-savemgr/releases">Vita-Savemgr</a>. Backed up saves will be transferred to <span style="background-color: #CCE8FF">ux0:data/savegames/TITLEID/</span>, where you can send them to PC over FTP using Vitashell if you want.
+		</td>
+	</tr>
+		<tr>
+		<td>
+			If you'd like to <b>run mods for games and you're using h-encore</b>, you need to <a href="https://amicitia.github.io/guides/vita/repatch">follow this guide on installing and using rePatch</a>.
+		</td>
+		<td>
+			<img src="https://i.imgur.com/vAuRjKC.png">
+		</td>
+	</tr>
+	<tr>
+		<td><img src="https://i.imgur.com/q7g9zIi.png">
+		</td>
+		<td>
+			By running <a href="https://github.com/xyzz/gamecard-microsd/releases">gamesd.skprx</a> alongside an unofficial adapter, you can <b>mount your MicroSD card</b> as a replacement for the system's <span style="background-color: #CCE8FF">memory card partition (ux0)</span>. <a href="https://amicitia.github.io/guides/vita/sd2vita">Read this guide for more details.</a> 
+		</td>
+	</tr>
+</table>
+</div>
+
+<br><br>
+<div class="footer">ShrineFox © 2016 - 2018</div>
+
+</body>
+</html>

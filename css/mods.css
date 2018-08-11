@@ -1,0 +1,191 @@
+@charset "utf-8";
+/* Bubbles BG */
+
+@import "compass/css3";
+
+.choices {
+	position: relative;
+	z-index:20;
+	margin: 0 auto;
+	margin-top: 3%;
+	width:60%;
+	padding: 20px 10px 20px 20px;
+	background: #FFFFFF;
+    border-radius: 12px;
+}
+
+.pagelink-p3 {
+	position: relative;
+	z-index:20;
+	margin: 0 auto;
+	padding: 20px 10px 20px 20px;
+	background-image: url("../images/p3.png");
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	color: #002040;
+	background-color: #FFFFFF;
+    border-radius: 12px;
+	font-size: 36px;
+}
+
+.pagelink-p3:hover {
+	background-image: url("../images/p.png");
+	background: #66AFFF;
+	color: #002040;
+}
+
+.pagelink-p4 {
+	position: relative;
+	z-index:20;
+	margin: 0 auto;
+	padding: 20px 10px 20px 20px;
+	background-image: url("../images/p4.png");
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	color: #002040;
+	background-color: #FFFFFF;
+    border-radius: 12px;
+	font-size: 36px;
+}
+
+.pagelink-p4:hover {
+	background-image: url("../images/p.png");
+	background: #FFE266;
+	color: #002040;
+}
+
+.pagelink-p3p {
+	position: relative;
+	z-index:20;
+	margin: 0 auto;
+	padding: 20px 10px 20px 20px;
+	background-image: url("../images/p3p.png");
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	color: #002040;
+	background-color: #FFFFFF;
+    border-radius: 12px;
+	font-size: 36px;
+}
+
+.pagelink-p3p:hover {
+	background-image: url("../images/p.png");
+	background: #66AFFF;
+	color: #002040;
+}
+
+.pagelink-p4g {
+	position: relative;
+	z-index:20;
+	margin: 0 auto;
+	padding: 20px 10px 20px 20px;
+	background-image: url("../images/p4g.png");
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	color: #002040;
+	background-color: #FFFFFF;
+    border-radius: 12px;
+	font-size: 36px;
+}
+
+.pagelink-p4g:hover {
+	background-image: url("../images/p.png");
+	background: #FFFF66;
+	color: #002040;
+}
+
+.pagelink-p4d {
+	position: relative;
+	z-index:20;
+	margin: 0 auto;
+	padding: 20px 10px 20px 20px;
+	background-image: url("../images/p4d.png");
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	color: #002040;
+	background-color: #FFFFFF;
+    border-radius: 12px;
+	font-size: 36px;
+}
+
+.pagelink-p4d:hover {
+	background-image: url("../images/p.png");
+	background: #BA6BA9;
+	color: #002040;
+}
+
+.pagelink-p3d {
+	position: relative;
+	z-index:20;
+	margin: 0 auto;
+	padding: 20px 10px 20px 20px;
+	background-image: url("../images/p3d.png");
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	color: #003E3F;
+	background-color: #FFFFFF;
+    border-radius: 12px;
+	font-size: 36px;
+}
+
+.pagelink-p3d:hover {
+	background-image: url("../images/p.png");
+	background: #61B2D3;
+	color: #003E3F;
+}
+
+.pagelink-p5d {
+	position: relative;
+	z-index:20;
+	margin: 0 auto;
+	padding: 20px 10px 20px 20px;
+	background-image: url("../images/p5d.png");
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	color: #3E2000;
+	background-color: #FFFFFF;
+    border-radius: 12px;
+	font-size: 36px;
+}
+
+.pagelink-p5d:hover {
+	background-image: url("../images/p.png");
+	background: #962121;
+	color: #FFFFFF;
+}
+
+.pagelink-p5 {
+	position: relative;
+	z-index:20;
+	margin: 0 auto;
+	padding: 20px 10px 20px 20px;
+	background-image: url("../images/p5.png");
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	color: #002040;
+	background-color: #FFFFFF;
+    border-radius: 12px;
+	font-size: 36px;
+}
+
+.pagelink-p5:hover {
+	background-image: url("../images/p.png");
+	background: #FF3A3A;
+	color: #FFFFFF;
+}

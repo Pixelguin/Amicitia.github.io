@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<link rel='shortcut icon' href='../../../favicon.png' type='image/x-icon'/ >
+<meta charset="utf-8">
+<title>Amicitia - Patcher FAQs</title>
+<link href="../../../css/index.css" rel="stylesheet" type="text/css">
+<link href="../../../css/waves.css" rel="stylesheet" type="text/css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+<canvas id='bgCanvas'></canvas>
+<script src="../../../js/bubbles.js"></script>
+<div class="waves">
+  <div class="wave wave_1"></div>
+  <div class="wave wave_2"></div>
+  <div class="wave wave_3"></div>
+</div>
+<div class="navigation">
+ <i class="fas fa-home"></i> Home
+ <a href="http://amicitia-team.tumblr.com"><i class="fas fa-edit"></i> Blog</a>
+ <a href="http://s15.zetaboards.com/Amicitia/index/"><i class="fa fa-comment" aria-hidden="true"></i> Forum</a>
+ <a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-book" aria-hidden="true"></i> Wiki</a>
+ <a href="https://amicitia.github.io/about"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a>
+ <a href="https://amicitia.github.io/discord"><i class="fab fa-discord" aria-hidden="true"></i> Discord</a>
+</div>
+<div class="logo"><center><a href="https://amicitia.github.io/"><img src="../../../images/logo.svg" width="179" height="179"></a></center></div>
+
+<div class="content"><a href="https://amicitia.github.io/index">Home</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="https://amicitia.github.io/guides">Guides</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="https://amicitia.github.io/guides/p3-p4//p3-p4">Persona 3 & 4 (PS2)</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="https://amicitia.github.io/guides/p3-p4/personapatcher">PersonaPatcher Guide</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <b>FAQs</b>
+ 
+ <b><h1>PersonaPatcher FAQ</h1></b>
+ by Ryan ShrineFox
+ <br>If you ended up on this page, you probably need to troubleshoot a problem.
+ <br>Chances are it's a common problem, and is listed on this page.
+ <br>If not, ask us <a href="http://s15.zetaboards.com/Amicitia/post/?type=1&mode=1&f=3194500">on the forum</a> or in <a href="https://discordapp.com/invite/Qkyammx">our Discord Chat!</a>
+ <br>
+ <b><h2>Q: My savestates/cheats no longer work!</h2></b>
+ <b>A</b>: The game CRC is different now. It’s listed in the console when you first 
+ <br>run the game, so you can rename files like cheats and saves so that the emulator will
+ <br>recognize that they’re compatible with your ISO.
+ <br>
+ <br>Also a tip, use memory card saves instead of savestates for testing. 
+ <br>They’re universal to the game across all CRCs.
+ <hr>
+ <b><h2>Q: My game is taking forever to load. PCSX2 says it’s “searching for layer 1”</h2></b>
+ <b>A</b>: This can happen if your ISO is larger in size than a normal DVD. Be patient. 
+ <br>If you’re sure it’s frozen, close the emulator and try again. After you wait long enough 
+ <br>the second time, the emulator should give up finding layer one. This happens if it decides 
+ <br>the ISO is too big, but the game should still run fine despite it saying that the ISO is 
+ <br>incomplete or corrupted. It should only take this long to start the first time.
+ <hr>
+ <b><h2>Q: The game froze and said TLB Miss in the PCSX2 console?</h2></b>
+ <b>A</b>: That could be for a couple of reasons. Either you didn’t patch the SLUS file for 
+ <br>ALL edited CVMs correctly (see below), or a file you replaced is incompatible with the game.
+ <br>This is most often the case with softlocks, where music still plays or animations still
+ <br>happen. Go back and try something else to confirm this is the case!
+ <hr>
+ <b><h2>Q: I get a ton of TLB misses when battle loads / music tries to play?</h2></b>
+ <b>A</b>: A: You didn’t apply the patch for multiple CVMs to the same SLUS. Common mistake. 
+ <br>When you delete the original SLUS and rename your new one to remove the “_new” part, go back 
+ <br>and patch for a different CVM and repeat until the changes for all CVMs are patched.
+</div>
+
+<br><br>
+<div class="footer">ShrineFox © 2016</div>
+
+</body>
+</html>

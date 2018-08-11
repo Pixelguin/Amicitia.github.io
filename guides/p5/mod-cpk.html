@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+<link rel='shortcut icon' href='../../favicon.png' type='image/x-icon'/ >
+<meta charset="utf-8">
+<title>Amicitia - P5 Mod Loader Guide</title>
+<link href="../../css/index.css" rel="stylesheet" type="text/css">
+<link href="../../css/waves.css" rel="stylesheet" type="text/css">
+<link href="../../css/guides.css" rel="stylesheet" type="text/css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+<canvas id='bgCanvas'></canvas>
+<script src="../../js/bubbles.js"></script>
+<div class="waves">
+  <div class="wave wave_1"></div>
+  <div class="wave wave_2"></div>
+  <div class="wave wave_3"></div>
+</div>
+<div class="navigation">
+ <i class="fas fa-home"></i> Home
+ <a href="http://amicitia-team.tumblr.com"><i class="fas fa-edit"></i> Blog</a>
+ <a href="http://amicitia-mods.boards.net/"><i class="fa fa-comment" aria-hidden="true"></i> Forum</a>
+ <a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-book" aria-hidden="true"></i> Wiki</a>
+ <a href="https://amicitia.github.io/about"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a>
+ <a href="https://amicitia.github.io/discord"><i class="fab fa-discord" aria-hidden="true"></i> Discord</a>
+</div>
+<div class="logo"><center><a href="https://amicitia.github.io/"><img src="../../images/logo.svg" width="179" height="179"></a></center></div>
+
+<div class="content"><a href="https://amicitia.github.io/index">Home</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="https://amicitia.github.io/guides">Guides</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="../p5">Persona 5 (PS3)</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <b>P5 Mod Loader Guide</b>
+ 
+ <b><h1>Loading Mods in Persona 5</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><img src="http://68.media.tumblr.com/3567b658ed173636de9bca6438a16fcd/tumblr_inline_opcy07LYXL1rp7sxh_500.png"></td>
+		<td id="left"><h2>What's a Mod.cpk?</h2>
+			A <span style="background-color: #CCE8FF">mod.cpk</span> file is a prepackaged archive that the game can
+			load mods from. The files inside override the contents loaded from the game's other CPK files.
+			<br>In order for this to work, you need to either
+			replace the game's EBOOT or patch it with this YML file made by TGE.
+			<br><br>
+			<br><a href="https://amicitia.github.io/mods/p5#modloader"><b>Download the EBOOT for your region and CFW type</b></a>. If there isn't one for your region, see <a href="https://amicitia.github.io/mods/p5#patch-eboot">this guide on patching the EBOOT yourself.</a>
+			<br><i>Or</i>, if you're using an emulator,<br>
+			<a href="https://amicitia.github.io/mods/p5#modloader"><b>download the patch.yml for RPCS3</b></a> to get started.
+		</td>
+	</tr>
+</table>
+</div>
+
+<div class="content">
+ <b><h1>Using mods on a Custom Firmware PS3</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td>
+			<br><span style="background-color: #FFCECE">Presently, the mod.cpk patch does not seem to be compatible with Blu-ray disc versions of the game on CFW. <b>Only the digital PSN release can take advantage of mod.cpk support on console.</b></span>
+			In order to install it on a real PS3, you need <a href="https://rebug.me/">a custom </a>
+			firmware and an FTP homebrew like <a href="https://github.com/aldostools/webMAN-MOD/releases">webman</a> or multiman <br>as well as <a href="https://filezilla-project.org/">a client like Filezilla</a> on PC.
+			<br>
+			<br>Note your PS3's IP address (you can change this in Network Settings)
+			and use it to connect to your FTP client.
+		</td>
+		<td>
+			<img src="http://i.imgur.com/Ct2gRJb.png">
+		</td>
+	<tr>
+		<td><img src="http://i.imgur.com/awRqj6W.png"></td>
+		<td id="left">Go to <span style="background-color: #CCE8FF">dev_hdd0/game/GAMEID/USRDIR</span> and place the EBOOT file there,
+			overwriting the original. The Game ID depends on your region, but
+			should be one of the following:
+			<br>NPEB02436 (Europe) / NPUB31848 (US)
+			<br><br>If the game ID starts with <b>"BL"</b> instead (for instance, BLUS31604) then you need to place modded files in <span style="background-color: #CCE8FF">dev_hdd0/disc/GAMEID/PS3_GAME/USRDIR</span>.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h2>How to use the Mod.cpk</h2>
+			Simply drop the downloaded CPK into the USRDIR folder
+			(same place where you replaced the Eboot) and you're
+			good to go! Note that you will need to restart the 
+			game to see any changes, and that you cannot rename
+			the CPK.
+		</td>
+		<td>
+			<img src="http://i.imgur.com/V49pDcV.png">
+		</td>
+	</tr>
+</table>
+
+</div>
+
+<div class="content">
+ 
+ <b><h1>Using mods on RPCS3</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td>
+			In order to test mods on PC, you need <a href="https://rpcs3.net/download">RPCS3</a>
+			downloaded and running on your PC. You will also need to install the game's PKGs and
+			install a PS3 firmware. <a href="https://rebug.me/">Rebug CFW</a> works fine for this purpose.
+		</td>
+		<td>
+			<img src="https://media.discordapp.net/attachments/153593230024245248/353253118659657728/unknown.png?width=989&height=560">
+		</td>
+	<tr>
+		<td><img src="https://i.imgur.com/bWxoKV0.png"></td>
+		<td id="left">Place your <a href="https://amicitia.github.io/mods/p5#modloader">downloaded patch.yml</a> file in the root of the RPCS3 directory.
+			Open it with Notepad or Notepad++ and scroll to the bottom. Here, you'll need
+			to replace the <b>PPU Hash</b> with your unique hash generated by RPCS3.
+			To get the hash, right click the console and set it to "Trace."
+			Then, start the game and quickly close it. Select all and copy the text
+			in the console to notepad and search for "hash." This is what you'll be using.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h2>Enabling/Disabling Eboot mods</h2>
+			At the bottom of the YML file, you can put a # symbol
+			in front of the the same lines where
+			you replaced your <b>PPU Hash</b> to disable those
+			specific mods next time you start the game.
+		</td>
+		<td>
+			<img src="https://i.imgur.com/tu2woqk.png">
+		</td>
+	</tr>
+		<tr>
+		<td>
+			<img src="http://i.imgur.com/V49pDcV.png">
+		</td>
+		<td id="left">
+			<h2>How to use the Mod.cpk</h2>
+			Simply drop the downloaded CPK into the game's
+			<span style="background-color: #CCE8FF">USRDIR</span> folder and you're
+			good to go! Note that you will need to restart the 
+			game to see any changes, and that you cannot rename
+			the CPK.
+		</td>
+	</tr>
+</table>
+<b>You can also patch EBOOT files using patch.yml files</b> 
+	if you want to use RPCS3-specific mods (like the <a href="https://amicitia.github.io/guides/p5/randomized-music">randomized music mod</a>) on a CFW PS3.
+	<br><a href="https://amicitia.github.io/guides/p5/patch-eboot">More info here</a>
+</div>
+
+<div class="content">
+<table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><h2>Creating your own Mod.cpk</h2>
+			<a href="https://amicitia.github.io/guides/p5/mod-compendium">Follow <b>this guide</b></a> on how to use TGE's <a href="https://amicitia.github.io/tools/p5#modcompendium"><b>Mod Compendium</b> program</a> to generate <span style="background-color: #CCE8FF">mod.cpk</span> files.
+		</td>
+		<td><img src="https://i.imgur.com/Xy1jaTo.png"></td>
+	</tr>
+</table>
+
+</div>
+
+<br><br>
+<div class="footer">ShrineFox © 2016 - 2018</div>
+
+</body>
+</html>

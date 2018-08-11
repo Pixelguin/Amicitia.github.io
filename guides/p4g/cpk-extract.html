@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<link rel='shortcut icon' href='../../favicon.png' type='image/x-icon'/ >
+<meta charset="utf-8">
+<title>Amicitia - P4G File Extraction Guide</title>
+<link href="../../css/index.css" rel="stylesheet" type="text/css">
+<link href="../../css/waves.css" rel="stylesheet" type="text/css">
+<link href="../../css/guides.css" rel="stylesheet" type="text/css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+<canvas id='bgCanvas'></canvas>
+<script src="../../js/bubbles.js"></script>
+<div class="waves">
+  <div class="wave wave_1"></div>
+  <div class="wave wave_2"></div>
+  <div class="wave wave_3"></div>
+</div>
+<div class="navigation">
+ <i class="fas fa-home"></i> Home
+ <a href="http://amicitia-team.tumblr.com"><i class="fas fa-edit"></i> Blog</a>
+ <a href="http://amicitia-mods.boards.net/"><i class="fa fa-comment" aria-hidden="true"></i> Forum</a>
+ <a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-book" aria-hidden="true"></i> Wiki</a>
+ <a href="https://amicitia.github.io/about"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a>
+ <a href="https://amicitia.github.io/discord"><i class="fab fa-discord" aria-hidden="true"></i> Discord</a>
+</div>
+<div class="logo"><center><a href="https://amicitia.github.io/"><img src="../../images/logo.svg" width="179" height="179"></a></center></div>
+
+<div class="content"><a href="https://amicitia.github.io/index">Home</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="https://amicitia.github.io/guides">Guides</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="../p4g">Persona 4 Golden (PSVita)</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <b>Extracting Persona 4 Golden's CPKs</b>
+ 
+ <b><h1>Extracting P3P's CPK Files</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><img src="https://i.imgur.com/HVxwqN0.png"></td>
+		<td id="left"><h2>What's a CPK?</h2>
+			A <b>CPK file</b> is an archive made by Criware that contains the game's content. They can be obtained and extracted several ways, as well as repacked.
+			<br>
+			<br>In order to modify or swap the game's files, you must unpack the files contained in the CPK to a folder on your computer. 
+			Then, after your changes have been made, compress the extracted folder back into a CPK file.
+		</td>
+	</tr>
+</table>
+</div>
+
+<div class="content">
+ <b><h1>Getting the CPK files from the game</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td>
+			Persona 4 Golden has one main CPK, <span style="background-color: #CCE8FF">data.cpk</span>. Using <a href="https://henkaku.xyz/">a Vita running Henkaku on 3.60 (see here for more information)</a>, you can extract the CPK from a cartridge or digital version of the game using Vitashell.
+			<br>
+			Simply open Vitashell, navigate to the ux0:/app/GAMEID folder and mount the directory. You can then copy it elsewhere and use FTP to transfer it to your PC.
+		</td>
+		<td>
+		<td><img src=https://i.imgur.com/JgUVtWE.png"></td>
+	</tr>
+</table>
+
+</div>
+
+<div class="content">
+ 
+ <b><h1>Extracting the CPK contents</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td>
+			Next, you must follow these steps to get the files from <span style="background-color: #CCE8FF">data.cpk</span>.
+			<br><br>Download and extract <b><a href="https://cdn.discordapp.com/attachments/316238229948989450/396825846633070592/CriPakGUI.zip">CriPakGUI.zip</a></b>. Run <b>CriPakGUI.exe</b> and click the <b>Extract me!</b> button to browse for your CPK file. It will prompt you to choose a location for the extracted contents. Then sit back and wait for it to finish!
+		</td>
+		<td>
+			<img src="https://i.imgur.com/wYEuTvc.png">
+		</td>
+</table>
+
+</div>
+
+<div class="content">
+<table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><h2>Packing a CPK</h2>
+			If you want to mod the game instead of just browsing its files, <a href="https://amicitia.github.io/guides/p4g/mod-compendium">follow <b>this guide</b></a> on how to use TGE's <a href="https://amicitia.github.io/tools/p5#modcompendium"><b>Mod Compendium</b> program</a> to generate new <span style="background-color: #CCE8FF">cpk files</span>.
+		</td>
+		<td><img src="https://i.imgur.com/Xy1jaTo.png"></td>
+	</tr>
+</table>
+</div>
+
+<br><br>
+<div class="footer">ShrineFox © 2016 - 2017</div>
+
+</body>
+</html>

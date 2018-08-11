@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+<link rel='shortcut icon' href='../../favicon.png' type='image/x-icon'/ >
+<meta charset="utf-8">
+<title>Amicitia - P5 Random Music Guide</title>
+<link href="../../css/index.css" rel="stylesheet" type="text/css">
+<link href="../../css/waves.css" rel="stylesheet" type="text/css">
+<link href="../../css/guides.css" rel="stylesheet" type="text/css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+<canvas id='bgCanvas'></canvas>
+<script src="../../js/bubbles.js"></script>
+<div class="waves">
+  <div class="wave wave_1"></div>
+  <div class="wave wave_2"></div>
+  <div class="wave wave_3"></div>
+</div>
+<div class="navigation">
+ <i class="fas fa-home"></i> Home
+ <a href="http://amicitia-team.tumblr.com"><i class="fas fa-edit"></i> Blog</a>
+ <a href="http://amicitia-mods.boards.net/"><i class="fa fa-comment" aria-hidden="true"></i> Forum</a>
+ <a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-book" aria-hidden="true"></i> Wiki</a>
+ <a href="https://amicitia.github.io/about"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a>
+ <a href="https://amicitia.github.io/discord"><i class="fab fa-discord" aria-hidden="true"></i> Discord</a>
+</div>
+<div class="logo"><center><a href="https://amicitia.github.io/"><img src="../../images/logo.svg" width="179" height="179"></a></center></div>
+
+<div class="content"><a href="https://amicitia.github.io/index">Home</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="https://amicitia.github.io/guides">Guides</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="../p5">Persona 5 (PS3)</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <b>P5 Random Music Guide</b>
+ 
+ <b><h1>Adding Random Battle Tracks to P5</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><img src="https://i.imgur.com/ULRLPdD.png"></td>
+		<td id="left"><h2>Preface</h2>
+			Read the following guides to acquaint yourself with <a href="https://amicitia.github.io/guides/p5/mod-cpk">the P5 Mod loader,</a> the <a href="https://amicitia.github.io/guides/p5/patch-eboot">patch.yml EBOOT patcher,</a> and <a href="https://amicitia.github.io/guides/p5/custom-sound">making custom music tracks.</a>
+			<br><br>
+			Using the <span style="background-color: #CCE8FF">mod.cpk</span> and <span style="background-color: #CCE8FF">patch.yml</span> together, it's possible to customize the game even further.
+			<br>
+			<br>In this example, I'll demonstrate how to <b>add music tracks</b> to the game (instead of replacing them like in the <a href="https://amicitia.github.io/guides/p5/custom-sound"><b>custom BGM tutorial</b></a>) 
+			by increasing the range for maximum Bgm tracks to randomize in the <span style="background-color: #CCE8FF">patch.yml</span>.
+		</td>
+	</tr>
+</table>
+</div>
+
+<div class="content">
+ <b><h1>Copying and Renaming</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td>
+			In Persona 5's <span style="background-color: #CCE8FF">ps3.cpk/sound</span> folder, there exists many <span style="background-color: #CCE8FF">acb/awb pairs</span> 
+			aside from the main <span style="background-color: #CCE8FF">bgm.acb/bgm.awb</span> files. Each AWB contains two tracks: an alternate battle theme, and an alternate victory theme.
+			Although these are used for DLC costumes, you can theoretically add an infinite amount of tracks by copying the pair and increasing the number in the filename.
+		</td>
+		<td>
+			<img src="https://i.imgur.com/5T029MR.png">
+		</td>
+	<tr>
+		<td><img src="https://i.imgur.com/FADst9K.png"></td>
+		<td id="left">Let's copy <span style="background-color: #CCE8FF">bgm_10.acb</span> and <span style="background-color: #CCE8FF">bgm.awb</span> to a new folder, e.g. <span style="background-color: #CCE8FF">mod/sound</span>.
+		Rename the <span style="background-color: #CCE8FF">10</span> in both files to <span style="background-color: #CCE8FF">11</span>. Repeat the process, incrementing the number each time until you have as many new pairs as extra songs you want to import.
+		</td>
+	</tr>
+</table>
+
+</div>
+
+<div class="content">
+ 
+ <b><h1>Replacing the ADX files</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td>
+			This step is exactly the same as in the <a href="https://amicitia.github.io/guides/p5/custom-sound">custom music tutorial</a>. Drag each acb file into <b>AcbEditor.exe</b> to unpack the awb file to generate a folder named after the awb, containing its two alternate BGM tracks.
+			Replace the battle theme (and optionally the victory theme, if you want) with your custom ADX files, but retain the filenames.
+			<br><br>In the example to the right, I copied <span style="background-color: #CCE8FF">excite.adx</span> to my unpacked <span style="background-color: #CCE8FF">bgm_18</span> folder. I'm going to delete <span style="background-color: #CCE8FF">00000_streaming.adx</span> and then rename <span style="background-color: #CCE8FF">excite.adx</span> to <span style="background-color: #CCE8FF">00000_streaming.adx</span> in place of the original.
+		</td>
+		<td>
+			<img src="https://i.imgur.com/tzuR7iF.png">
+		</td>
+	<tr>
+		<td><img src="http://i.imgur.com/JAKpRJy.png"></td>
+		<td id="left">Once you've replaced the desired ADX in each unpacked folder, repack them into AWB again by dragging the folder onto <b>AcbEditor.exe</b>. Do this for each of them until all your acb/awb pairs have been updated.
+		Create a <span style="background-color: #CCE8FF">mod.cpk</span> from your mod folder containing the new sound directory. There's one last step left to get the game to recognize these new music tracks.
+		</td>
+	</tr>
+</table>
+
+</div>
+
+<div class="content">
+<table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><h2>Editing the patch.yml</h2>
+		Find the line in the image to the right in your <span style="background-color: #CCE8FF">patch.yml</span> file.
+		<br>Add one to the number of the last acb/awb pair you added to account for the regular battle BGM track, and convert it to hex.
+		<br>For instance, my last acb file was <span style="background-color: #CCE8FF">bgm_18.acb</span>. So I'll convert 19 to hex (13) and replace the "<b>0B</b>" in <span style="background-color: #CCE8FF">0x38C000<B>0B</B></span> with 13.
+		<br><br>Save the changes to <span style="background-color: #CCE8FF">patch.yml</span> and use it to create your new EBOOT. Every time you enter battle, the game should randomly cycle through a much bigger variety of songs, including brand new ones now!</td>
+		<td><img src="https://i.imgur.com/AeplfQa.png"></td>
+	</tr>
+</table>
+
+</div>
+
+<br><br>
+<div class="footer">ShrineFox © 2016 - 2017</div>
+
+</body>
+</html>

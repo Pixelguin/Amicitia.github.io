@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<link rel='shortcut icon' href='../../favicon.png' type='image/x-icon'/ >
+<meta charset="utf-8">
+<title>Amicitia - PCSX2 Guide</title>
+<link href="../../css/index.css" rel="stylesheet" type="text/css">
+<link href="../../css/waves.css" rel="stylesheet" type="text/css">
+<link href="../../css/guides.css" rel="stylesheet" type="text/css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+<canvas id='bgCanvas'></canvas>
+<script src="../../js/bubbles.js"></script>
+<div class="waves">
+  <div class="wave wave_1"></div>
+  <div class="wave wave_2"></div>
+  <div class="wave wave_3"></div>
+</div>
+<div class="navigation">
+ <i class="fas fa-home"></i> Home
+ <a href="http://amicitia-team.tumblr.com"><i class="fas fa-edit"></i> Blog</a>
+ <a href="http://amicitia-mods.boards.net/"><i class="fa fa-comment" aria-hidden="true"></i> Forum</a>
+ <a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-book" aria-hidden="true"></i> Wiki</a>
+ <a href="https://amicitia.github.io/about"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a>
+ <a href="https://amicitia.github.io/discord"><i class="fab fa-discord" aria-hidden="true"></i> Discord</a>
+</div>
+<div class="logo"><center><a href="https://amicitia.github.io/"><img src="../../images/logo.svg" width="179" height="179"></a></center></div>
+
+<div class="content"><a href="https://amicitia.github.io/index">Home</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="https://amicitia.github.io/guides">Guides</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="../p3-p4">Persona 3 & 4 (PS2)</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <b>PCSX2 Guide</b>
+ 
+ <b><h1>Setting Up PCSX2</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><img src="http://i.imgur.com/ArXrkNT.jpg"></td>
+		<td id="left"><a href="http://pcsx2.net/getting-started.html"><b>PCSX2</b></a> is a cross-platform PS2 emulator.
+			<br>While it's easy to install, choosing the right settings
+			<br>can not only enhance your experience with the game on PC,
+			<br>(making it even more graphically impressive than on native PS2 hardware),
+			<br>but improve the presentation of your mods!
+			<br><a href="http://www.emuparadise.me/biosfiles/Ps2%20bios.zip"><b>Use this PS2 BIOS</b></a> to get started.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<br>Navigate to <b>Config > Emulation Settings > Aspect Ratio</b>
+			<br>to try widescreen!
+		</td>
+		<td>
+			<img src="http://i.imgur.com/GREvInz.png">
+		</td>
+	<tr>
+		<td><img src="http://i.imgur.com/DTSwvp7.png"></td>
+		<td id="left">Next, try going to <b>Config > Emulation Settings > Speedhacks</b>
+			<br>Leave them low and disable mVU flag hack if you don't need the speed boost.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			In <b>Config > Video > Plugin Settings</b>,
+			<br>I recommend using a graphics card/hardware renderer
+			<br> if you have one. Also, <b>Direct3D9 or Direct3D11</b>
+			<br>over OpenGL. Reasoning: OpenGL fixes shadow draw distance,
+			<br>but causes clipping problems with close together
+			<br> textures (rugs, roads, lighting effects...)
+			<br>Also, Direct3D11 has some occasional flickering.
+			<br>Direct3D9 does not seem to have any of these problems.
+			<br>
+			<br>
+			<strong>DISABLE native PS2 resolution!!</strong> The game will look a lot better.
+			<br>Anisotropic filtering and texture filtering make
+			<br>the graphics look a lot smoother, too!
+		</td>
+		<td>
+			<img src="http://i.imgur.com/HDXVpU4.png">
+		</td>
+	</tr>
+</table>
+
+</div>
+
+<br><br>
+<div class="footer">ShrineFox © 2016-2017</div>
+
+</body>
+</html>

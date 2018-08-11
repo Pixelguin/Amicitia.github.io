@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+<link rel='shortcut icon' href='../../favicon.png' type='image/x-icon'/ >
+<meta charset="utf-8">
+<title>Amicitia - Patcher Guide</title>
+<link href="../../css/index.css" rel="stylesheet" type="text/css">
+<link href="../../css/waves.css" rel="stylesheet" type="text/css">
+<link href="../../css/guides.css" rel="stylesheet" type="text/css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+<canvas id='bgCanvas'></canvas>
+<script src="../../js/bubbles.js"></script>
+<div class="waves">
+  <div class="wave wave_1"></div>
+  <div class="wave wave_2"></div>
+  <div class="wave wave_3"></div>
+</div>
+<div class="navigation">
+ <i class="fas fa-home"></i> Home
+ <a href="http://amicitia-team.tumblr.com"><i class="fas fa-edit"></i> Blog</a>
+ <a href="http://amicitia-mods.boards.net/"><i class="fa fa-comment" aria-hidden="true"></i> Forum</a>
+ <a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-book" aria-hidden="true"></i> Wiki</a>
+ <a href="https://amicitia.github.io/about"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a>
+ <a href="https://amicitia.github.io/discord"><i class="fab fa-discord" aria-hidden="true"></i> Discord</a>
+</div>
+<div class="logo"><center><a href="https://amicitia.github.io/"><img src="../../images/logo.svg" width="179" height="179"></a></center></div>
+
+<div class="content"><a href="https://amicitia.github.io/index">Home</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="https://amicitia.github.io/guides">Guides</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="../p3-p4">Persona 3 & 4 (PS2)</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <b>PersonaPatcher Guide</b>
+ 
+ <b><h1>Using PersonaPatcher</h1></b>
+ by Ryan ShrineFox
+ <b><h2>1. Getting the Game Files</h2></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><img src="http://i.imgur.com/q2YXOh1.png"></td>
+			<td id="left">This guide will cover the basics of replacing files 
+			<br>in Persona 3 and 4, and how to run it without any crashing.
+			<br><a href="https://amicitia.github.io/tools/p3-p4"><b>PersonaPatcher</b></a> is TGE's solution to a big obstacle in.
+			<br>modding P3 and P4 for the PS2: The executable.
+			<br>You can find it on the root of the ISO as a  <a href="https://amicitia.miraheze.org/wiki/Executable"><b>SLUS file</b></a>
+			<br>(variant by game region). It keeps track of the offsets
+			<br>of the game's files, so mods with differing filesizes
+			<br>crash when the executable hasn't been "patched."
+			<br>
+			<br><b>Please note that currently the SLUS Patch function only
+			<br>supports the North American version of P3, P3FES, and P4.</b>
+			<br>If you want to develop support for your region, 
+			<br>the source code is also available <a href="https://github.com/TGEnigma/Amicitia/tree/master/Source/Commandline%20tools/PersonaPatcher">here</a>.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<br>In Persona 3 and 4, all the game's files are 
+			<br>contained in <a href="https://amicitia.miraheze.org/wiki/CVM"><b>CVM files</b></a>. They're archives that
+			<br>can be extracted from and later rebuilt with your changes.
+			<br>First, you must extract these files using an ISO editor.
+			<br>I suggest the <b>premium version of UltraISO.</b>
+		</td>
+		<td>
+			<img src="http://i.imgur.com/PlHFjUd.png">
+		</td>
+	<tr>
+		<td id="left"><img src="http://i.imgur.com/88QiRyX.png"></td>
+		<td>Once you've extracted the files somewhere, open each
+		<br>of them individually using your ISO editor. UltraISO
+		<br>can automatically open CVM files. Once again, move
+		<br>the contents of each CVM to a folder named after it.
+		<br>You will use these files as backups for editing, and
+		<br>the CVMs for the next step. <b>Be careful not to overwrite
+		<br>your backup files or you will need to extract them
+		<br>again from an unmodded ISO!</b>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Now that you have all the files ready, decide
+			<br>what you want to edit. We have guides on editing
+			<br>various formats here. If you're looking for a specific
+			<br>file or want more information about a format,
+			<br><a href="https://amicitia.miraheze.org/wiki/Main_Page">check our wiki!</a>
+			<br>Again, make sure to save your changes to a separate
+			<br>file instead of overwriting your extracted backups
+			<br>for your own convenience!
+		</td>
+		<td>
+			<img src="http://i.imgur.com/lN74d7L.png">
+		</td>
+	</tr>
+</table>
+<b><h2>2. Editing CVM files</h2></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><img src="http://i.imgur.com/WJXaCVS.png"></td>
+			<td id="left">Once you've edited your files, you need to extract
+			<br>PersonaPatcher to a folder using a program like 7-Zip.
+			<br>Then, copy the <a href="https://amicitia.miraheze.org/wiki/CVM"><b>CVM File</b></a> you want to edit to the
+			<br><b>CVM Folder</b> in the PersonaPatcher folder.
+			<br>Make sure you don't change the name of the CVM or 
+			<br>put it anywhere else, or this won't work!
+			<br>
+			<br><b>Run the Split CVM.bat file in the root.</b>
+			<br>If Windows tells you it's unsafe, click on advanced and run
+			<br>anyway. If you want to be sure it's safe, you can right
+			<br>click the BAT file and Edit in Notepad to see what it does.
+		</td>
+	</tr>
+	<tr>
+		<td id="left">
+			<br>Once the file opens, type the name of the <a href="https://amicitia.miraheze.org/wiki/CVM"><b>CVM File</b></a>
+			<br>you want to split. It will then read the file and
+			<br>generate a <b>ISO file</b> and <b>HDR file</b> in the
+			<br>PersonaPatcher/CVM/split folder. Since UltraISO can't
+			<br>save a file as CVM, we need to convert it to ISO
+			<br>and back to make our edits.
+		</td>
+		<td>
+			<img src="http://i.imgur.com/WTwhNTd.png">
+		</td>
+	<tr>
+		<td><img src="http://i.imgur.com/Vnhk5nt.png"></td>
+		<td id="left">This process may take some time to complete depending
+		<br>on a number of factors: the size of the CVM, the speed
+		<br>of your computer's processor, and the write speed of 
+		<br>your hard drive. Be patient and <b>don't close the window
+		<br>until it says it's done!</b>
+		<br>
+		<br>When it's finished, you may open the newly generated .ISO
+		<br>file in your ISO editor, and replace the files!
+		</td>
+	</tr>
+	<tr>
+		<td>
+			When you're done, save your edited ISO file and move
+			<br>it to the PersonaPatcher/CVM/Make folder. Make sure
+			<br>you <b>don't change the filenames!</b> For instance,
+			<br>if you're modding data.cvm, make sure data.iso and 
+			<br>data.hdr are in the Make folder.
+			<br>
+			<br>At last, run the Make CVM.bat in the root.
+			<br>Just like before, type the CVM name and wait for 
+			<br>a new CVM to generate in PersonaPatcher/CVM.
+			<br>It will have "_repacked" added to the filename.
+			<br><b>Don't change this yet!</b> We still need to
+			<br><b>patch the SLUS in the next step.</b>
+			<br>It should be quick and easy if you did everything
+			<br>correctly thus far.
+		</td>
+		<td>
+			<img src="http://i.imgur.com/0NONffR.png">
+		</td>
+	</tr>
+</table>
+<b><h2>3. Patching the SLUS</h2></b>
+ <table border="0" cellspacing="20" cellpadding="0">
+	<tr>
+		<td><img src="http://i.imgur.com/0NONffR.png"></td>
+			<td id="left">Congrats on making it this far! It might seem
+			<br>like a lot of steps (it is), but the more experienced
+			<br>you get, the faster I can promise it will go.
+			<br>This is the quickest step, with virtually no wait
+			<br>time.
+			<br>Copy the game's <a href="https://amicitia.miraheze.org/wiki/Executable"><b>SLUS file</b></a> to your SLUS folder
+			<br>and run the <b>Patch SLUS.bat</b> file in the root.
+			<br><b>Run the Split CVM.bat file in the root.</b>
+			<br>Enter which game you're editing, and which CVM
+			<br>you're using to patch. It will then scan the new
+			<br>file offsets and update the SLUS file with them.
+		</td>
+	</tr>
+	<tr>
+		<td id="left">
+			<br>A new SLUS file will have been created in <b>/SLUS</b>!
+			<br>It will have _new added to the end of the filename.
+			<br>You can delete the original SLUS from this folder and
+			<br>remove the _new from the filename, or move it somewhere
+			<br>else and rename it. Either way, <b>make sure your new SLUS
+			<br>has the name of the original.</b>
+			<br>
+			<br>If you edited multiple CVM files for this mod, <b>repeat the 
+			<br>process for each CVM</b> and make sure you're updating the 
+			<br>offsets to the same SLUS file! The game will still crash
+			<br>if the offsets only match one of the CVMs you edited.
+		</td>
+		<td>
+			<img src="http://i.imgur.com/FMaHCyQ.png">
+		</td>
+	<tr>
+		<td><img src="http://i.imgur.com/16eUZdn.png"></td>
+		<td id="left">Now, all that's left is to make your new game ISO and play!
+		<br>Just like with the SLUS file, remove "_repacked" from your
+		<br>CVM's name <b>only after patching it.</b>
+		<br>Then, open your game's ISO in UltraISO.
+		<br>
+		<br>Drag over the edited CVMs and SLUS file and replace.
+		<br>Then, go to file > Save As and save as a new ISO!
+		</td>
+	</tr>
+	<tr>
+		<td>
+			You're done! Use PCSX2 to test your mod on the PC.
+			<br><a href="file:///C:/Users/Ryan/Documents/GitHub/amicitia.github.io/guides/p3-p4/pcsx2.html">Use this guide to set up PCSX2 for the best experience.</a>
+			<br>Keep in mind: <b>Patching will change the game CRC</b>,
+			<br>meaning previous save states and cheats will no
+			<br>longer be recognized for the mod.
+			<br>Memory card saves, however, should still work.
+			<br>
+			<br>Rename your .pnach file or save states
+			<br>using the new CRC (which can be found in the console
+			<br>when you start the game) in order to make cheats
+			<br>and save states work again!
+		</td>
+		<td>
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/PCSX2_screenshot_july_2014.png/300px-PCSX2_screenshot_july_2014.png">
+		</td>
+	</tr>
+</table>
+
+<b>Problems?</b>
+<a href="https://amicitia.github.io/guides/p3-p4/personapatcher/faqs"><h2>Check this article's FAQ</h2></a>
+<a href="https://discordapp.com/invite/Qkyammx"><h2>Join our Discord chat</h2></a>
+</div>
+
+<br><br>
+<div class="footer">ShrineFox © 2016-2017</div>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<center><big>Admins will attempt to hand these out to people who earned them asap. For more information, see our <a href="https://shrinefox.github.io/rewards">Rewards Page</a>.<big></center>
+<div id='shopinfo' class='meta_box' style='display:none;text-align:center;'></div>
+<div class='category'><table class='cat_head'><tr><td><h2>Shop</h2></td></tr></table><table id='shoptable'>
+<tr><th style='width:1px;'></th><th>Profile Badge</th><th>Bonus Requirements</th><th>Price</th><th style='text-align:center;'>Qty</th><th ></th></tr>
+</table></div>
+<script type='text/javascript'>
+// Advanced Shop By Quozzo
+var shopforum = "3194852";
+var shoptopic = "8061431";
+var shopitem = [
+//["img","Name","Description",Price,"additional info"]
+["https://i.imgur.com/Zp7H095.png","LAVENZA","Finish and Submit a Persona 5 Mod!",12000,"Please link to your mod ( or pay 12000 yen )"],
+["https://i.imgur.com/njO0hvJ.png","REN AMAMIYA","Start a Persona 5 Mod!",8000,"Please link to your mod ( or pay 8000 yen )"],
+["https://i.imgur.com/nn6wF2S.png","TWIN WARDENS","Finish a PQ Mod!",8000,"Please link to your mod ( or pay 4000 yen ) and you get the icon for free!"],
+["https://i.imgur.com/3sobFxK.png","RYUJI","",8000,"Click the confirm button on the right to complete transaction! ( 8000 yen )"],
+["https://i.imgur.com/HX5MXno.png","ANN","",8000,"Click the confirm button on the right to complete transaction! ( 8000 yen )"],
+["https://i.imgur.com/43Hs8WJ.png","MORGANA","",8000,"Click the confirm button on the right to complete transaction! ( 8000 yen )"],
+["https://i.imgur.com/QCLItUe.png","MAKOTO","",8000,"Click the confirm button on the right to complete transaction! ( 8000 yen )"],
+["https://i.imgur.com/tWixm5w.png","FUTABA","Contribute to the Wiki!",8000,"To get this badge for free, link to a Wiki page you contributed to! (Or pay 8000 yen)"],
+["https://i.imgur.com/MNYl6JC.png","HARU","",8000,"Click the confirm button on the right to complete transaction! ( 8000 yen )"],
+["https://i.imgur.com/8luOpAV.png","YUSUKE","",8000,"Click the confirm button on the right to complete transaction! ( 8000 yen )"],
+["https://i.imgur.com/RXlgjmF.png","AKECHI","",8000,"Click the confirm button on the right to complete transaction! ( 8000 yen )"],
+["https://i.imgur.com/ymYI9jJ.png","ELIZABETH","Contribute to a community mod!",6000,"Please link to the mod ( or pay 6000 yen )"],
+["https://i.imgur.com/XeTV6U4.png","AIGIS","Complete/Publish a Persona 3 Mod!",6000,"Please link to your mod ( or pay 6000 yen )"],
+["https://i.imgur.com/KRzTW0d.png","ADACHI","Complete/Publish a Persona 4 Mod!",6000,"Please link to your mod ( or pay 6000 yen )"],
+["https://i.imgur.com/fWIctTx.png","CAROLINE","Start a PQ Mod!",4000,"Please link to your mod ( or pay 4000 yen ) and you get the icon for free!"],
+["https://i.imgur.com/dQnVGW4.png","JUSTINE","Start a PQ Mod!",4000,"Please link to your mod ( or pay 4000 yen ) and you get the icon for free!"],
+["https://i.imgur.com/fiIEvD2.png","MARGARET","Publish a tool for modding a Persona game!",4000,"Please link to your tool ( or pay 4000 yen )"],
+["https://i.imgur.com/IzhZN3j.png","MAKOTO YUUKI","Start a P3 Mod!",4000,"Please link to your mod ( or pay 3000 yen )"],
+["https://i.imgur.com/V7wI8V1.png","YU NARUKAMI","Start a P4 Mod!",4000,"Please link to your mod ( or pay 3000 yen )"],
+["https://i.imgur.com/jJxlwdS.png","JACK FROST","Post a helpful tutorial!",3000,"Please link to your tutorial ( or pay 3000 yen )"],
+["https://i.imgur.com/dN2Ynfi.png","LABRYS","Finish and Submit an Arena mod!",6000,"Please link to your mod ( or pay 6000 yen )"],
+["https://i.imgur.com/DTMxsfY.png","SHO","Start a mod for an Arena game!",3000,"Please link to your mod ( or pay 3000 yen )"],
+["https://i.imgur.com/CnfYxFJ.png","NANAKO","Upload modded files for a project!",3000,"Please link to your post ( or pay 3000 yen )"],
+["https://i.imgur.com/7tRuDzN.png","FUUKA","Help someone in need!",3000,"Please link to your post ( or pay 3000 yen )"],
+["https://i.imgur.com/GuF3OGU.png","THEODORE","",2000,"Click the confirm button on the right to complete transaction! (2000 yen )"],
+["https://i.imgur.com/VFzeXPc.png","YOSUKE","",2000,"Click the confirm button on the right to complete transaction! ( 2000 yen )"],
+["https://i.imgur.com/ifMmkKl.png","YUKARI","",2000,"Click the confirm button on the right to complete transaction! ( 2000 yen )"],
+["https://i.imgur.com/OX7z7dP.png","YUKIKO","",2000,"Click the confirm button on the right to complete transaction! ( 2000 yen )"],
+["https://i.imgur.com/LCL3lfE.png","AKIHIKO","",2000,"Click the confirm button on the right to complete transaction! ( 2000 yen )"],
+["https://i.imgur.com/uxzVOpu.png","CHIE","",2000,"Click the confirm button on the right to complete transaction! ( 2000 yen )"],
+["https://i.imgur.com/qBvvRss.png","JUNPEI","",2000,"Click the confirm button on the right to complete transaction! ( 2000 yen )"],
+["https://i.imgur.com/1IWHPfE.png","KANJI","",2000,"Click the confirm button on the right to complete transaction! ( 2000 yen )"],
+["https://i.imgur.com/Bnpw00v.png","KEN","",2000,"Click the confirm button on the right to complete transaction! ( 2000 yen )"],
+["https://i.imgur.com/vkWc492.png","KOROMARU","",2000,"Click the confirm button on the right to complete transaction! ( 2000 yen )"],
+["https://i.imgur.com/wFWtyUI.png","MITSURU","",2000,"Click the confirm button on the right to complete transaction! (2000 yen )"],
+["https://i.imgur.com/ngDFxPF.png","NAOTO","",2000,"Click the confirm button on the right to complete transaction! ( 2000 yen )"],
+["https://i.imgur.com/mspMEwj.png","RISE","",2000,"Click the confirm button on the right to complete transaction! ( 2000 yen )"],
+["https://i.imgur.com/Q5CZoIU.png","SHINJI","",2000,"Click the confirm button on the right to complete transaction! ( 2000 yen )"],
+["https://i.imgur.com/c1H8j5n.png","TEDDIE","",2000,"Click the confirm button on the right to complete transaction! ( 2000 yen )"],
+["https://i.imgur.com/bfI8Uud.png","HUMAN TEDDIE","",2000,"Click the confirm button on the right to complete transaction! ( 2000 yen )"],
+["https://i.imgur.com/mkpKgc9.png","IGOR","Make the rigger.",﻿9999999,"There's no buying your way out of this unless you make the rigger."]
+];
+var sendingtext = "<big><strong>Sending Request</strong></big>";
+var senttext = "<big><strong>Request Complete, Yen transaction will take place next time Admin is online.</strong></big><br />You will then have the icon added to your profile!";
+
+for(i=0;i<shopitem.length;i++){
+if(shopitem[i][0]){shopitem[i][0]="<img src='"+shopitem[i][0]+"'></img>"};
+$('#shoptable').append("<tr><td>"+shopitem[i][0]+"</td><td><strong>"+shopitem[i][1]+"</strong></td><td>"+shopitem[i][2]+"</td><td style='width:10%;'><span style='display:none;' class='singlecost'>"+shopitem[i][3]+"</span>"+pointsicon+"<span class='itemcost'>"+shopitem[i][3]+"</span></td><td style='text-align:center;width:10%'><a class='decrease' style='cursor:pointer;float:left;'>[-]</a> <a class='currentqty' style='cursor:pointer;'>1</a> <a class='increase' style='cursor:pointer;float:right;'>[+]</a></td><td style='width:10%;text-align:center;'><button class='purchase'>Purchase</button><span style='display:none'>"+shopitem[i][4]+"</span></td></tr>");
+};
+
+senttime=0
+$('.purchase').live('click',function(){
+$('#extrainfo').remove();
+conf=false;
+itemqty = $(this).parent().prev().find('.currentqty').text();
+itemprice = $(this).parent().prev().prev().find('.singlecost').text();
+totalprice = $(this).parent().prev().prev().find('.itemcost').text();
+itemdesc = $(this).parent().prev().prev().prev().text();
+itemname = $(this).parent().prev().prev().prev().prev().text();
+if(!$('#top_info:contains("Guest")').length){
+nowtime = Math.ceil((new Date().getTime())/1000);
+iteminfoneeded = $(this).next().text();
+if(nowtime-30<senttime){
+alert("Please wait a few seconds before purchasing something else");
+}else if(!iteminfoneeded){
+conf=confirm("Purchase "+itemqty+"x "+itemname+" for "+pointsicon+totalprice);
+}else{
+conf=true;
+}
+if(conf){
+if(!iteminfoneeded){
+sendpurchase(itemqty,itemprice,totalprice,itemdesc,itemname);
+}else if(!$(this).parent().parent().next().find('textarea').length){
+$(this).parent().parent().after("<tr id='extrainfo'><td colspan='5'>"+iteminfoneeded+"<br /><textarea rows='4'></textarea></td><td style='text-align:center;'><button id='confirm'>Confirm</button></td></tr>");
+};
+};
+};
+});
+
+function sendpurchase(itemqty,itemprice,totalprice,itemdesc,itemname,iteminfo,iteminfodesc){
+if(iteminfo){iteminfo="[hr]"+iteminfoneeded+": "+iteminfo}else{iteminfo=""}
+$('#shopinfo').show().html("<span>"+sendingtext+"</span>");
+purchased = "Item Name: "+itemname+"[hr]Description: "+itemdesc+"[hr]Price: "+pointsicon+itemprice+"[hr]Qty: "+itemqty+"[hr]Total Price: "+pointsicon+totalprice+iteminfo;
+$.get(main_url+"post/?mode=2&type=1&f="+shopforum+"&t="+shoptopic,function(d){
+$.post(main_url+"post/",{mode:2,type:1,f:shopforum,t:shoptopic,emo:1,ast:$("input[name=ast]",d).val(),xc:$("input[name=xc]",d).val(),post: purchased,q:0,qhash:$("input[name=qhash]",d).val(),sd:1,fcolor:'',helpbox:'Quote Text',zbpost:0,attach1:'',mod_opts:'',sig:1,post_submit:''});
+$('#shopinfo').html("<span>"+senttext+"</span>");
+senttime = Math.ceil((new Date().getTime())/1000);
+$('#extrainfo').remove();
+});
+};
+
+$('#confirm').live('click', function(){
+itemqty = $(this).parent().prev().find('.currentqty').text();
+itemprice = $(this).parent().parent().prev().find('.singlecost').text();
+totalprice = $(this).parent().parent().prev().find('.itemcost').text();
+itemdesc = $(this).parent().parent().prev().find('td:eq(2)').text();
+itemname = $(this).parent().parent().prev().find('td:eq(1)').text();
+iteminfo = $(this).parent().prev().find('textarea').val();
+iteminfodesc = $(this).parent().prev().text();
+sendpurchase(itemqty,itemprice,totalprice,itemdesc,itemname,iteminfo,iteminfodesc)
+});
+
+$('.increase').live('click',function(){
+thisqty = $(this).parent().find('.currentqty').text();
+plusqty = thisqty*1+1;
+$(this).parent().find('.currentqty').text(plusqty);
+singlecost = $(this).parent().prev().find('.singlecost').text();
+totalcost = singlecost*plusqty;
+$(this).parent().prev().find('.itemcost').text(totalcost);
+});
+
+$('.decrease').live('click',function(){
+thisqty = $(this).parent().find('.currentqty').text();
+if(thisqty<=1){alert("You cannot select an amount lower than 1");
+}else{
+minusqty = thisqty*1-1;
+$(this).parent().find('.currentqty').text(minusqty);
+singlecost = $(this).parent().prev().find('.singlecost').text();
+totalcost = singlecost*minusqty;
+$(this).parent().prev().find('.itemcost').text(totalcost);
+};
+});
+
+$('.currentqty').live('click',function(){
+currentqty = $(this).html();
+$(this).replaceWith("<input class='setqty' size='2'/>");
+$('.setqty').focus();
+});
+
+$(".setqty").live('focusout', function() {
+$(this).replaceWith("<a class='currentqty' style='cursor:pointer;'>"+currentqty+"</a>");
+});
+
+$('.setqty').live('keypress', function(e) {
+if(e.keyCode==13){
+setqty = $('.setqty').val();
+if(!setqty){setqty=currentqty};
+if(isNaN(setqty)){setqty=currentqty};
+if(setqty<1){setqty=currentqty};
+singlecost = $(this).parent().prev().find('.singlecost').text();
+totalcost = singlecost*setqty;
+$(this).parent().prev().find('.itemcost').text(totalcost);
+$(this).replaceWith("<a class='currentqty' style='cursor:pointer;'>"+setqty+"</a>");
+};
+});
+</script>
