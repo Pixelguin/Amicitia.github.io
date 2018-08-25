@@ -532,7 +532,7 @@ p5_NoHudLite: &p5_NoHudLite
 p5_NoHud: &p5_NoHud
     - [ be32, 0x116934, 0x4E800020 ]
 
-# Replace the below PPU hash with yours. For more info: https://shrinefox.github.io/guides/p5/mod-cpk
+# Replace the below PPU hash with yours. For more info: https://amicitia.github.io/guides/p5/mod-cpk
 # Comment a line with # if you dont want a particular mod
 PPU-b8c34f774adb367761706a7f685d4f8d9d355426:
     - [ load, p5_ModSupport ]
