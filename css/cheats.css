@@ -1,0 +1,21 @@
+.toggle-title {
+    position: relative;
+    display: block;
+    border-top: 1px solid #000;
+    margin-bottom: 6px;
+}
+
+.toggle-inner {
+    display: none;
+}
+
+.cheat {
+    font-size:7px;
+	background-color: #DEEBF7;
+	padding: 10px;
+}
+
+.copied {
+	color: green;
+	display: none;
+}
