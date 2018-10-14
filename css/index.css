@@ -16,6 +16,11 @@ body{
 	overflow-x: hidden;
 }
 
+td {
+	min-width: 350px;
+}
+
+
 a:visited {
     color: #2D83D8;
 	text-decoration: none;
