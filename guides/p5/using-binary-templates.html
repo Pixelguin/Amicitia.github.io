@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<link rel='shortcut icon' href='../../favicon.png' type='image/x-icon'/ >
+<meta charset="utf-8">
+<title>Amicitia - Binary Templates Guide</title>
+<link href="../../css/index.css" rel="stylesheet" type="text/css">
+<link href="../../css/waves.css" rel="stylesheet" type="text/css">
+<link href="../../css/guides.css" rel="stylesheet" type="text/css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+<canvas id='bgCanvas'></canvas>
+<script src="../../js/https://amicitiamods.jcink.net/.js"></script>
+<div class="waves">
+  <div class="wave wave_1"></div>
+  <div class="wave wave_2"></div>
+  <div class="wave wave_3"></div>
+</div>
+<div class="navigation">
+ <i class="fas fa-home"></i> Home
+ <a href="http://amicitia-team.tumblr.com"><i class="fas fa-edit"></i> Blog</a>
+ <a href="http://amicitia-mods.boards.net/"><i class="fa fa-comment" aria-hidden="true"></i> Forum</a>
+ <a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-book" aria-hidden="true"></i> Wiki</a>
+ <a href="https://amicitia.github.io/about"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a>
+ 
+</div>
+<div class="logo"><center><a href="https://amicitia.github.io/"><img src="../../images/logo.svg" width="179" height="179"></a></center></div>
+
+<div class="content"><a href="https://amicitia.github.io/index">Home</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="https://amicitia.github.io/guides">Guides</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="../p5">Persona 5 (PS3)</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <b>Using Binary Templates</b>
+ 
+ <b><h1>About TBL Files</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><img src="https://i.imgur.com/xzil1jB.png"></td>
+		<td id="left">
+			<b>*.TBL</b> Files are sets of tables that contain statistics used in Persona games. 
+			In Persona 5, they can be found in <span style="background-color: #CCE8FF">data.cpk/battle/table.pac</span>.
+			<br>
+			<br>Each TBL's set of data is related to its function. For example, <span style="background-color: #CCE8FF">ENCOUNT.TBL</span> has variables for each set of enemies in the game-- their IDs, the music, the battlefield etc.
+		</td>
+	</tr>
+</table>
+</div>
+
+<div class="content">
+ <b><h1>Setting Up the Binary Template</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td>
+			Right now, a work in progress <b>binary template</b> is available that can edit the <span style="background-color: #CCE8FF">PERSONA.TBL</span> from Persona 5, as well as potentially some other ones.
+			<br><br><b><a href="https://amicitia.github.io/tools/p5-2#p5-2#tbl-bt">Download it here.</a></b>
+		</td>
+		<td>
+			<img src="https://i.imgur.com/WfT3IEi.png">
+		</td>
+	<tr>
+		<td><img src="https://i.imgur.com/574wwzv.png"></td>
+		<td id="left">Binary Templates are for use specifically with <b><a href="https://www.sweetscape.com/010editor/">010 Editor</a></b>, an advanced hex editor with scripting features that really come in handy for formats like this.
+		<br><span style="background-color: #FFCECE">(Note: 010 Editor has a 30 Day trial. We don't host warez here so you'll have to look elsewhere.)</span>
+		</td>
+	</tr>
+	<tr>
+		<td><img src="https://i.imgur.com/550Gs5b.png"></td>
+		<td id="left">
+			Once you have 010 Editor installed and the Binary Template downloaded, open 010 Editor and navigate to <span style="background-color: #CCE8FF">Templates > <b>View Installed Templates...</b></span>
+			<br>Then, click <span style="background-color: #CCE8FF">Add</span> and select the <b>P5_TBL.bt</b> file.			
+		</td>
+	</tr>
+</table>
+ 
+ <b><h2>Editing a TBL with the Template</h2></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+ 	<tr>
+		<td>
+			Open your TBL file in 010 Editor (after extracting it from table.pac using Amicitia).
+			<br>Then, navigate to <span style="background-color: #CCE8FF">Templates > <b>Run Template</b></span>. Choose <b>P5_TBL</b>. The hex digits should become highlighted with a color, and a table should expand at the bottom of the window.
+		</td>
+		<td id="left">
+			<img src="https://i.imgur.com/wRiIzgQ.png">
+		</td>
+	</tr>
+	<tr>
+		<td><img src="https://i.imgur.com/MskFA3O.png"></td>
+		<td id="left">
+			Click the arrows next to the name of a structure to expand a list of table entries within it. There may be a lot of yet-unknown values, but important ones should already be labelled. For instance, here we see the values for the selected Persona's Arcana, Level, Strength and other stats.
+			<br><br>By looking on the Wiki, we can determine which Persona corresponds to what number, as well as Arcanas and Skills.
+			<br>
+		</td>
+	</tr>
+	<tr>
+		<td><br>When you're done editing these stats, press Ctrl + S to save the changes to the file. You can then replace the TBL in table.pac and add it to your mod.cpk using the Mod Compendium.</span>
+		</td>
+		<td id="left">
+		<img src="https://i.imgur.com/Ndhy2ai.png"></td>
+	</tr>
+</table>
+
+<br><br>
+
+</body>
+</html>

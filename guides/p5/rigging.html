@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+<link rel='shortcut icon' href='../../favicon.png' type='image/x-icon'/ >
+<meta charset="utf-8">
+<title>Amicitia - Rigging Guide</title>
+<link href="../../css/index.css" rel="stylesheet" type="text/css">
+<link href="../../css/waves.css" rel="stylesheet" type="text/css">
+<link href="../../css/guides.css" rel="stylesheet" type="text/css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+<canvas id='bgCanvas'></canvas>
+<script src="../../js/https://amicitiamods.jcink.net/.js"></script>
+<div class="waves">
+  <div class="wave wave_1"></div>
+  <div class="wave wave_2"></div>
+  <div class="wave wave_3"></div>
+</div>
+<div class="navigation">
+ <i class="fas fa-home"></i> Home
+ <a href="http://amicitia-team.tumblr.com"><i class="fas fa-edit"></i> Blog</a>
+ <a href="http://amicitia-mods.boards.net/"><i class="fa fa-comment" aria-hidden="true"></i> Forum</a>
+ <a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-book" aria-hidden="true"></i> Wiki</a>
+ <a href="https://amicitia.github.io/about"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a>
+ 
+</div>
+<div class="logo"><center><a href="https://amicitia.github.io/"><img src="../../images/logo.svg" width="179" height="179"></a></center></div>
+
+<div class="content"><a href="https://amicitia.github.io/index">Home</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="https://amicitia.github.io/guides">Guides</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="../p5">Persona 5 (PS3)</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <b>Rigging</b>
+ 
+ <b><h1>About 3DSMax</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><iframe src="https://www.youtube.com/embed/w7Hj97Zw1mw?ecver=1" width="350" height="200" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen scrolling="no"></iframe></td>
+		<td id="left"><h2>What's 3DSMax?</h2>
+			Autodesk <b>3DSMax</b> is industry standard software used by animators, product designers, and game developers. It's an indespensible program for modders thanks to its extensive scripting capabilities and wide variety of editing tools.
+			<br>
+			<br>You can get it for free using an educational license. We use "maxscripts" (such as this one for P3/4 RMDs and this one for P5/Dancing GMDs) to convert models from their proprietary formats into 3DSMax "Scenes."
+			<br>
+			<br>Scenes consist of objects such as Meshes (geometric shapes consisting of vertices, polygons polygons) and Bones (part of a Skeleton, points that deform the Meshes surrounding them).
+		</td>
+	</tr>
+</table>
+</div>
+
+<div class="content">
+ <b><h1>Running a Maxscript</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td>
+			After installing 3DSMax and downloading the maxscript, extract the .ms file (along with the "include" folder) to your 3DSMax Scripts folder. When you go to Scripting > Run Script (from the navigation bar at the top of the window), it will open up to this folder.
+			<br>
+			<br>Run the maxscript and a window will pop up with several options. From here, you can load a GMD model into the scene. There's a chance that it might be lying down on the grid. You can rotate the Viewcube so that Top is facing toward you, right click it and choose "Set Current View as Front" in order to properly orbit around the model. Pressing the G key will toggle the grid.
+		</td>
+		<td>
+			<img src="https://i.imgur.com/A8NESs0.png">
+		</td>
+	<tr>
+		<td><img src="https://i.imgur.com/IDhIg7q.png"></td>
+		<td id="left">With the model loaded, you can also load an animation. Choose a GAP file instead of a GMD and then click Load Animation. You can use the controls at the top to play and pause, or choose a different keyframe.
+		<br>You can change the index to load a different animation from the GAP file, or choose Reset to return your model to its default pose.
+		</td>
+	</tr>
+	<tr>
+		<td><img src="https://i.imgur.com/Dm41Mzq.png"></td>
+		<td id="left">
+			<span style="background-color: #CCE8FF">If you want to create a custom model and convert it back to the game's format, you'll need GFDStudio as well.
+			<br>The rest of this guide focuses on using an existing character's skeleton (Bones) and rigging a new character's Meshes to them, in order to take advantage of the original model's animations.
+			<br>This process <b>may not be necessary if both models are from the same game!</b> Read more about <b>GFDStudio's "Replace" feature</b> which automatically compares and matches the IDs of bones with the same names to make them compatible for direct model swapping.
+		</td>
+	</tr>
+</table>
+ 
+ <b><h2>Loading and Preparing Your Models</h2></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+ 	<tr>
+		<td>
+			In this example, I'll be replacing Haru from Persona 5 with Aigis from Persona 3: Dancing In Moonlight. You can view lists of models from each game on our Wiki.
+			<br>Before loading a model, it's a good idea to make a Layer that will separate it. On the left pane in 3DSMax, toggle the "Hierarchy" view to the "Layer" view. Then click the Plus sign at the top to add a new layer and name it however you'd like.
+			<br>
+			<br>Make sure the bluish-green layer icon next to it is selected and then load your model! All the bones and meshes should go in that layer as they're loaded. Do the same thing for your replacement model on a separate layer.
+			<br>
+		</td>
+		<td id="left">
+			<img src="https://i.imgur.com/3PWCKQ2.png">
+		</td>
+	</tr>
+	<tr>
+		<td><img src="https://i.imgur.com/XLmBC0g.png"></td>
+		<td id="left">
+			With this done, you can click on the eyeball icon next to a layer to toggle its visibility. This will be very helpful when you need to focus on one model at a time.
+			<br>
+			<br>Before we can start rigging our new model, it's a good idea to <b>edit it to fit the proportions of the one we're replacing</b>. The more similar they appear to eachother in size and positioning, the better the end result will look. In this case, Aigis is a little taller than Haru.
+		</td>
+	</tr>
+	<tr>
+		<td><br>You may notice that each Mesh already has some Modifiers.
+		<br>In 3DSMax, each object can have several "Modifiers," as seen in the Modifiers tab while an object is selected.
+			<br><b>Editable Mesh</b> is the default Modifier, and can be used to <b>edit vertices and polygons.</b>
+			<br>Rigged models use a <b>Skin</b> Modifier to keep track of weight data for each vertice.
+			<br>A weight is basically a percentage of  how much influence a bone has on that vertice.
+			<br>Models from the Dancing games may load with some <b>Morpher</b> Modifiers. You might as well delete these, since GFDStudio doesn't support custom morphs yet.
+		</td>
+		<td id="left">
+		<img src="https://i.imgur.com/3PWCKQ2.png"></td>
+	</tr>
+</table>
+
+<h2>Editing Your Custom Model</h2>
+<table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><img src="https://i.imgur.com/4Qhi1Cg.png"></td>
+		<td id="left">
+			Once your new replacement model (in my case, Aigis) is lined up as well as you can by resizing and moving it, you may delete all of its Bones. Remember, we only need Haru's Bones. You can hide all Mesh objects by toggling the Sphere icon on the left, near the layers.
+			<br>
+			<br>Then, with all of the Mesh objects selected, it's also a good idea to head to the Advanced Tab and click on Reset XForm. This will add a XForm Modifier to each Mesh. You can quickly collapse all of these back into a single Editable Mesh modifier by right clicking one of the highlighted models and choosing Convert To > Editable Mesh. 
+			<br>It's important to do this because this makes the new position of the model (in terms of rotation, scale and coordinates) the default. The program might get confused later while working with the Skin modifiers, and we want to prevent that headache in advance.
+		</td>
+	</tr>
+	<tr>
+		<td><br>Now we can safely edit our meshes using the Editable Mesh modifier.
+		<br><br>One workaround to this is to use the <b>"Make Animation Packs Relative"</b> option in the Tools dropdown at the top of the window. This will have you <b>choose the original model, the model you're replacing it with, and a GAP file that you want to be "fixed"</b> to work with the new model.
+		<br>This works by comparing the coordinates of each model's bones and subtracting the difference from the animation's keyframes.
+		</td>
+		<td id="left">
+		<img src="https://i.imgur.com/2sJ3C1e.png"></td>
+	</tr>
+</table>
+
+<h2>Importing Models</h2>
+<table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><img src="https://i.imgur.com/ecCaf6P.png"></td>
+		<td id="left">
+			If you want to rig a custom model to an existing character's skeleton in order to make use of their animations, follow this guide! If you're a beginner to using 3DSMax, it'll walk you through it. 
+			<br>Be sure to export your new model as an <b>ASCII 2011 .FBX</b> with the following settings enabled: 
+			<br><b>Triangulate</b> (under Geometry)
+			<br><b>Deformations and Skin</b> (under Animation)
+			<br><b>Scale Factor</b> set to 1.0 (under Advanced Options/Units)
+		</td>
+	</tr>
+	<tr>
+		<td><br>If you just want to <b>swap one model from the game with another</b>, as long as it's similar enough (most biped human models are), you can do this in GFD Studio without using any external program.
+		<br><br><span style="background-color: #CCE8FF">Simply open the model you want to replace, right click its name, and choose <b>Replace</b>.</span>
+		<br>Then choose the model you want to swap it with. This will match the bone IDs from the new model to match the original one, which fixes a lot of incompatibility problems (especially in battle). 
+		<br>This is different from simply renaming a model file outside of GFD Studio, because for some reason each battle model has its bone IDs in a different order so that their animations are incompatible with eachother (even for the same character).
+		<br><br>Keep in mind that <span style="background-color: #FFCECE">when swapping models, you <b>must choose to either</b> use the Replace feature to make one battle model compatible with another's animations, or replace/rename the GAP that corresponds to that character.</span> For instance, <span style="background-color: #CCE8FF">c0001_051_00.GMD</span> uses <span style="background-color: #CCE8FF">bb0001_051_051(a/b/c).GAP</span> in the battle folder. If your model is rigged to the 051 GMD but you want to replace the model in slot 157 with your custom one instead, you must either rename the 051 animations to 157, or use GFDStudio's "Replace" feature.
+		</td>
+		<td id="left">
+		<img src="https://i.imgur.com/N7gB8iA.png"></td>
+	</tr>
+</table>
+
+</div>
+
+<br><br>
+
+</body>
+</html>

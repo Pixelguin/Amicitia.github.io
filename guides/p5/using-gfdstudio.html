@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+<link rel='shortcut icon' href='../../favicon.png' type='image/x-icon'/ >
+<meta charset="utf-8">
+<title>Amicitia - GFD Studio Guide</title>
+<link href="../../css/index.css" rel="stylesheet" type="text/css">
+<link href="../../css/waves.css" rel="stylesheet" type="text/css">
+<link href="../../css/guides.css" rel="stylesheet" type="text/css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+<canvas id='bgCanvas'></canvas>
+<script src="../../js/https://amicitiamods.jcink.net/.js"></script>
+<div class="waves">
+  <div class="wave wave_1"></div>
+  <div class="wave wave_2"></div>
+  <div class="wave wave_3"></div>
+</div>
+<div class="navigation">
+ <i class="fas fa-home"></i> Home
+ <a href="http://amicitia-team.tumblr.com"><i class="fas fa-edit"></i> Blog</a>
+ <a href="http://amicitia-mods.boards.net/"><i class="fa fa-comment" aria-hidden="true"></i> Forum</a>
+ <a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-book" aria-hidden="true"></i> Wiki</a>
+ <a href="https://amicitia.github.io/about"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a>
+ 
+</div>
+<div class="logo"><center><a href="https://amicitia.github.io/"><img src="../../images/logo.svg" width="179" height="179"></a></center></div>
+
+<div class="content"><a href="https://amicitia.github.io/index">Home</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="https://amicitia.github.io/guides">Guides</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+ <a href="../p5">Persona 5 (PS3)</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <b>Using GFD Studio</b>
+ 
+ <b><h1>About GFD Formats</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><iframe src="https://www.youtube.com/embed/w7Hj97Zw1mw?ecver=1" width="350" height="200" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen scrolling="no"></iframe></td>
+		<td id="left"><h2>What's GFDStudio?</h2>
+			TGE's <b>GFDStudio</b> (formerly called AtlusGFDEditor) is a Windows application for <span style="background-color: #CCE8FF">creating and editing GMD/GFS (models) and GAP (animation) files</span>. These formats are used in <b>Persona 5 as well as the Dancing spinoffs</b> as part of Atlus's new graphics engine, internally named "GFD".
+			<br>
+			<br>Using this program, you can <span style="background-color: #CCE8FF">export and replace textures, modify materials, import custom models and animations, as well as automatically compare models and animations</span> to be compatible with eachother.
+			<br><br><b><a href="https://amicitia.github.io/tools/p5#gfd-studio">Download it here or check out the source code.</a></b>
+		</td>
+	</tr>
+</table>
+</div>
+
+<div class="content">
+ <b><h1>Using GFDStudio</h1></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td>
+			When you open a <b>.GMD Model</b> with GFD Studio, you may see a preview of the model to the left <span style="background-color: #FFCECE">(if you have a supported graphics card)</span>.
+			<br>
+			<br>Use the <b>middle mouse button to pan</b>, the <b>scroll wheel to zoom</b> in and out, and <b>Alt to rotate</b> while panning. The <b>Shift key speeds up</b> all of these controls.
+		</td>
+		<td>
+			<img src="https://i.imgur.com/A8NESs0.png">
+		</td>
+	<tr>
+		<td><img src="https://i.imgur.com/IDhIg7q.png"></td>
+		<td id="left">If you click on the model's name on the right, information will be displayed
+			below it such as <b>GFD Version.</b> <span style="background-color: #CCE8FF">This ID is unique for each game that uses the GFD engine, and must match whatever game you're porting the model to</span>.
+		</td>
+	</tr>
+	<tr>
+		<td><img src="https://i.imgur.com/Dm41Mzq.png"></td>
+		<td id="left">
+			<span style="background-color: #CCE8FF">Every time you click on the model name, the model viewer will refresh</span>, allowing you to see a preview of whatever changes you've made. 
+			<br><span style="background-color: #FFCECE">If a material or texture cannot be found, part of the model will be rendered black. Be sure to fix this before saving or the game will crash!</span>
+		</td>
+	</tr>
+</table>
+ 
+ <b><h2>Textures</h2></b>
+ <table border="0" cellspacing="20" cellpadding="0" id="entry">
+ 	<tr>
+		<td>
+			If you click on the plus sign next to the model name, it will expand a treeview with components of the model you can edit, such as Textures, Materials, and Animations.
+			<br>For instance, if you expand the Textures, you'll see a list of texture filenames. Clicking on one will show a preview to the left. <span style="background-color: #CCE8FF">Each of these can be exported as PNG or DDS, replaced, or renamed.</span> You can even add new textures or export them all at once by right clicking "Textures"!
+			<br>
+			<br>Textures that are replaced with a PNG file will automatically be converted to DDS for you.
+		</td>
+		<td id="left">
+			<img src="https://i.imgur.com/3PWCKQ2.png">
+		</td>
+</table>
+
+<h2>Materials</h2>
+<table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><img src="https://i.imgur.com/XLmBC0g.png"></td>
+		<td id="left">
+			When expanded, the Materials tab functions similarly. <span style="background-color: #CCE8FF">All materials can be exported or replaced in bulk, or expanded and edited</span> one by one. 
+			<br><b>Materials control how parts of the model are rendered in-game</b>. For instance, some might have different levels of opacity or specularity, or reference different texture maps.
+			<br><br>Most materials have at least a <b>Diffuse Map</b>, which is a regular texture. They might also have <b>Shadow Maps</b>, which affect the intensity of shading on different parts of a model.
+			<br>
+		</td>
+	</tr>
+	<tr>
+		<td><br>You can change which textures a Material references by changing the filename in the material's texture map.
+			<br><b>Important:</b> If you rename a texture, be sure to also properly update its filename in all the texture maps that use it.
+			<br><span style="background-color: #FFCECE">If the game can't find a texture that a material references, it will crash trying to load the model. You'll know if a texture isn't found because it'll turn black in the preview to the left.</span>
+			<br>
+			<br>Similarly, if you replace a Material with one from another model, <span style="background-color: #FFCECE">be sure to change the Material's name back to what it originally was, as well as update all the filenames of its texture maps to ones that actually exist in the model you're currently editing!</span>
+		</td>
+		<td id="left">
+		<img src="https://i.imgur.com/3PWCKQ2.png"></td>
+	</tr>
+</table>
+
+<h2>Animations</h2>
+<table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><img src="https://i.imgur.com/4Qhi1Cg.png"></td>
+		<td id="left">
+			When you open a GAP file or a model with embedded animations, you can see a list of all animations in the file. <span style="background-color: #CCE8FF">You can right click them to reorder them, delete them, export them, or replace them.</span>
+			<br>
+			<br>If you want to easily see which animation is which, <a href="https://amicitia.github.io/tools/p5#gmd-maxscript">use the GMD Maxscript</a> with 3DSMax and load a GAP file (after loading a P5 model into the scene). You can also export custom animations from 3DSMax in FBX format, which can be used to replace any animations in GFDStudio. Read more with this guide!
+		</td>
+	</tr>
+	<tr>
+		<td><br>Animations in this game rely on absolute transformations/translations of bones. This means that <span style="background-color: #FFCECE">if you're swapping models with different bone positions (i.e. characters of different heights), the new model may look weirdly stretched while using the original model's animations.</span>
+		<br><br>One workaround to this is to use the <b>"Make Animation Packs Relative"</b> option in the Tools dropdown at the top of the window. This will have you <b>choose the original model, the model you're replacing it with, and a GAP file that you want to be "fixed"</b> to work with the new model.
+		<br>This works by comparing the coordinates of each model's bones and subtracting the difference from the animation's keyframes.
+		</td>
+		<td id="left">
+		<img src="https://i.imgur.com/2sJ3C1e.png"></td>
+	</tr>
+</table>
+
+<h2>Importing Models</h2>
+<table border="0" cellspacing="20" cellpadding="0" id="entry">
+	<tr>
+		<td><img src="https://i.imgur.com/ecCaf6P.png"></td>
+		<td id="left">
+			If you want to rig a custom model to an existing character's skeleton in order to make use of their animations, follow this guide! If you're a beginner to using 3DSMax, it'll walk you through it. 
+			<br>Be sure to export your new model as an <b>ASCII 2011 .FBX</b> with the following settings enabled: 
+			<br><b>Triangulate</b> (under Geometry)
+			<br><b>Deformations and Skin</b> (under Animation)
+			<br><b>Scale Factor</b> set to 1.0 (under Advanced Options/Units)
+		</td>
+	</tr>
+	<tr>
+		<td><br>If you just want to <b>swap one model from the game with another</b>, as long as it's similar enough (most biped human models are), you can do this in GFD Studio without using any external program.
+		<br><br><span style="background-color: #CCE8FF">Simply open the model you want to replace, right click its name, and choose <b>Replace</b>.</span>
+		<br>Then choose the model you want to swap it with. This will match the bone IDs from the new model to match the original one, which fixes a lot of incompatibility problems (especially in battle). 
+		<br>This is different from simply renaming a model file outside of GFD Studio, because for some reason each battle model has its bone IDs in a different order so that their animations are incompatible with eachother (even for the same character).
+		<br><br>Keep in mind that <span style="background-color: #FFCECE">when swapping models, you <b>must choose to either</b> use the Replace feature to make one battle model compatible with another's animations, or replace/rename the GAP that corresponds to that character.</span> For instance, <span style="background-color: #CCE8FF">c0001_051_00.GMD</span> uses <span style="background-color: #CCE8FF">bb0001_051_051(a/b/c).GAP</span> in the battle folder. If your model is rigged to the 051 GMD but you want to replace the model in slot 157 with your custom one instead, you must either rename the 051 animations to 157, or use GFDStudio's "Replace" feature.
+		</td>
+		<td id="left">
+		<img src="https://i.imgur.com/N7gB8iA.png"></td>
+	</tr>
+</table>
+
+</div>
+
+<br><br>
+
+</body>
+</html>
