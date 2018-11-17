@@ -309,3 +309,16 @@ margin-left: 20px;
 	word-wrap: break-word;
 	overflow: hidden;
 }
+
+.update {
+	position: relative;
+	z-index:20;
+	margin: 0 auto;
+	margin-top: 3%;
+	width:60%;
+	padding: 20px 10px 20px 20px;
+	background: #96FF96;
+    border-radius: 12px;
+	word-wrap: break-word;
+	overflow: hidden;
+}
