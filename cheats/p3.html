@@ -47,7 +47,7 @@
 	<div class="toggle-inner">
 		This cheat allows you to choose a skill or item on your party member's turn, similar to in Persona 4 and 5. Known side effects: the protagonist's fusion skills can be used by everyone on their turns.
 		<br><span class="copied">Copied cheat to clipboard!</span>
-		<div id="cheat1" onclick="copyDivToClipboard('cheat1')"><div class="cheat">// Controllable party members (by TGE)
+		<div id="cheat0" onclick="copyDivToClipboard('cheat0')"><div class="cheat">// Controllable party members (by TGE)
 <br>patch=1,EE,0029AFC8,word,00000000 // nop check for if battle unit is not mc -> ai
 <br>patch=1,EE,0020207C,word,00000000 // load proper unit id for battle menu skill list
 <br>patch=1,EE,0020208C,word,8F84B6FC
@@ -707,7 +707,7 @@
 	<div class="toggle-inner">
 		This cheat sets the cost to zero when summoning Personas from the Compendium.
 		<br><span class="copied">Copied cheat to clipboard!</span>
-		<div id="cheat14" onclick="copyDivToClipboard('cheat14')"><div class="cheat"> 
+		<div id="cheat15" onclick="copyDivToClipboard('cheat15')"><div class="cheat"> 
 <br>// Compendium Persona costs no Money
 <br>patch=1,EE,2040bb58,extended,0000202D</div></div>
 	</div>
@@ -721,7 +721,7 @@
 		</h3>
 	</div>
 	<div class="toggle-inner">
-		These cheats allow you to change the value of the other characters currently in your party.
+		These cheats allow you to change the value of the other characters currently in your party. This has the unintended side effect of them following you even outside of the dungeon.
 		<br>00 None
 		<br>01 Protagonist (Crashes the game)
 		<br>02 Yukari
@@ -733,7 +733,7 @@
 		<br>08 Shinjiro (Metis in The Answer)
 		<br>09 Koromaru
 		<br><span class="copied">Copied cheat to clipboard!</span>
-		<div id="cheat15" onclick="copyDivToClipboard('cheat15')"><div class="cheat">// Party Member 2 Mod
+		<div id="cheat16" onclick="copyDivToClipboard('cheat16')"><div class="cheat">// Party Member 2 Mod
 <br>patch=1,EE,1083A6E0,extended,000000??
 <br>
 <br>// Party Member 3 Mod
@@ -754,7 +754,7 @@
 	<div class="toggle-inner">
 		This makes camera turn speed dependent on how far you've pushed the analog stick. Normally the game only lets you turn once the stick passes a certain threshold at a fixed speed.
 		<br><span class="copied">Copied cheat to clipboard!</span>
-		<div id="cheat16" onclick="copyDivToClipboard('cheat16')"><div class="cheat">// "processInput" jump to patch code
+		<div id="cheat17" onclick="copyDivToClipboard('cheat17')"><div class="cheat">// "processInput" jump to patch code
 <br>    patch=1,EE,001E05B0,word,08140d17 // j $50345C  Jump to custom code that restores turn rate
 <br>
 <br>// "processInput" fix sticks being offset by 128 instead of 127
@@ -824,8 +824,10 @@
 		</h3>
 	</div>
 	<div class="toggle-inner">
-		This cheat forces the game to render 60 frames per second, however it breaks a lot of things that rely on accurate framecount for timing.</span>
-		<div id="cheat17" onclick="copyDivToClipboard('cheat17')"><div class="cheat">patch=1,EE,2019D330,extended,10000006 ////fps
+		This cheat forces the game to render 60 frames per second, however it breaks a lot of things that rely on accurate framecount for timing.
+		<br><span class="copied">Copied cheat to clipboard!</span>
+		<div id="cheat18" onclick="copyDivToClipboard('cheat18')"><div class="cheat">//Broken 60FPS
+<br>patch=1,EE,2019D330,extended,10000006 ////fps
 <br>patch=1,EE,207CADD4,extended,3C888889 ////speed
 <br>patch=1,EE,204C6A30,extended,3C023F00 ////traverse</div></div>
 	</div>

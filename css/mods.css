@@ -5,7 +5,7 @@
 
 .choices {
 	position: relative;
-	z-index:20;
+	z-index: 20;
 	margin: 0 auto;
 	margin-top: 3%;
 	width:60%;
@@ -14,6 +14,12 @@
     border-radius: 12px;
 }
 
+
+th {
+	color: #fff;
+	font-size:30px;
+	z-index: 20;
+}
 
 .pagelink-p3 {
 	position: relative;
@@ -186,6 +192,72 @@
 }
 
 .pagelink-p5:hover {
+	background-image: url("../images/p.png");
+	background: #FF3A3A;
+	color: #FFFFFF;
+}
+
+.pagelink-pq {
+	position: relative;
+	z-index:20;
+	margin: 0 auto;
+	padding: 20px 10px 20px 20px;
+	background-image: url("../images/pq.png");
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	color: #002040;
+	background-color: #FFFFFF;
+    border-radius: 12px;
+	font-size: 36px;
+}
+
+.pagelink-pq:hover {
+	background-image: url("../images/p.png");
+	background: #BA6BA9;
+	color: #FFFFFF;
+}
+
+.pagelink-pq2 {
+	position: relative;
+	z-index:20;
+	margin: 0 auto;
+	padding: 20px 10px 20px 20px;
+	background-image: url("../images/pq2.png");
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	color: #002040;
+	background-color: #FFFFFF;
+    border-radius: 12px;
+	font-size: 36px;
+}
+
+.pagelink-pq2:hover {
+	background-image: url("../images/p.png");
+	background: #FF3A3A;
+	color: #FFFFFF;
+}
+
+.pagelink-nocturne {
+	position: relative;
+	z-index:20;
+	margin: 0 auto;
+	padding: 20px 10px 20px 20px;
+	background-image: url("../images/nocturne.png");
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	color: #002040;
+	background-color: #FFFFFF;
+    border-radius: 12px;
+	font-size: 36px;
+}
+
+.pagelink-nocturne:hover {
 	background-image: url("../images/p.png");
 	background: #FF3A3A;
 	color: #FFFFFF;

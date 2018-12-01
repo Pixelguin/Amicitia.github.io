@@ -3,18 +3,20 @@
 //
 //      File: AtlusTable_P5.bt
 //   Authors: TGE
-//   Version: 1.0
+//   Version: 1.1
 //   Purpose: Parse Persona 5 Table files.
 //  Category: Table
-// File Mask: *.tbl
+// File Mask: *.tbl, *.pac
 //  ID Bytes: 
 //   History: 
+//   1.0 - Initial release
+//   1.1 - Parse tables from within table.pac, add enums for battle skills and units, misc changes
 //------------------------------------------------
 
 //---------------------------------------------
 // Includes
 //---------------------------------------------
-//#include "AtlusTable_P5_PersonaNames.bt"
+#include "P5_Enums.bt"
 
 //---------------------------------------------
 // Type definition
@@ -23,7 +25,7 @@ typedef byte u8;
 typedef ushort u16;
 typedef uint u32;
 
-typedef struct b08
+typedef struct
 {
     u8 bit0 : 1;
     u8 bit1 : 1;
@@ -33,9 +35,9 @@ typedef struct b08
     u8 bit5 : 1;
     u8 bit6 : 1;
     u8 bit7 : 1;
-};
+} b8;
 
-typedef struct b16
+typedef struct
 {
     u8 bit0 : 1;
     u8 bit1 : 1;
@@ -53,9 +55,9 @@ typedef struct b16
     u8 bit13 : 1;
     u8 bit14 : 1;
     u8 bit15 : 1;
-};
+} b16;
 
-typedef struct b32
+typedef struct
 {
     u8 bit0 : 1;
     u8 bit1 : 1;
@@ -89,18 +91,11 @@ typedef struct b32
     u8 bit29 : 1;
     u8 bit30 : 1;
     u8 bit31 : 1;
-};
+} b32;
 
 //---------------------------------------------
 // Helper functions
 //---------------------------------------------
-void AlignPosition( int alignment )
-{
-    local long position = FTell();
-    local long alignedPosition = position + ( alignment - 1 ) & ~( alignment - 1 );
-    FSeek( alignedPosition );
-}
-
 local uint __RandomSeed = 0xDEADBABE;
 local uint __RandomBit = 0;
 local uint __RandomCount = 0;
@@ -117,12 +112,31 @@ uint MyRandom( uint to )
     return __RandomSeed;
 }
 
+void DetectEndianness()
+{
+    // Test endianness
+    LittleEndian();
+    local uint sizeTest = ReadUInt();
+    if ( sizeTest & 0xFF000000 )
+        BigEndian();
+}
+
+u32 Align( u32 value, u32 alignment )
+{
+	return (value + (alignment - 1)) & ~(alignment - 1);
+}
+
+void FAlign( u32 alignment )
+{
+	FSeek( Align( FTell(), alignment ) );
+}
+
 //---------------------------------------------
 // Define structures
 //---------------------------------------------
 
 // Persona
-typedef struct PersonaStats
+typedef struct
 {
     b16 Flags1;
     u8 Arcana;
@@ -135,9 +149,10 @@ typedef struct PersonaStats
     u8 Unused;
     b16 Flags2;
     u16 Unknown;
-};
+} TPersonaStats;
 
-typedef struct PersonaSkillSet
+local u32 personaSkillSetIndex = 0;
+typedef struct
 {
     u8 Strength;
     u8 Magic;
@@ -150,42 +165,43 @@ typedef struct PersonaSkillSet
     {        
         u8 PendingLevels;
         u8 Unknown; 
-        u16 Skill;  
+        BattleSkill Skill;  
     } PersonaSkill[ 16 ];
-};
 
-typedef struct PersonaLevelUpThresholds
+} TPersonaSkillSet;
+
+typedef struct
 {
     u32 Thresholds[ 98 ];
-};
+} TPersonaLevelUpThresholds;
 
 // Elsai
-typedef struct ElsaiSegment1Entry
+typedef struct
 {
     u16 Unused;
     u16 AiId; // All I know about this value is that if it's not 0, it causes the game to load an AI script for this enemy
     u32 Unknown[ 10 ];
-};
+} TElsaiSegment1Entry;
 
-typedef struct ElsaiSegment2Entry
+typedef struct
 {
     u8 Data[ 320 ];
-};
+} TElsaiSegment2Entry;
 
 // Encounter
-typedef struct Encounter
+typedef struct
 {
     b32 Flags;
     u16 Field04;
     u16 Field06;
-    u16 Units[ 5 ];
+    BattleUnit Units[ 5 ];
     u16 FieldId;
     u16 RoomId;
     u16 MusicId;
-};
+} TEncounter;
 
 // Unit table
-typedef struct UnitStats
+typedef struct
 {
     b16 Flags;
     u8 ArcanaId;
@@ -200,7 +216,7 @@ typedef struct UnitStats
     u8 Agility;
     u8 Luck;
     u8 Unknown3;
-    u16 SkillIds[ 8 ];
+    BattleSkill SkillIds[ 8 ];
     u16 ExpReward;
     u16 MoneyReward;
     u16 Unknown4;
@@ -208,13 +224,25 @@ typedef struct UnitStats
     u8 Unknown6[ 18 ];
     b16 Unknown7;
     u16 AttackDamage;
-};
+} TUnitStats;
 
-typedef struct UnitVisualIndex
+typedef struct
+{
+    u32 Values[ 10 ];
+    //u16 Values[ 20 ]; // uncomment this if you want them to be shorts
+} TUnitSegment2Entry;
+
+typedef struct
+{
+    u32 Values[ 6 ];
+    //u16 Values[ 12 ]; // uncomment this if you want them to be shorts
+} TUnitSegment3Entry;
+
+typedef struct
 {
     u16 ShadowIndex;
     u16 ModelIndex;
-};
+} TUnitVisualIndex;
 
 
 //---------------------------------------------
@@ -226,134 +254,169 @@ enum TableSegmentType
     TableSegmentType_Persona_Stats,
     TableSegmentType_Persona_SkillSets,
     TableSegmentType_Persona_LevelUpThresholds,
+    TableSegmentType_Elsai_Segment0,
     TableSegmentType_Elsai_Segment1,
-    TableSegmentType_Elsai_Segment2,
     TableSegmentType_Encounter,
     TableSegmentType_Unit_Stats,
+    TableSegmentType_Unit_Segment1,
+    TableSegmentType_Unit_Segment2,
+    TableSegmentType_Unit_Segment3,
     TableSegmentType_Unit_VisualIndex,
 };
 
-typedef struct TableSegment( TableSegmentType type )
+typedef struct( TableSegmentType _type )
 {
     uint Size;
+    local TableSegmentType type = _type; // for debugging
 
     switch ( type )
     {
         case TableSegmentType_Persona_Stats:
-            PersonaStats Stats[ Size / sizeof( PersonaStats ) ];
+            TPersonaStats Stats[ Size / sizeof( TPersonaStats ) ];
             break;
 
         case TableSegmentType_Persona_SkillSets:
-            PersonaSkillSet SkillSets[ Size / sizeof( PersonaSkillSet ) ];
+            TPersonaSkillSet SkillSets[ Size / sizeof( TPersonaSkillSet ) ];
             break;
 
         case TableSegmentType_Persona_LevelUpThresholds:
-            PersonaLevelUpThresholds LevelUpThresholds[ Size / sizeof( PersonaLevelUpThresholds ) ];
+            TPersonaLevelUpThresholds LevelUpThresholds[ Size / sizeof( TPersonaLevelUpThresholds ) ];
+            break;
+
+        case TableSegmentType_Elsai_Segment0:
+            TElsaiSegment1Entry Entries[ Size / sizeof( TElsaiSegment1Entry ) ];
             break;
 
         case TableSegmentType_Elsai_Segment1:
-            ElsaiSegment1Entry Entries[ Size / sizeof( ElsaiSegment1Entry ) ];
-            break;
-
-        case TableSegmentType_Elsai_Segment2:
-            ElsaiSegment2Entry Entries[ Size / sizeof( ElsaiSegment2Entry ) ];
+            TElsaiSegment2Entry Entries[ Size / sizeof( TElsaiSegment2Entry ) ];
             break;
 
         case TableSegmentType_Encounter:
-            Encounter Encounters[ Size / sizeof( Encounter ) ];
+            TEncounter TEncounters[ Size / sizeof( TEncounter ) ];
             break;
 
         case TableSegmentType_Unit_Stats:
-            UnitStats Stats[ Size / sizeof( UnitStats ) ];
+            TUnitStats Stats[ Size / sizeof( TUnitStats ) ];
+            break;
+
+        case TableSegmentType_Unit_Segment1:
+            TUnitSegment2Entry Entries[ Size / sizeof( TUnitSegment2Entry ) ];
+            break;
+
+        case TableSegmentType_Unit_Segment3:
+            TUnitSegment3Entry Entries[ Size / sizeof( TUnitSegment3Entry ) ];
             break;
 
         case TableSegmentType_Unit_VisualIndex:
-            UnitVisualIndex VisualIndices[ Size / sizeof( UnitVisualIndex ) ];
+            TUnitVisualIndex VisualIndices[ Size / sizeof( TUnitVisualIndex ) ];
             break;
 
         default:
             byte Data[ Size ];
     }
     
-    AlignPosition( 16 );
-};
+    FAlign( 16 );
+} TTableSegment <read=TableSegmentToString>;
 
-// Test endianness
-LittleEndian();
-local uint sizeTest = ReadUInt( 0 );
-if ( sizeTest & 0xFF000000 )
+string TableSegmentToString( TTableSegment& segment )
 {
-    BigEndian();
+    return EnumToString( segment.type );
 }
 
-// Read table
-local string filePath = GetFileName();
-local string fileName = FileNameGetBase( filePath, false );
-local int segmentIndex = 0;
-local TableSegmentType segmentType;
-
-struct
+typedef struct( string tableName, u32 endOffset )
 {
-    while ( !FEof() )
+    local int segmentIndex = 0;
+    local TableSegmentType segmentType;
+
+    while ( FTell() < endOffset )
     {
         segmentType = TableSegmentType_Unknown;
-        if ( !Stricmp( fileName, "persona" ) )
+        if ( !Stricmp( tableName, "persona" ) )
         {
             switch ( segmentIndex )
             {
-                case 0:
-                    segmentType = TableSegmentType_Persona_Stats;
-                    break;
-
-                case 1:
-                    segmentType = TableSegmentType_Persona_SkillSets;
-                    break;
-
-                case 2:
-                    segmentType = TableSegmentType_Persona_LevelUpThresholds;
-                    break;
+                case 0: segmentType = TableSegmentType_Persona_Stats; break;
+                case 1: segmentType = TableSegmentType_Persona_SkillSets; break;
+                case 2: segmentType = TableSegmentType_Persona_LevelUpThresholds; break;
             }
         }
-        else if ( !Stricmp( fileName, "elsai" ) )
+        else if ( !Stricmp( tableName, "elsai" ) )
         {
             switch ( segmentIndex )
             {
-                case 0:
-                    segmentType = TableSegmentType_Elsai_Segment1;
-                    break;
-
-                case 1:
-                    segmentType = TableSegmentType_Elsai_Segment2;
-                    break;
+                case 0: segmentType = TableSegmentType_Elsai_Segment0; break;
+                case 1: segmentType = TableSegmentType_Elsai_Segment1; break;
             }
         } 
-        else if ( !Stricmp( fileName, "encount" ) )
+        else if ( !Stricmp( tableName, "encount" ) )
         {
             switch ( segmentIndex )
             {
-                case 0:
-                    segmentType = TableSegmentType_Encounter;
-                    break;
+                case 0: segmentType = TableSegmentType_Encounter; break;
             }
         }
-        else if ( !Stricmp( fileName, "unit" ) )
+        else if ( !Stricmp( tableName, "unit" ) )
         {
             switch ( segmentIndex )
             {
-                case 0:
-                    segmentType = TableSegmentType_Unit_Stats;
-                    break;
-                case 4:
-                    segmentType = TableSegmentType_Unit_VisualIndex;
-                    break;
+                case 0: segmentType = TableSegmentType_Unit_Stats; break;
+                case 1: segmentType = TableSegmentType_Unit_Segment1; break;
+                case 2: segmentType = TableSegmentType_Unit_Segment2; break;
+                case 3: segmentType = TableSegmentType_Unit_Segment3; break;
+                case 4: segmentType = TableSegmentType_Unit_VisualIndex; break;
             }
         }
 
         Printf( "%s\n", EnumToString( segmentType ) );
         SetBackColor( MyRandom( 0xFFFFFFFF ) );
-        TableSegment Segment( segmentType );
+        TTableSegment Segment( segmentType );
 
         ++segmentIndex;
     }
 
-} Table;
+} TTable;
+
+typedef struct
+{
+    LittleEndian();
+    char FileName[ 252 ];
+    u32 FileSize;
+
+    if ( Stricmp( FileNameGetExtension( FileName ), ".tbl" ) == 0 )
+    {
+        BigEndian();
+        TTable Table( FileNameGetBase( FileName, false ), FTell() + FileSize ); 
+    }
+    else
+    {
+        u8 Data[ FileSize ];
+    }
+
+    FAlign( 64 );  
+} TFile <read=FileToString>; 
+
+string FileToString( struct TFile& file )
+{
+    return file.FileName;
+}
+
+
+// Read table
+local string filePath = GetFileName();
+local string fileName = FileNameGetBase( filePath, false );
+local string fileExt = FileNameGetExtension( filePath );
+
+if ( Stricmp( fileExt, ".pac" ) == 0 )
+{
+    // table.pac
+    while ( !FEof() )
+    {
+        TFile File;
+    }
+}
+else if ( Stricmp( fileExt, ".tbl" ) == 0 )
+{
+    // tbl file
+    BigEndian();
+    TTable Table( fileName, FileSize() );
+}
