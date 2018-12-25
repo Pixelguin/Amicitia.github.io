@@ -16,5 +16,6 @@
 }
 
 .carousel-caption {
-  right: -50%;
+    float: right;
+    position: static;
 }
