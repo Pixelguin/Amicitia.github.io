@@ -134,14 +134,16 @@ a:hover {
 }
 
 .download-as {
-	border-radius: 5px;
+	border-radius: 12px;
+	border: 2px solid #ff0000;
+	background: #262626;
+    margin-top:auto;
+    margin-bottom:auto;
+	cursor: pointer;
 	position: relative;
 	z-index:20;
 	width: 270px;
 	color: #FFFFFF;
-	background: #66AFFF;
-    margin-top:auto;
-    margin-bottom:auto;
 	text-align: center;
 	margin: 0 auto;
 }
@@ -154,8 +156,12 @@ a:hover {
 }
 
 .download-as:hover {
+	animation: glow 800ms ease-out infinite alternate;
+	outline: none;
+    border-color: #FF0000;
+    box-shadow: 0 0 10px #FF0000;
 	color: #FFFFFF;
-	background: #2676CC;
+	background: #440100;
     margin-top:auto;
     margin-bottom:auto;
 	text-align: center;
