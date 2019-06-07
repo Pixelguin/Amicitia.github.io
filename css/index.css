@@ -51,6 +51,20 @@ a:hover {
 	text-align: center;
 }
 
+.redirect {
+	position: relative;
+	top: 0;
+	width: 100%;
+	z-index: 21;
+	color: rgba(255,255,255,1);
+	background-color: rgba(255,0,0,1);
+	background-repeat: repeat-x;
+	background-position: left;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 18px;
+	text-align: center;
+}
+
 .logo {
 	position: relative;
 	z-index: 20;
