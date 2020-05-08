@@ -8,7 +8,7 @@ function navigate() {
             else if (game == "all" && type != "all")
                 url = url + type + "s";
             else if (type == "all" && game != "all")
-                url = url + game;
+                url = url + "game/" + game;
 
             window.location.href = url;
         }

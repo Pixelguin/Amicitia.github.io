@@ -14,7 +14,7 @@ namespace Amicitia.github.io
     class Program
     {
         public static string indexPath;
-        public static List<string> gameList = new List<string>() { "p3", "p4", "p5", "p4g", "p3p", "p3d", "p4d", "p5d", "pq", "pq2", "p4au", "smt3", "cfb"};
+        public static List<string> gameList = new List<string>() { "p3fes", "p4", "p5", "p4g", "p3p", "p3d", "p4d", "p5d", "pq", "pq2", "p4au", "smt3", "cfb"};
 
         static void Main(string[] args)
         {
@@ -32,6 +32,8 @@ namespace Amicitia.github.io
             CreateCheatPages(data.Where(p => p.Type == "Cheat").ToList());
             Console.WriteLine("Creating guide pages...");
             CreateGuidePages(data.Where(p => p.Type == "Guide").ToList());
+            Console.WriteLine("Creating game pages...");
+            CreateGamePages(data);
             //List all searchable pages
             Console.WriteLine("Creating author pages...");
             CreateAuthorPages(data);
@@ -43,6 +45,15 @@ namespace Amicitia.github.io
 
             Console.WriteLine("Done!");
             Console.ReadKey();
+        }
+
+        private static void CreateGamePages(List<PostInfo> data)
+        {
+            //Create single-post pages for hyperlinks
+            foreach (var game in gameList)
+            {
+                CreateHtml(data.Where(p => p.Game.Equals(game.ToUpper())).ToList(), $"game\\{game}");
+            }
         }
 
         private static void CreatePostPages(List<PostInfo> data)
@@ -106,7 +117,10 @@ namespace Amicitia.github.io
             //Create guide indexes narrowed down per game
             foreach (var game in gameList)
             {
-                CreateHtml(data.Where(p => p.Game.Equals(game.ToUpper())).ToList(), $"guides\\{game}");
+                if (game == "p3fes")
+                    CreateHtml(data.Where(p => p.Game.Equals("P4") || p.Game.Equals("")).ToList(), $"guides\\p3fes");
+                else
+                    CreateHtml(data.Where(p => p.Game.Equals(game.ToUpper()) || p.Game.Equals("")).ToList(), $"guides\\{game}");
             }
         }
 
@@ -124,7 +138,10 @@ namespace Amicitia.github.io
             CreateHtml(data, "tools");
             foreach (var game in gameList)
             {
-                CreateHtml(data.Where(p => p.Game.Equals(game.ToUpper())).ToList(), $"tools\\{game}");
+                if (game == "p3fes")
+                    CreateHtml(data.Where(p => p.Game.Equals("P4") || p.Game.Equals("")).ToList(), $"tools\\p3fes");
+                else
+                    CreateHtml(data.Where(p => p.Game.Equals(game.ToUpper()) || p.Game.Equals("")).ToList(), $"tools\\{game}");
             }
         }
 
@@ -144,6 +161,9 @@ namespace Amicitia.github.io
             int postLimit = 0;
             int pageNumber = 1;
             int postNumber = 0;
+
+            if (data.Count == 0)
+                content = "<center>Sorry! No posts matching your query were found. Please check again later.</center>";
 
             foreach (PostInfo post in data)
             {
@@ -182,6 +202,19 @@ namespace Amicitia.github.io
         {
             //Header
             string html = Properties.Resources.IndexHeader;
+            //Auto-select game or type
+            foreach (var game in gameList)
+                if (url.Contains($"\\{game}"))
+                    html = html.Replace($"option value=\"{game.ToUpper()}\"", $"option value=\"{game.ToUpper()}\" selected");
+            if (url.Contains("mods"))
+                html = html.Replace($"option value=\"Mod\"", "option value=\"Mod\" selected");
+            if (url.Contains("tools"))
+                html = html.Replace($"option value=\"Tool\"", "option value=\"Tool\" selected");
+            if (url.Contains("guides"))
+                html = html.Replace($"option value=\"Guide\"", "option value=\"Guide\" selected");
+            if (url.Contains("cheats"))
+                html = html.Replace($"option value=\"Cheat\"", "option value=\"Cheat\" selected");
+
             //Body Content
             html += content;
 
