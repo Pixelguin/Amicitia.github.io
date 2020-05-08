@@ -1,210 +1,100 @@
 <!doctype html>
 <html>
 <head>
-<link rel='shortcut icon' href='../favicon.png' type='image/x-icon'/ >
-<meta charset="utf-8">
-<title>Amicitia - Persona 4 Cheats</title>
-<link href="../css/index.css" rel="stylesheet" type="text/css">
-<link href="../css/waves.css" rel="stylesheet" type="text/css">
-<link href="../css/cheats.css" rel="stylesheet" type="text/css">
-<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-<script src="../js/jquery-3.3.1.min.js"></script>
+    <link rel='shortcut icon' href='favicon.png' type='image/x-icon' />
+    <meta charset="utf-8">
+    <title>Amicitia - Home</title>
+    <link href="../css/index.css" rel="stylesheet" type="text/css">
+    <link href="../css/waves.css" rel="stylesheet" type="text/css">
+    <script defer src="https://use.fontawesome.com/releases/v5.9.0/js/all.js"></script>
+    <script src="https://shrinefox.com/Scripts/Amicitia/jquery-3.3.1.min.js"></script>
+    <script src="../js/bubbles.js"></script>
+    <script src="../js/showhide.js"></script>
+    <script src="../js/navigation.js"></script>
 </head>
 <body>
-<canvas id='bgCanvas'></canvas>
-<script src="../js/bubbles.js"></script>
-<script src="../js/showhide.js"></script>
-<div class="ocean">
-  <div class="wave"></div>
-  <div class="wave"></div>
-</div>
-<div class="navigation">
- <i class="fas fa-home"></i> Home
- <a href="http://amicitia-team.tumblr.com"><i class="fas fa-edit"></i> Blog</a>
- <a href="https://amicitiamods.jcink.net/"><i class="fa fa-comment" aria-hidden="true"></i> Forum</a>
- <a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-book" aria-hidden="true"></i> Wiki</a>
- <a href="https://amicitia.github.io/about"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a>
- 
-</div></div><div class="redirect">
-Content on this page may be outdated! Check out <a href="https://shrinefox.com">shrinefox.com</a> for the latest mods, tools, guides and cheats-- all on one easy to sort page!</div>
+    <canvas id='bgCanvas'></canvas>
+    <div class="ocean">
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
 
-<div class="logo"><center><a href="https://amicitia.github.io/index"><img src="https://amicitia.github.io/images/logo.svg" width="179" height="179"></a></center></div>
-<div class="content"><a href="https://amicitia.github.io/index">Home</a> > <a href="https://amicitia.github.io/cheats">Cheats</a> > <b>Persona 4 (PS2)</b></b>
-</div>
-
-<div class="content">
-<h2>Click any of the titles below to display or hide the full cheat code.</h2>
-<h3>Once displayed, click on the cheat code to instantly copy it to your clipboard.
-<br>You can then paste it into your PNACH file.
-<br>For <b>help using these cheats, check out <a href="https://amicitia.github.io/guides/p3-p4/cheats">this page</a></b>.</h3>
-	
-<div class="toggle">
-	<div class="toggle-title ">
-		<h3>
-		<i class="fas fa-chevron-circle-down"></i>
-		<span class="title-name">Enable Debug Log by TGE</span>
-		</h3>
-	</div>
-	<div class="toggle-inner">
-		This cheat prints string output from the game's original debug functions into the PCSX2 log. TGE's modification also prints the filename and path of each file the game accesses in real time, which is extremely helpful for finding and narrowing down the location of assets like models, fields etc.
-		<br><span class="copied">Copied cheat to clipboard!</span>
-		<div id="cheat2" onclick="copyDivToClipboard('cheat1')"><div class="cheat">// Enable debug log
-<br>patch=1,EE,00421DE8,word,00000000 // always branch even if not debug</div></div>
-	</div>
-	</div><!-- END OF TOGGLE -->
-	
-<div class="toggle">
-	<div class="toggle-title ">
-		<h3>
-		<i class="fas fa-chevron-circle-down"></i>
-		<span class="title-name">Enable Debug Options in TV World</span>
-		</h3>
-	</div>
-	<div class="toggle-inner">
-		This cheat grants you an extra menu option in dungeons that can be used to skip to the next floor or return to the entrance. 
-		<br><span class="copied">Copied cheat to clipboard!</span>
-		<div id="cheat3" onclick="copyDivToClipboard('cheat2')"><div class="cheat">// Debug Mode ON
-<br>patch=1,EE,D08C0142,extended,00007FFF
-<br>patch=1,EE,0079B34C,extended,000000FF
-<br>patch=1,EE,D08C0142,extended,0000BFFF
-<br>patch=1,EE,0079B34C,extended,000000FF</div></div>
-	</div>
-	</div><!-- END OF TOGGLE -->
-	
-<div class="toggle">
-	<div class="toggle-title ">
-		<h3>
-		<i class="fas fa-chevron-circle-down"></i>
-		<span class="title-name">Disable Save File Integrity Check</span>
-		</h3>
-	</div>
-	<div class="toggle-inner">
-		This cheat allows you to load modified save files where the checksum doesn't match the contents. Useful for changing the player's name or stats. 
-		<br><span class="copied">Copied cheat to clipboard!</span>
-		<div id="cheat3" onclick="copyDivToClipboard('cheat3')"><div class="cheat">// Disable save file integrity check
-patch=1,EE,002A402C,word,00000000 // don't branch to crc check
-patch=1,EE,002A3FE8,word,10000004 // always branch to 0x002A3FFC regardless if v0 is zero</div></div>
-	</div>
-	</div><!-- END OF TOGGLE -->
-
-<div class="toggle">
-	<div class="toggle-title ">
-		<h3>
-		<i class="fas fa-chevron-circle-down"></i>
-		<span class="title-name">Gain EXP x256 (Main Character)</span>
-		</h3>
-	</div>
-	<div class="toggle-inner">
-		This cheat multiplies the EXP you earn from battle by 256. Use this to quickly reach level 99.
-		<br><span class="copied">Copied cheat to clipboard!</span>
-		<div id="cheat4" onclick="copyDivToClipboard('cheat4')"><div class="cheat">// EXP Multi x256 (Main Character)
-<br>patch=1,EE,200A0000,word,00118A00
-<br>patch=1,EE,200A0004,word,08087895
-<br>patch=1,EE,200A0008,word,02222021
-<br>patch=1,EE,2021E250,word,08028000
-<br>patch=1,EE,2021E254,word,00000000
-<br>patch=1,EE,2021E258,word,0C041678
-<br>patch=1,EE,2021E25C,word,00000000
-<br>patch=1,EE,2021E260,word,304200FF
-<br>patch=1,EE,2021E264,word,12020003</div></div>
-	</div>
-	</div><!-- END OF TOGGLE -->
-
-<div class="toggle">
-<div class="toggle-title ">
-	<h3>
-	<i class="fas fa-chevron-circle-down"></i>
-	<span class="title-name">Gain EXP x256 (Other Characters)</span>
-	</h3>
-</div>
-<div class="toggle-inner">
-	This cheat multiplies the EXP your party members earn from battle by 256. Use this to quickly reach level 99.
-	<br><span class="copied">Copied cheat to clipboard!</span>
-	<div id="cheat5" onclick="copyDivToClipboard('cheat5')"><div class="cheat">// EXP Multi x256 (Other Characters)
-<br>patch=1,EE,200A0010,word,00108A00
-<br>patch=1,EE,200A0014,word,00701821
-<br>patch=1,EE,200A0018,word,0804326F
-<br>patch=1,EE,200A001C,word,AE230008
-<br>patch=1,EE,2010C9B8,word,08028004
-<br>patch=1,EE,2010C9BC,word,00000000</div></div>
-</div>
-</div><!-- END OF TOGGLE -->
-	
-<div class="toggle">
-	<div class="toggle-title ">
-		<h3>
-		<i class="fas fa-chevron-circle-down"></i>
-		<span class="title-name">Max Money</span>
-		</h3>
-	</div>
-	<div class="toggle-inner">
-		This cheat maxes out your Yen.
-		<br><span class="copied">Copied cheat to clipboard!</span>
-		<div id="cheat6" onclick="copyDivToClipboard('cheat6')"><div class="cheat">// Inf Money
-<br>//patch=1,EE,2079B68C,word,05F5E0FF</div></div>
-	</div>
-	</div><!-- END OF TOGGLE -->
-	
-<div class="toggle">
-	<div class="toggle-title ">
-		<h3>
-		<i class="fas fa-chevron-circle-down"></i>
-		<span class="title-name">Max Social Stats</span>
-		</h3>
-	</div>
-	<div class="toggle-inner">
-		These cheats give you the maximum level of points for each social stat.
-		<br><span class="copied">Copied cheat to clipboard!</span>
-		<div id="cheat7" onclick="copyDivToClipboard('cheat7')"><div class="cheat">// Max Courage
-<br>//patch=1,EE,007973F4,word,000000FF
-<br>
-<br>// Max Knowledge
-<br>//patch=1,EE,007973F6,word,000000FF
-<br>
-<br>// Max Diligence
-<br>//patch=1,EE,007973F8,word,000000FF
-<br>
-<br>// Max Understanding
-<br>//patch=1,EE,007973FA,word,000000FF
-<br>
-<br>// Max Expression
-<br>//patch=1,EE,007973FC,word,000000FF
-<br>
-<br></div></div>
-	</div>
-	</div><!-- END OF TOGGLE -->
-	
-<div class="toggle">
-	<div class="toggle-title ">
-		<h3>
-		<i class="fas fa-chevron-circle-down"></i>
-		<span class="title-name">Max Persona Stats (Party)</span>
-		</h3>
-	</div>
-	<div class="toggle-inner">
-		This cheat gives the protagonist's currently equipped Persona maximum stats.
-		<br><span class="copied">Copied cheat to clipboard!</span>
-		<div id="cheat8" onclick="copyDivToClipboard('cheat8')"><div class="cheat">//Enable Code 
-<br>patch=1,EE,F0511884,extended,00511887
-<br>patch=1,EE,2017F6B8,word,24420001
-<br>
-<br>//Hero Persona Max Stats
-<br>patch=1,EE,40836BC8,extended,000C000D
-<br>patch=1,EE,63636363,extended,00000000
-<br>patch=1,EE,40836BCC,extended,000C000D
-<br>patch=1,EE,00000063,extended,00000000</div></div>
-	</div>
-	</div><!-- END OF TOGGLE -->
-
-<div class="toggle">
-	<div class="toggle-title ">
-		<h3>
-		<i class="fas fa-chevron-circle-down"></i>
-		<span class="title-name">Party Member Mod</span>
-		</h3>
-	</div>
-	<div class="toggle-inner">
-		These cheats allow you to change the value of the other characters currently in your party. This has the unintended side effect of them following you even outside of the dungeon.
+    <div style="text-align:left;position:absolute;z-index:100;"><a href="https://shrinefox.com/blog">🦊</a></div><div class="navigation" style="text-align:center;">
+        <ul class="main-navigation" style="display:inline-table;">
+            <li style="display:inline;"><a href="https://amicitia.github.io/"><i class="fas fa-home"></i> Home </a> </li>
+            <li style="display:inline;"><a href="http://amicitia-team.tumblr.com"><i class="fas fa-edit"></i> Blog </a> </li>
+            <li style="display:inline;"><a href="https://shrinefox.com/forum"><i class="fas fa-comment"></i> Forum </a> </li>
+            <li style="display:inline;"><a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fas fa-book"></i> Wiki </a> </li>
+            <li style="display:inline;"><a href="https://shrinefox.com/forum/app.php/faqpage"><i class="fas fa-question-circle" aria-hidden="true"></i> FAQ </a> </li>
+            <li style="display:inline;">
+                <a href="#"><i class="fas fa-toolbox"></i> Toolbox</a>
+                <ul>
+                    <li><a href="https://shrinefox.com/textsearch"><i class="fas fa-search"></i> Dialog Search</a></li>
+                    <li><a href="https://shrinefox.com/flowscript"><i class="fas fa-file-code"></i> Flowscript Docs</a></li>
+                    <li><a href="https://amicitia.github.io/files"><i class="fas fa-folder-open"></i> Files</a></li>
+                    <li><a href="https://shrinefox.com/PatchCreator"><i class="fas fa-file-signature"></i> Patch.yml Creator</a></li>
+                    <li><a href="http://shrinefox.com/PNACHCreator"><i class="fas fa-code"></i> .PNACH Creator</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="logo">
+        <center>
+            <a href="https://amicitia.github.io/">
+                <img src="../images/logo.svg" width="179" height="179">
+            </a>
+        </center>
+    </div>
+    <br /><br />
+    <div class="container body-content">
+        <table>
+            <tr>
+                <td width="25%" style="vertical-align:top">
+                    <div class="content-outer">
+                        <div class="content" id="bloglinks" runat="server">
+                            <h3>Recent Blog Posts</h3>
+                            <script src="../js/blogposts.js"></script>
+                            <asp:ContentPlaceHolder ID="SideBarContent" runat="server"></asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </td>
+                <td width="75%">
+                    <div class="content-outer">
+                        <div class="content">
+                            <div class="text">
+                                <br />
+                                <b>Type</b>:
+                                <select onchange="navigate()" id="type" name="type">
+                                    <option value="All">All</option>
+                                    <option value="Mod">Mods</option>
+                                    <option value="Tool">Tools</option>
+                                    <option value="Cheat">Cheats</option>
+                                    <option value="Guide">Guides</option>
+                                </select>
+                                <b>Game</b>:
+                                <select onchange="navigate()" id="game" name="game">
+                                    <option value="All">All</option>
+                                    <option value="P5">Persona 5</option>
+                                    <option value="P4">Persona 4</option>
+                                    <option value="P3FES">Persona 3 FES</option>
+                                    <option value="P3P">Persona 3 Portable</option>
+                                    <option value="P4G">Persona 4 Golden</option>
+                                    <option value="P3D">Persona 3 Dancing in Moonlight</option>
+                                    <option value="P4D">Persona 4 Dancing All Night</option>
+                                    <option value="P5D">Persona 5 Dancing in Starlight</option>
+                                    <option value="PQ">Persona Q</option>
+                                    <option value="PQ2">Persona Q 2</option>
+                                    <option value="CFB">Catherine Full Body</option>
+                                    <option value="SMT3">Shin Megami Tensei Nocturne</option>
+                                    <option value="P4AU">Persona 4 Arena Ultimax</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-outer">
+                        <div class="content">
+                            <div class="text"><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-nolevellimit"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5"> No Level Limit When Fusing Persona</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This cheat removes the player level limitation when fusing Personas. 
+</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-maxcompendiumlvlstats"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Compendium Personas Max Stats/Level</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>All Personas in the compendium will have maxed out stats/level.</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-fullcompendium"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">All Personas in Compendium</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Unlocks all the Personas in the compendium.</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-allitems"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">All Items (x99)</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Have 99 of each item, including key items and some unused dummy items</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-fullyanalyzed"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Enemies Fully Analyzed</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Enemies are already fully analyzed in battle while this code is enabled.</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-infsp"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Infinite SP</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Gives the main character (and party?) infinite SP.</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-infhp"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Infinite HP</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Gives the main character (and party?) infinite HP</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-allweapons"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">All Weapons, Armors, Accessories (MC, Party)</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>The main character and all party members will have all weapons, armors and accessories.</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-timeofdayrepeaterOFF"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Time of Day Repeater OFF</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Stops the time of day from repeating after using Time of Day Repeater ON (which must be disabled first).</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-timeofdayrepeater"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Time of Day Repeater ON</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Will keep repeating a time of the day without finish it, use for requests and these. Deactivate with Time of Day Repeater OFF code.</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-dayrepeaterOFF"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Day Repeater OFF</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Stops the days from repeating after using Day Repeater ON (which must be disabled first).</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-dayrepeater"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Day Repeater ON</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Will keep repeating the same date until u deactivate this code and activate Day Repeater OFF.</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-broken60fps"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Broken 60FPS</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This cheat forces the game to render 60 frames per second, however it breaks a lot of things that rely on accurate framecount for timing. </td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-disablemotionblur"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Disable Motion Blur</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This cheat attempts to remove the motion blur in the game. However, it has the side effect of making the game appear darker. </td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-partymod"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Party Member Mod</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>These cheats allow you to change the value of the other characters currently in your party. This has the unintended side effect of them following you even outside of the dungeon.
 		<br>00 None
 		<br>01 Protagonist (Crashes the game)
 		<br>02 Yosuke
@@ -214,54 +104,22 @@ patch=1,EE,002A3FE8,word,10000004 // always branch to 0x002A3FFC regardless if v
 		<br>06 Kanji
 		<br>07 Naoto
 		<br>08 Teddie
-		<br>09 Koromaru
-		<br><span class="copied">Copied cheat to clipboard!</span>
-		<div id="cheat15" onclick="copyDivToClipboard('cheat15')"><div class="cheat">// Party Member 2 Mod
-<br>patch=1,EE,1079B690,extended,000000??
-<br>
-<br>// Party Member 3 Mod
-<br>patch=1,EE,1079B692,extended,000000??
-<br>
-<br>// Party Member 4 Mod
-<br>patch=1,EE,1079B694,extended,000000??</div></div>
-	</div>
-	</div><!-- END OF TOGGLE -->
-
-<div class="toggle">
-	<div class="toggle-title ">
-		<h3>
-		<i class="fas fa-chevron-circle-down"></i>
-		<span class="title-name">Broken 60FPS</span>
-		</h3>
-	</div>
-	<div class="toggle-inner">
-		This cheat attempts to remove the motion blur in the game. However, it has the side effect of making the game appear darker.</span>
-		<br><span class="copied">Copied cheat to clipboard!</span>
-		<div id="cheat17" onclick="copyDivToClipboard('cheat17')"><div class="cheat">//Disable Motion Blur
-<br>patch=1,EE,00485AFC,word,00000000</div></div>
-	</div>
-	</div><!-- END OF TOGGLE -->
-	
-<div class="toggle">
-	<div class="toggle-title ">
-		<h3>
-		<i class="fas fa-chevron-circle-down"></i>
-		<span class="title-name">Broken 60FPS</span>
-		</h3>
-	</div>
-	<div class="toggle-inner">
-		This cheat forces the game to render 60 frames per second, however it breaks a lot of things that rely on accurate framecount for timing.</span>
-		<br><span class="copied">Copied cheat to clipboard!</span>
-		<div id="cheat17" onclick="copyDivToClipboard('cheat17')"><div class="cheat">//Broken 60FPS
-<br>patch=1,EE,201026C0,extended,10000006 ////fps
-<br>patch=1,EE,20761130,extended,3C888889 ////speed
-<br>patch=1,EE,203E40F0,extended,3C023F00 ////traverse</div></div>
-	</div>
-	</div><!-- END OF TOGGLE -->
-	
-	
-  <br>
-		</div><br><br>
-
+		<br>09 Koromaru</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-maxpersonastats"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Max Persona Stats (MC)</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This cheat gives the protagonist's currently equipped Persona maximum stats. </td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-maxsocialstats"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Max Social Stats</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>These cheats give you the maximum level of points for each social stat. </td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-maxmoney"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Max Money</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This cheat maxes out your Yen. 
+</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-256xexpparty"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Gain EXP x256 (Party)</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This cheat multiplies the EXP your party members earn from battle by 256. Use this to quickly reach level 99. </td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-256xexpmc"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Gain EXP x256 (MC)</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This cheat multiplies the EXP you earn from battle by 256. Use this to quickly reach level 99. 
+</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-disablesavecheck"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Disable Save File Integrity Check</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Fendroidus">Fendroidus</a>, <a href="https://amicitia.github.io/author/TGEnigma">TGEnigma</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This cheat allows you to load modified save files where the checksum doesn't match the contents. Useful for changing the player's name or stats. </td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-debugoptions"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Enable Debug Options in TV World</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This cheat grants you an extra menu option in dungeons that can be used to skip to the next floor or return to the entrance.
+</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a><a href="https://amicitia.github.io/tag/Debug"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> Debug</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-debuglog"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Enable Debug Log</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/TGEnigma">TGEnigma</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This cheat prints string output from the game's original debug functions into the PCSX2 log. TGE's modification also prints the filename and path of each file the game accesses in real time, which is extremely helpful for finding and narrowing down the location of assets like models, fields etc. 
+</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a><a href="https://amicitia.github.io/tag/Debug"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> Debug</p></div></a></div></div></div><table><tr><td></td><td></td></tr></table></div></div></div></td></tr></table></div>
+<br />
+<br />
+<p style="font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;">
+    We are not affiliated, associated, authorized, endorsed by, or in any way
+    <br>officially connected with ATLUS, SEGA, or any of its subsidiaries or its affiliates.
+    <br>The official ATLUS website can be found at <a href="https://atlus.com">https://atlus.com</a>. "Persona", as well
+    <br>as all characters referenced on this page are registered trademarks of ATLUS.
+</p>
+<br />
+<br />
 </body>
-</html>
+<footer>
+    <div class="footer">&copy; ShrineFox
+2020. Last updated 5/7/2020.</div></footer></html>
