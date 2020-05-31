@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -162,15 +164,29 @@ namespace Amicitia.github.io
             int pageNumber = 1;
             int postNumber = 0;
 
+            //Not found page or results
             if (data.Count == 0)
-                content = "<center>Sorry! No posts matching your query were found. Please check again later.</center>";
+                content += $"<br><center>Sorry! No posts matching your query were found. Please check again later.</center>";
+            else
+                content += $" ({data.Count} results)<br>";
+
+            //Extra info on using mods
+            if (url.Contains("mods\\p5"))
+                content += "<br><center>To learn how to run P5 mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-setupguide\">this guide.</a></center>";
+            else if (url.Contains("mods\\p3fes") || url.Equals("mods\\p4") || url.Contains("mods\\smt3.html"))
+                content += "<br><center>To learn how to run these mods, see <a href=\"https://amicitia.github.io/post/hostfs-guide\">this guide.</a></center>";
+            else if (url.Contains("mods\\"))
+                content += "<br><center>To learn how to use these mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-modcreationguide\">this guide.</a></center>";
 
             foreach (PostInfo post in data)
             {
                 postNumber++;
                 if (postLimit < 30)
                 {
-                    content += WritePost(post);
+                    if (url.Contains("post"))
+                        content += WritePost(post, false);
+                    else
+                        content += WritePost(post);
                     postLimit++;
                 }
                 else
@@ -179,6 +195,7 @@ namespace Amicitia.github.io
                         CreatePage(content, $"{url}.html", pageNumber, (data.Count - postNumber >= 30));
                     else
                         CreatePage(content, $"{url}\\{pageNumber}.html", pageNumber, (data.Count - postNumber >= 30));
+                        
                     content = "";
 
                     if (data.Count - postNumber >= 30)
@@ -202,6 +219,17 @@ namespace Amicitia.github.io
         {
             //Header
             string html = Properties.Resources.IndexHeader;
+            html += "<br><a href=\"https://amicitia.github.io/\">index</a>";
+            foreach (var split in url.Split('\\'))
+            {
+                if (split == "mods" || split == "tools" || split == "guides" || split == "cheats")
+                    html += $" > <a href=\"https://amicitia.github.io/{split}\">{split}</a>";
+                else if (gameList.Any(g => g.Equals(split)))
+                    html += $" > <a href=\"https://amicitia.github.io/game/{split}\">{split}</a>";
+                else if (split != "index")
+                    html += $" > {split.Replace(".html", "")}";
+            }
+
             //Auto-select game or type
             foreach (var game in gameList)
                 if (url.Contains($"\\{game}"))
@@ -266,8 +294,18 @@ namespace Amicitia.github.io
             else if (depth == 2)
             {
                 html = html.Replace("\"../", "\"../../");
+                html = html.Replace("\"css", "\"../../css");
+                html = html.Replace("\"js", "\"../../js");
+                html = html.Replace("\"images", "\"../../images");
             }
-            
+            else if (depth == 3)
+            {
+                html = html.Replace("\"../../", "\"../../../");
+                html = html.Replace("\"css", "\"../../../css");
+                html = html.Replace("\"js", "\"../../../js");
+                html = html.Replace("\"images", "\"../../../images");
+            }
+
             //Create page
             string htmlPath = Path.Combine(indexPath, url);
             Directory.CreateDirectory(Path.GetDirectoryName(htmlPath));
@@ -276,7 +314,7 @@ namespace Amicitia.github.io
             Console.WriteLine($"Created {htmlPath}");
         }
 
-        private static string WritePost(PostInfo data)
+        private static string WritePost(PostInfo data, bool toggle = true)
         {
             string result;
             string[] splitGames = data.Game.Split(' ');
@@ -322,7 +360,9 @@ namespace Amicitia.github.io
             }
             result += $"</font></td><td width='25%'><center>{data.Date}</center></td></tr></tbody></table></div>";
             //Hidden Post Details
-            result += $"<div class=\"toggle-inner\"><div class=\"cheat\"><table><tbody><tr><td>{data.Description}";
+            if (toggle)
+                result += $"<div class=\"toggle-inner\">";
+            result += $"<div class=\"cheat\"><table><tbody><tr><td>{data.Description}";
             //Update
             if (!String.IsNullOrEmpty(data.UpdateText) && data.Type != "Cheat")
                 result += $"<br><div class=\"update\">{data.UpdateText}</div>";
