@@ -378,6 +378,8 @@ namespace Amicitia.github.io
                     result += $"<a href=\"{data.SourceURL}\"><i class=\"fas fa-file-code\" aria-hidden=\"true\"></i> Source Code</a>";
                 result += "</center></div>";
             }
+            else if (data.Type == "Cheat")
+                    result += $"<div id=\"cheat{data.ID}\" onclick=\"copyDivToClipboard('cheat{data.ID}')\"><div class=\"cheatcode\">{data.UpdateText}</div></div>";
 
             //Related Guides
             if (!String.IsNullOrEmpty(data.GuideURL))

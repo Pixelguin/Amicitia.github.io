@@ -13,6 +13,7 @@
     <script src="../js/navigation.js"></script>
 </head>
 <body>
+    <span class="copied">Copied cheat to clipboard</span>
     <canvas id='bgCanvas'></canvas>
     <div class="ocean">
         <div class="wave"></div>
@@ -93,8 +94,66 @@
                     </div>
                     <div class="content-outer">
                         <div class="content">
-                            <div class="text"><br><a href="https://amicitia.github.io/">index</a> > <a href="https://amicitia.github.io/cheats">cheats</a> > smt3 (4 results)<br><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/smt3-filelog"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">File Access Log</font></b><br>SMT3 Cheat by <a href="https://amicitia.github.io/author/TGE">TGE</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This cheat prints string output from the game's original debug functions into the PCSX2 log. TGE's modification also prints the filename and path of each file the game accesses in real time, which is extremely helpful for finding and narrowing down the location of assets like models, fields etc. 
-</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/smt3-widescreen"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Widescreen Hack</font></b><br>SMT3 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This cheat renders the game in widescreen for PCSX2.</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/smt3-shadowalphahack"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Shadow Alpha Hack (Optional)</font></b><br>SMT3 Cheat by <a href="https://amicitia.github.io/author/Krisan Thyme">Krisan Thyme</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td></td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/smt3-480p"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">480p Resolution</font></b><br>SMT3 Cheat by <a href="https://amicitia.github.io/author/TGE">TGE</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Upscale graphics to 480p natively.</td><td></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><table><tr><td></td><td></td></tr></table></div></div></div></td></tr></table></div>
+                            <div class="text">
+<br><a href="https://amicitia.github.io/">index</a> > <a href="https://amicitia.github.io/cheats">cheats</a> > smt3 (4 results)<br><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/smt3-filelog"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">File Access Log</font></b><br>SMT3 Cheat by <a href="https://amicitia.github.io/author/TGE">TGE</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This cheat prints string output from the game's original debug functions into the PCSX2 log. TGE's modification also prints the filename and path of each file the game accesses in real time, which is extremely helpful for finding and narrowing down the location of assets like models, fields etc. 
+</td><td><div id="cheat147" onclick="copyDivToClipboard('cheat147')"><div class="cheatcode"><br>// file access log
+<br>patch=1,EE,002E67C8,word,080E84F2
+<br>patch=1,EE,003A13C8,word,0C0C00FC
+<br>patch=1,EE,003A13CC,word,2384C830
+<br>patch=1,EE,003A13D0,word,0C0C00FC
+<br>patch=1,EE,003A13D4,word,02802021
+<br>patch=1,EE,003A13D8,word,0C0C00FC
+<br>patch=1,EE,003A13DC,word,2384C830
+<br>patch=1,EE,003A13E0,word,0C0C0763
+<br>patch=1,EE,003A13E4,word,02802021
+<br>patch=1,EE,003A13E8,word,080B99F4
+<br>patch=1,EE,003076EC,word,00000000</div></div></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/smt3-widescreen"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Widescreen Hack</font></b><br>SMT3 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This cheat renders the game in widescreen for PCSX2.</td><td><div id="cheat145" onclick="copyDivToClipboard('cheat145')"><div class="cheatcode">//comment=Widescreen Hack.<br>patch=1,EE,202F59B4,word,3FC6C6E7</div></div></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/smt3-shadowalphahack"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Shadow Alpha Hack (Optional)</font></b><br>SMT3 Cheat by <a href="https://amicitia.github.io/author/Krisan Thyme">Krisan Thyme</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td></td><td><div id="cheat144" onclick="copyDivToClipboard('cheat144')"><div class="cheatcode"><br>//Optional shadow alpha hack
+<br>//comment=Shadow Override (Krisan Thyme)
+<br>//patch=1,EE,202FBD80,extended,00000000
+<br>//patch=1,EE,202FBD84,extended,00000000
+<br>//patch=1,EE,202FBD88,extended,00000000
+<br>//patch=1,EE,202FBD8C,extended,00000000
+<br>//patch=1,EE,202FBD90,extended,00000000
+<br>//patch=1,EE,202FBD94,extended,00000000
+<br>//patch=1,EE,202FBD98,extended,00000000
+<br>//patch=1,EE,202FBD9C,extended,00000000
+<br>//patch=1,EE,202FBDA0,extended,00000000
+<br>//patch=1,EE,202FBDA4,extended,00000000
+<br>//patch=1,EE,202FBDA8,extended,00000000
+<br>//patch=1,EE,202FBDAC,extended,00000000
+<br>//patch=1,EE,202FBDB0,extended,00000000
+<br>//patch=1,EE,202FBDB4,extended,00000000
+<br>//patch=1,EE,202FBDB8,extended,00000000
+<br>//patch=1,EE,202FBDBC,extended,00000000
+<br>//patch=1,EE,202FBDC0,extended,00000000
+<br>//patch=1,EE,202FBDC4,extended,00000000
+<br>//patch=1,EE,202FBDC8,extended,00000000
+<br>//patch=1,EE,202FBDCC,extended,00000000
+<br>//patch=1,EE,202FBDD0,extended,00000000
+<br>//patch=1,EE,202FBDD4,extended,00000000
+<br>//patch=1,EE,202FBDD8,extended,00000000
+<br>//patch=1,EE,202FBDDC,extended,00000000
+<br>//patch=1,EE,202FBDE0,extended,00000000
+<br>//patch=1,EE,202FBDE4,extended,00000000
+<br>//patch=1,EE,202FBDE8,extended,00000000
+<br>//patch=1,EE,202FBDEC,extended,00000000
+<br>//patch=1,EE,202FBDF0,extended,00000000
+<br>//patch=1,EE,202FBDF4,extended,00000000
+<br>//patch=1,EE,202FBDF8,extended,00000000
+<br>//patch=1,EE,202FBDFC,extended,00000000</div></div></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/smt3-480p"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">480p Resolution</font></b><br>SMT3 Cheat by <a href="https://amicitia.github.io/author/TGE">TGE</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Upscale graphics to 480p natively.</td><td><div id="cheat143" onclick="copyDivToClipboard('cheat143')"><div class="cheatcode"><br>//480P RESOLUTION
+<br>
+<br>// NOP out old interlaced field switch
+<br>patch=1,EE,002AA1B4,word,00000000
+<br>
+<br>// Another field switch here that needs to be NOP'd to prevent
+<br>// post processing effects from getting misaligned when entering
+<br>// and leaving menus.
+<br>patch=1,EE,002ADBE0,word,00000000
+<br>
+<br>// Patch sceGsResetGraph arguments to set 480p
+<br>patch=1,EE,002C81D4,word,24110000 // addiu $s1, 0, 0x00
+<br>patch=1,EE,002C81D8,word,24120050 // addiu $s2, 0, 0x50
+<br>patch=1,EE,002C81DC,word,24020001 // addiu $s3, 0, 0x0/</div></div></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><table><tr><td></td><td></td></tr></table></div></div></div></td></tr></table></div>
 <br />
 <br />
 <p style="font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;">
@@ -108,4 +167,4 @@
 </body>
 <footer>
     <div class="footer">&copy; ShrineFox
-2020. Last updated 5/31/2020.</div></footer></html>
+2020. Last updated 6/6/2020.</div></footer></html>
