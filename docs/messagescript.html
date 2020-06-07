@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+    <link rel='shortcut icon' href='favicon.png' type='image/x-icon' />
+    <meta charset="utf-8">
+    <title>Amicitia - Home</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.9.0/js/all.js"></script>
+    <script src="https://shrinefox.com/Scripts/Amicitia/jquery-3.3.1.min.js"></script>
+	<link href="../css/index.css" rel="stylesheet" type="text/css">
+    <link href="../css/waves.css" rel="stylesheet" type="text/css">
+    <script src="../js/bubbles.js"></script>
+    <script src="../js/showhide.js"></script>
+    <script src="../js/navigation.js"></script>
+</head>
+<body>
+    <canvas id='bgCanvas'></canvas>
+    <div class="ocean">
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <div style="text-align:left;position:absolute;z-index:100;"><a href="https://shrinefox.com/blog">🦊</a></div><div class="navigation" style="text-align:center;">
+        <ul class="main-navigation" style="display:inline-table;">
+            <li style="display:inline;"><a href="https://amicitia.github.io/"><i class="fas fa-home"></i> Home </a> </li>
+            <li style="display:inline;"><a href="http://amicitia-team.tumblr.com"><i class="fas fa-edit"></i> Blog </a> </li>
+            <li style="display:inline;"><a href="https://shrinefox.com/forum"><i class="fas fa-comment"></i> Forum </a> </li>
+            <li style="display:inline;"><a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fas fa-book"></i> Wiki </a> </li>
+            <li style="display:inline;"><a href="https://shrinefox.com/forum/app.php/faqpage"><i class="fas fa-question-circle" aria-hidden="true"></i> FAQ </a> </li>
+            <li style="display:inline;">
+                <a href="#"><i class="fas fa-toolbox"></i> Toolbox</a>
+                <ul>
+                    <li><a href="https://shrinefox.com/textsearch"><i class="fas fa-search"></i> Dialog Search</a></li>
+                    <li><a href="https://amicitia.github.io/docs/flowscript"><i class="fas fa-file-code"></i> Flowscript Docs</a></li>
+                    <li><a href="https://amicitia.github.io/files"><i class="fas fa-folder-open"></i> Files</a></li>
+                    <li><a href="https://shrinefox.com/PatchCreator"><i class="fas fa-file-signature"></i> Patch.yml Creator</a></li>
+                    <li><a href="http://shrinefox.com/PNACHCreator"><i class="fas fa-code"></i> .PNACH Creator</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="logo">
+        <center>
+            <a href="https://amicitia.github.io/">
+                <img src="../images/logo.svg" width="179" height="179">
+            </a>
+        </center>
+    </div>
+    <br /><br />
+<div class="container body-content">
+	<table>
+        <tr>
+            <td width="25%" style="vertical-align:top">
+                <div class="content-outer">
+                    <div class="content"><br>
+						Basics
+						<br>↳ <a href="https://amicitia.github.io/docs/flowscript">Flowscript</a>
+						<br>↳ <a href="https://amicitia.github.io/docs/messagescript">Messagescript</a>
+						<br>↳ <a href="https://amicitia.github.io/docs/decompiling">Decompiling</a>
+						<br>↳ <a href="https://amicitia.github.io/docs/compiling">Compiling</a>
+						<br>
+						<br>Features
+						<br>↳ <a href="https://amicitia.github.io/docs/importing">Importing</a>
+						<br>↳ Declaring Functions
+						<br>↳ Declaring Variables
+						<br>↳ <a href="https://amicitia.github.io/docs/hookingfunctions">Hooking Functions</a>
+						<br>
+						<br>P5 Functions
+						<br>↳ AI
+						<br>↳ Common
+						<br>↳ Facility
+						<br>↳ Field
+						<br>↳ Net
+						<br>↳ Social
+					</div>
+				</div>
+			</td>
+			<td width="75%">
+				<div class="content-outer">
+                    <div class="content">
+					<h1>Messagescript</h1><i>Flowscript</i> doesn't support <a href="https://techterms.com/definition/string">strings</a> as a variable type, but it's possible to display text in the form of dialog and selectable options by referencing a <b>messagescript</b> file.
+<h2>Creating a Messagescript</h2>
+Messagescripts are text files ending with the extension .<b>msg</b>, often accompanying a .<i>flow</i> (<i>flowscript</i>). Simply create a new text file and rename the extension. You may need to <a href="https://www.howtogeek.com/205086/beginner-how-to-make-windows-show-file-extensions/">make Windows display known file extensions</a> in order to change .txt to .msg.
+<br>Below is a sample from a <a href="https://github.com/TGEnigma/AtlusScriptToolchain/blob/a8533ccf589953e6a75858c4bcb333a4dcdc38bc/Source/AtlusScriptCompiler/Resources/TestScript2.msg">custom messagescript</a>.
+<pre><code class="c#">[dlg BossRushModeDialog [TGE]]
+[f 2 1]Select a boss fight.[f 1 1][e]
+
+[sel SelectBoss0]
+[f 2 1]D00_SCENARIO_BATTLE_01[e]
+[f 2 1]D01_01_SCENARIO_BATTLE_01[e]
+[f 2 1]D01_01_MORUGANA_BATTLE[e]
+[f 2 1]D01_02_SCENARIO_BATTLE_01[e]
+[f 2 1]Previous[e]
+[f 2 1]Next[e]
+</code></pre>
+<br>There are <b>two types</b> of message declarations: <b>dialog</b> and <b>selection</b>.
+<br>Brackets that start with <b>dlg</b> or <b>msg</b>...
+<ul>
+    <li>Can be used for dialog boxes, window labels etc.
+    <li>Have a unique name (i.e. <b>BossRushModeDialog</b> )
+    <li>Can have an optional nametag in brackets (i.e. <b>[TGE]</b> )
+    <li>Have a message on the next new line, starting with <b>[s]</b>/<b>[f 2 1]</b> and ending with <b>[e]</b>.
+    <li>Can have multiple messages on new lines as long as they come before the next message declaration.
+</ul>
+<br>Brackets that start with <b>sel</b>...
+<ul>
+    <li>Can be used for menu options.
+    <li>Have a unique name (i.e. <b>SelectBoss0</b> )
+    <li>Have a message on the next new line, starting with <b>[s]</b>/<b>[f 2 1]</b> and ending with <b>[e]</b>.
+    <li>Can have multiple messages on new lines as long as they come before the next message declaration.
+</ul>
+<a href="https://youtu.be/fTUIyUgc04U?t=237"><img src="https://i.imgur.com/Q3AkSbO.png"></a>
+<h2>Using Markup</h2>
+You can change the appearance of text by inserting the following codes (in brackets) into your message.
+<ul>
+    <li>[<b>clr</b> x] Text color. x is a number <a href="https://github.com/TGEnigma/AtlusScriptToolchain/blob/a8533ccf589953e6a75858c4bcb333a4dcdc38bc/Documents/RE/MessageScriptInterpreter.cpp#L28">between 0 and 30</a>. Affects all text after the tag until the end of the line ([e]).
+    <li>[<b>n</b>] Linebreak. Put this between some text to make it show up on a new line ingame.
+    <li>[<b>w</b>] Wait. Makes the game await user input before moving on to the next line.
+    <li>[<b>vp</b> w x y z 0 0] Voice Pack. Makes the game play a voice clip. <a href="https://github.com/TGEnigma/AtlusScriptToolchain/blob/a8533ccf589953e6a75858c4bcb333a4dcdc38bc/Source/AtlusScriptLibrary/Libraries/Persona5/MessageScriptLibrary.json#L233">w = eventIdMajor, x = eventIdMinor, y = eventIdSub, z = cueId</a>.
+    <li>[<b>bup</b> 0 x y z 0] Bustup. Shows a character's talking sprite during dialog. <a href="https://github.com/TGEnigma/AtlusScriptToolchain/blob/a8533ccf589953e6a75858c4bcb333a4dcdc38bc/Source/AtlusScriptLibrary/Libraries/Persona5/MessageScriptLibrary.json#L314">x = characterId, y = expressionId, z = customeId</a>. Lip flap will animate if followed by [f 4 10 -1 0 0].
+</ul>
+<h2>Referencing Messages in Flowscripts</h2>
+By <a href="https://amicitia.github.io/docs/importing">importing the messagescript into the flowscript</a>, you can reference messages in two ways: by <b>ID</b> or by the message's <b>unique name</b>.
+For instance, here's an example of a dialog box that references the messagescript sample above.
+<pre><code class="c#">import( "TestScript2.msg" );
+
+void StartBossrushMode()
+{
+	// Display the dialog window
+	MSG_WND_DSP(); 
+	// Display dialog
+	MSG( BossRushModeDialog, 0 );
+	// Close the dialog window
+	MSG_WND_CLS(); 	
+}</pre></code>
+    <b>MSG(BossRushModeDialog, 0)</b> actually yeilds the same results as <b>MSG(5, 0)</b> since (counting up from 0) BossRushModeDialog is the fifth selection or dialog message with a unique name in the <a href="https://github.com/TGEnigma/AtlusScriptToolchain/blob/a8533ccf589953e6a75858c4bcb333a4dcdc38bc/Source/AtlusScriptCompiler/Resources/TestScript2.msg#L31">msg file</a>.
+    Here's an example of a selection that returns an integer (the index of the string from the referenced [sel] message).
+<pre><code class="c#">// Display dialog window
+MSG_WND_DSP(); 
+MSG( HelloDialog, 0 ); 
+// Display selection options while dialog is still shown
+int selection = SEL( 1 );
+MSG_WND_CLS();</pre></code>
+    <b>SEL(1)</b> in this case refers to <a href="https://github.com/TGEnigma/AtlusScriptToolchain/blob/a8533ccf589953e6a75858c4bcb333a4dcdc38bc/Source/AtlusScriptCompiler/Resources/TestScript2.msg#L4">this message in the messagescript file</a>. You can use the value it returns to decide what to do with the selected option in-game:
+<pre><code class="c#">
+switch ( selection )
+{
+	case 0:
+		int playerResHandle = FLD_PC_GET_RESHND( 0 );		
+		FLD_MODEL_SET_SCALE( playerResHandle, 2f );
+		break;
+	case 1:
+		CALL_FIELD( 0, 2, 0, 0 );
+		break;
+	case 2:
+		StartBossrushMode();
+		break;
+	case 3:
+		StartTeleportMode();
+		break;
+	case 4:
+		StartButtonTestMode();
+		break;
+	case 5:
+		StartSoundTestMode();
+		break;
+	default:
+		break;
+}</pre></code>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<p style="font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;">We are not affiliated, associated, authorized, endorsed by, or in any way 
+    <br>officially connected with ATLUS, SEGA, or any of its subsidiaries or its affiliates.
+    <br>The official ATLUS website can be found at https://atlus.com. "Persona", as well
+    <br>as all characters referenced on this page are registered trademarks of ATLUS.</p>
+
+<div class="footer">© ShrineFox 2020. Last updated 6/7/2020.</div>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+    <link rel='shortcut icon' href='favicon.png' type='image/x-icon' />
+    <meta charset="utf-8">
+    <title>Amicitia - Home</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.9.0/js/all.js"></script>
+    <script src="https://shrinefox.com/Scripts/Amicitia/jquery-3.3.1.min.js"></script>
+	<link href="../css/index.css" rel="stylesheet" type="text/css">
+    <link href="../css/waves.css" rel="stylesheet" type="text/css">
+    <script src="../js/bubbles.js"></script>
+    <script src="../js/showhide.js"></script>
+    <script src="../js/navigation.js"></script>
+</head>
+<body>
+    <canvas id='bgCanvas'></canvas>
+    <div class="ocean">
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <div style="text-align:left;position:absolute;z-index:100;"><a href="https://shrinefox.com/blog">🦊</a></div><div class="navigation" style="text-align:center;">
+        <ul class="main-navigation" style="display:inline-table;">
+            <li style="display:inline;"><a href="https://amicitia.github.io/"><i class="fas fa-home"></i> Home </a> </li>
+            <li style="display:inline;"><a href="http://amicitia-team.tumblr.com"><i class="fas fa-edit"></i> Blog </a> </li>
+            <li style="display:inline;"><a href="https://shrinefox.com/forum"><i class="fas fa-comment"></i> Forum </a> </li>
+            <li style="display:inline;"><a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fas fa-book"></i> Wiki </a> </li>
+            <li style="display:inline;"><a href="https://shrinefox.com/forum/app.php/faqpage"><i class="fas fa-question-circle" aria-hidden="true"></i> FAQ </a> </li>
+            <li style="display:inline;">
+                <a href="#"><i class="fas fa-toolbox"></i> Toolbox</a>
+                <ul>
+                    <li><a href="https://shrinefox.com/textsearch"><i class="fas fa-search"></i> Dialog Search</a></li>
+                    <li><a href="https://amicitia.github.io/docs/flowscript"><i class="fas fa-file-code"></i> Flowscript Docs</a></li>
+                    <li><a href="https://amicitia.github.io/files"><i class="fas fa-folder-open"></i> Files</a></li>
+                    <li><a href="https://shrinefox.com/PatchCreator"><i class="fas fa-file-signature"></i> Patch.yml Creator</a></li>
+                    <li><a href="http://shrinefox.com/PNACHCreator"><i class="fas fa-code"></i> .PNACH Creator</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="logo">
+        <center>
+            <a href="https://amicitia.github.io/">
+                <img src="../images/logo.svg" width="179" height="179">
+            </a>
+        </center>
+    </div>
+    <br /><br />
+<div class="container body-content">
+	<table>
+        <tr>
+            <td width="25%" style="vertical-align:top">
+                <div class="content-outer">
+                    <div class="content"><br>
+						Basics
+						<br>↳ <a href="https://amicitia.github.io/docs/flowscript">Flowscript</a>
+						<br>↳ <a href="https://amicitia.github.io/docs/messagescript">Messagescript</a>
+						<br>↳ <a href="https://amicitia.github.io/docs/decompiling">Decompiling</a>
+						<br>↳ <a href="https://amicitia.github.io/docs/compiling">Compiling</a>
+						<br>
+						<br>Features
+						<br>↳ <a href="https://amicitia.github.io/docs/importing">Importing</a>
+						<br>↳ Declaring Functions
+						<br>↳ Declaring Variables
+						<br>↳ <a href="https://amicitia.github.io/docs/hookingfunctions">Hooking Functions</a>
+						<br>
+						<br>P5 Functions
+						<br>↳ AI
+						<br>↳ Common
+						<br>↳ Facility
+						<br>↳ Field
+						<br>↳ Net
+						<br>↳ Social
+					</div>
+				</div>
+			</td>
+			<td width="75%">
+				<div class="content-outer">
+                    <div class="content">
+					<h1>Importing</h1>
+As seen in the <a href="https://amicitia.github.io/docs/messagescript">Messagescript</a> tutorial, in order to use text strings in a .flow, you must reference a .msg file to get the strings from.
+<br />An "import statement" usually looks like the following, at the top of the document:
+<br /><pre><code>import( "field.msg" );</code></pre>
+<br />The paths are relative to the .flow file, so in this case, if your .flow is at <b>C:\Users\Username\Documents\field.flow</b>, it would look for <b>field.msg</b> in the Documents folder.
+<br />
+<br />Once a .msg file has successfully been referenced, you can start referring to the names of messages in your .flow. When compiling, your resulting .bf will contain a .bmd made from your .msg.
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<p style="font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;">We are not affiliated, associated, authorized, endorsed by, or in any way 
+    <br>officially connected with ATLUS, SEGA, or any of its subsidiaries or its affiliates.
+    <br>The official ATLUS website can be found at https://atlus.com. "Persona", as well
+    <br>as all characters referenced on this page are registered trademarks of ATLUS.</p>
+
+<div class="footer">© ShrineFox 2020. Last updated 6/7/2020.</div>

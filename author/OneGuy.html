@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+    <link rel='shortcut icon' href='favicon.png' type='image/x-icon' />
+    <meta charset="utf-8">
+    <title>Amicitia - Home</title>
+    <link href="../css/index.css" rel="stylesheet" type="text/css">
+    <link href="../css/waves.css" rel="stylesheet" type="text/css">
+    <script defer src="https://use.fontawesome.com/releases/v5.9.0/js/all.js"></script>
+    <script src="https://shrinefox.com/Scripts/Amicitia/jquery-3.3.1.min.js"></script>
+    <script src="../js/bubbles.js"></script>
+    <script src="../js/showhide.js"></script>
+    <script src="../js/navigation.js"></script>
+</head>
+<body>
+    <span class="copied">Copied cheat to clipboard</span>
+    <canvas id='bgCanvas'></canvas>
+    <div class="ocean">
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <div style="text-align:left;position:absolute;z-index:100;"><a href="https://shrinefox.com/blog">🦊</a></div><div class="navigation" style="text-align:center;">
+        <ul class="main-navigation" style="display:inline-table;">
+            <li style="display:inline;"><a href="https://amicitia.github.io/"><i class="fas fa-home"></i> Home </a> </li>
+            <li style="display:inline;"><a href="http://amicitia-team.tumblr.com"><i class="fas fa-edit"></i> Blog </a> </li>
+            <li style="display:inline;"><a href="https://shrinefox.com/forum"><i class="fas fa-comment"></i> Forum </a> </li>
+            <li style="display:inline;"><a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fas fa-book"></i> Wiki </a> </li>
+            <li style="display:inline;"><a href="https://shrinefox.com/forum/app.php/faqpage"><i class="fas fa-question-circle" aria-hidden="true"></i> FAQ </a> </li>
+            <li style="display:inline;">
+                <a href="#"><i class="fas fa-toolbox"></i> Toolbox</a>
+                <ul>
+                    <li><a href="https://shrinefox.com/textsearch"><i class="fas fa-search"></i> Dialog Search</a></li>
+                    <li><a href="https://amicitia.github.io/docs/flowscript"><i class="fas fa-file-code"></i> Flowscript Docs</a></li>
+                    <li><a href="https://amicitia.github.io/files"><i class="fas fa-folder-open"></i> Files</a></li>
+                    <li><a href="https://shrinefox.com/PatchCreator"><i class="fas fa-file-signature"></i> Patch.yml Creator</a></li>
+                    <li><a href="http://shrinefox.com/PNACHCreator"><i class="fas fa-code"></i> .PNACH Creator</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="logo">
+        <center>
+            <a href="https://amicitia.github.io/">
+                <img src="../images/logo.svg" width="179" height="179">
+            </a>
+        </center>
+    </div>
+    <br /><br />
+    <div class="container body-content">
+        <table>
+            <tr>
+                <td width="25%" style="vertical-align:top">
+                    <div class="content-outer">
+                        <div class="content" id="bloglinks" runat="server">
+                            <h3>Recent Blog Posts</h3>
+                            <script src="../js/blogposts.js"></script>
+                            <asp:ContentPlaceHolder ID="SideBarContent" runat="server"></asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </td>
+                <td width="75%">
+                    <div class="content-outer">
+                        <div class="content">
+                            <div class="text">
+                                <br />
+                                <b>Type</b>:
+                                <select onchange="navigate()" id="type" name="type">
+                                    <option value="All">All</option>
+                                    <option value="Mod">Mods</option>
+                                    <option value="Tool">Tools</option>
+                                    <option value="Cheat">Cheats</option>
+                                    <option value="Guide">Guides</option>
+                                </select>
+                                <b>Game</b>:
+                                <select onchange="navigate()" id="game" name="game">
+                                    <option value="All">All</option>
+                                    <option value="P5">Persona 5</option>
+                                    <option value="P4">Persona 4</option>
+                                    <option value="P3FES">Persona 3 FES</option>
+                                    <option value="P3P">Persona 3 Portable</option>
+                                    <option value="P4G">Persona 4 Golden</option>
+                                    <option value="P3D">Persona 3 Dancing in Moonlight</option>
+                                    <option value="P4D">Persona 4 Dancing All Night</option>
+                                    <option value="P5D">Persona 5 Dancing in Starlight</option>
+                                    <option value="PQ">Persona Q</option>
+                                    <option value="PQ2">Persona Q 2</option>
+                                    <option value="CFB">Catherine Full Body</option>
+                                    <option value="SMT3">Shin Megami Tensei Nocturne</option>
+                                    <option value="P4AU">Persona 4 Arena Ultimax</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-outer">
+                        <div class="content">
+                            <div class="text">
+<br><a href="https://amicitia.github.io/">index</a> > author > OneGuy (1 results)<br><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5-p5ricons"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><div class="ribbon"><div class="new">NEW</div></div><img src="https://cdn.discordapp.com/attachments/713128546062696500/719271561982509147/rpcs3_mod_2020-06-07_14-19-42.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">P5R Icons</font></b><br>P5 Mod by <a href="https://amicitia.github.io/author/OneGuy">OneGuy</a></font></td><td width='25%'><center>6/7/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Ever wanted persona 5 royal icons knowing that only almighty skills icon changes?
+ Well here's your mod.</td><td><center><font size="4"><a href="https://drive.google.com/drive/folders/1mZLk-7PIKtkHkV4lWK0PopHa9jDoxe6Q"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=15&t=313"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/UI"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">UI</p></div></a><a href="https://amicitia.github.io/tag/HUD"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> HUD</p></div></a></div></div></div><table><tr><td></td><td></td></tr></table></div></div></div></td></tr></table></div>
+<br />
+<br />
+<p style="font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;">
+    We are not affiliated, associated, authorized, endorsed by, or in any way
+    <br>officially connected with ATLUS, SEGA, or any of its subsidiaries or its affiliates.
+    <br>The official ATLUS website can be found at <a href="https://atlus.com">https://atlus.com</a>. "Persona", as well
+    <br>as all characters referenced on this page are registered trademarks of ATLUS.
+</p>
+<br />
+<br />
+</body>
+<footer>
+    <div class="footer">&copy; ShrineFox
+2020. Last updated 6/7/2020.</div></footer></html>
