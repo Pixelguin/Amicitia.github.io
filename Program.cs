@@ -383,7 +383,7 @@ namespace Amicitia.github.io
 
             //Related Guides
             if (!String.IsNullOrEmpty(data.GuideURL))
-                result += $"<br><center><a href=\"https://shrinefox.com/guides/{data.GuideURL}\"><i class=\"fas fa-info-circle\" aria-hidden=\"true\"></i> {data.GuideText}</a></center>";
+                result += $"<br><center><a href=\"{data.GuideURL}\"><i class=\"fas fa-info-circle\" aria-hidden=\"true\"></i> {data.GuideText}</a></center>";
             //Thread Link
             if (!String.IsNullOrEmpty(data.ThreadURL))
                 result += $"<center><a href=\"{data.ThreadURL}\"><i class=\"fas fa-comment\" aria-hidden=\"true\"></i> Feedback</a></center>";
