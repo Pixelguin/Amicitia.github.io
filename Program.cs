@@ -171,12 +171,34 @@ namespace Amicitia.github.io
                 content += $" ({data.Count} results)<br>";
 
             //Extra info on using mods
-            if (url.Contains("mods\\p5"))
-                content += "<br><center>To learn how to run P5 mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-setupguide\">this guide.</a></center>";
-            else if (url.Contains("mods\\p3fes") || url.Equals("mods\\p4") || url.Contains("mods\\smt3.html"))
-                content += "<br><center>To learn how to run these mods, see <a href=\"https://amicitia.github.io/post/hostfs-guide\">this guide.</a></center>";
-            else if (url.Contains("mods\\"))
-                content += "<br><center>To learn how to use these mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-modcreationguide\">this guide.</a></center>";
+            if (url.Contains("mods") || url.Contains("game"))
+            {
+                if (url.Contains("\\p5"))
+                    content += "<br><center>To learn how to run P5 mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-setupguide\">this guide.</a></center>";
+                else if (url.Contains("\\p3fes") || url.Contains("\\p4.html") || url.Contains("\\smt3.html"))
+                    content += "<br><center>To learn how to run these mods, see <a href=\"https://amicitia.github.io/post/hostfs-guide\">this guide.</a></center>";
+                else if (url.Contains("\\p4g"))
+                    content += "<br><center>To learn how to mod the PC version of P4G, see <a href=\"https://gamebanana.com/tuts/13379\">this guide.</a><br>More P4G PC mods available at <a href=\"https://gamebanana.com/games/8263\">gamebanana.com</a>.</center>";
+                else
+                    content += "<br><center>To learn how to use these mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-modcreationguide\">this guide.</a></center>";
+            }
+            else if (url.Contains("post"))
+            {
+                for(int i = 0; i < data.Count; i++)
+                {
+                    if(data[i].Hyperlink == url.Split('\\').Last().Replace(".html","") && data[i].Type == "Mod")
+                    {
+                        if(data[i].Game == "P5")
+                            content += "<br><center>To learn how to run P5 mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-setupguide\">this guide.</a></center>";
+                        else if (data[i].Game == "P3FES" || data[i].Game == "P4" || data[i].Game == "SMT3")
+                            content += "<br><center>To learn how to run these mods, see <a href=\"https://amicitia.github.io/post/hostfs-guide\">this guide.</a></center>";
+                        else if (data[i].Game == "P4G")
+                            content += "<br><center>To learn how to mod the PC version of P4G, see <a href=\"https://gamebanana.com/tuts/13379\">this guide.</a><br>More P4G PC mods available at <a href=\"https://gamebanana.com/games/8263\">gamebanana.com</a>.</center>";
+                        else
+                            content += "<br><center>To learn how to use these mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-modcreationguide\">this guide.</a></center>";
+                    }
+                }
+            }
 
             foreach (PostInfo post in data)
             {
