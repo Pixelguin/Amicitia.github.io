@@ -20,7 +20,7 @@
         <div class="wave"></div>
     </div>
 
-    <div style="text-align:left;position:absolute;z-index:100;"><a href="https://shrinefox.com/blog">🦊</a></div><div class="navigation" style="text-align:center;">
+    <div style="text-align:left;position:absolute;z-index:100;"><a href="https://github.com/Amicitia/Amicitia.github.io"><i class="fab fa-github"></i> Source</a></div><div class="navigation" style="text-align:center;">
         <ul class="main-navigation" style="display:inline-table;">
             <li style="display:inline;"><a href="https://amicitia.github.io/"><i class="fas fa-home"></i> Home </a> </li>
             <li style="display:inline;"><a href="http://amicitia-team.tumblr.com"><i class="fas fa-edit"></i> Blog </a> </li>
@@ -33,8 +33,6 @@
                     <li><a href="https://shrinefox.com/textsearch"><i class="fas fa-search"></i> Dialog Search</a></li>
                     <li><a href="https://amicitia.github.io/docs/flowscript"><i class="fas fa-file-code"></i> Flowscript Docs</a></li>
                     <li><a href="https://amicitia.github.io/files"><i class="fas fa-folder-open"></i> Files</a></li>
-                    <li><a href="https://shrinefox.com/PatchCreator"><i class="fas fa-file-signature"></i> Patch.yml Creator</a></li>
-                    <li><a href="http://shrinefox.com/PNACHCreator"><i class="fas fa-code"></i> .PNACH Creator</a></li>
                 </ul>
             </li>
         </ul>
@@ -95,7 +93,37 @@
                     <div class="content-outer">
                         <div class="content">
                             <div class="text">
-<br><a href="https://amicitia.github.io/">index</a> > tag >  > 6<div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-fullcompendium"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">All Personas in Compendium</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Unlocks all the Personas in the compendium.</td><td><div id="cheat140" onclick="copyDivToClipboard('cheat140')"><div class="cheatcode">//Have All Persona in Compendium Book
+<br><a href="https://amicitia.github.io/">index</a> > tag >  > 6<div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/smt3-480p"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">480p Resolution</font></b><br>SMT3 Cheat by <a href="https://amicitia.github.io/author/TGE">TGE</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Upscale graphics to 480p natively.</td><td><div id="cheat143" onclick="copyDivToClipboard('cheat143')"><div class="cheatcode"><br>//480P RESOLUTION
+<br>
+<br>// NOP out old interlaced field switch
+<br>patch=1,EE,002AA1B4,word,00000000
+<br>
+<br>// Another field switch here that needs to be NOP'd to prevent
+<br>// post processing effects from getting misaligned when entering
+<br>// and leaving menus.
+<br>patch=1,EE,002ADBE0,word,00000000
+<br>
+<br>// Patch sceGsResetGraph arguments to set 480p
+<br>patch=1,EE,002C81D4,word,24110000 // addiu $s1, 0, 0x00
+<br>patch=1,EE,002C81D8,word,24120050 // addiu $s2, 0, 0x50
+<br>patch=1,EE,002C81DC,word,24020001 // addiu $s3, 0, 0x0/</div></div></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-nolevellimit"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5"> No Level Limit When Fusing Persona</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This cheat removes the player level limitation when fusing Personas. 
+</td><td><div id="cheat142" onclick="copyDivToClipboard('cheat142')"><div class="cheatcode"><br>// All Persona can be fused without Level restriction
+<br>patch=1,EE,202ef884,word,24010000
+<br>patch=1,EE,202f055c,word,24010000
+<br>patch=1,EE,202f5350,word,24010000
+<br>patch=1,EE,202f6314,word,24010000
+<br>patch=1,EE,202f8d3c,word,24010000
+<br>patch=1,EE,202f9798,word,24010000</div></div></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-maxcompendiumlvlstats"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Compendium Personas Max Stats/Level</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>All Personas in the compendium will have maxed out stats/level.</td><td><div id="cheat141" onclick="copyDivToClipboard('cheat141')"><div class="cheatcode"><br>// All Persona Level Max in Compendium Book
+<br>//patch=1,EE,40798200,extended,00BF000C
+<br>//patch=1,EE,00000063,extended,00000000
+<br>
+<br>// All Persona Max Stats in Compendium Book
+<br>patch=1,EE,40798218,extended,00BF000C
+<br>patch=1,EE,63636363,extended,00000000
+<br>patch=1,EE,4079821C,extended,00BF000C
+<br>patch=1,EE,63636363,extended,00000000
+<br>patch=1,EE,40798220,extended,00BF000C
+<br>patch=1,EE,00006363,extended,00000000</div></div></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-fullcompendium"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">All Personas in Compendium</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Unlocks all the Personas in the compendium.</td><td><div id="cheat140" onclick="copyDivToClipboard('cheat140')"><div class="cheatcode">//Have All Persona in Compendium Book
 <br>patch=1,EE,407981FC,extended,00BF000C
 <br>patch=1,EE,00010001,extended,00010000</div></div></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4-allitems"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">All Items (x99)</font></b><br>P4 Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Have 99 of each item, including key items and some unused dummy items</td><td><div id="cheat139" onclick="copyDivToClipboard('cheat139')"><div class="cheatcode"><br>// Inf Items/Gain 99
 <br>//patch=1,EE,1013C8F4,extended,00000000
@@ -709,31 +737,7 @@ patch=1,EE,002A3FE8,word,10000004 // always branch to 0x002A3FFC regardless if v
 <br>patch=1,EE,10838FD4,extended,00000001
 <br>patch=1,EE,10839008,extended,00000001
 <br>patch=1,EE,1083903C,extended,00000001
-<br>patch=1,EE,10839070,extended,00000001</div></div></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3fes-slinkmax"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">All Social Links Maxed</font></b><br>P3FES Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This cheat maxes out the current level of each of your social links.</td><td><div id="cheat108" onclick="copyDivToClipboard('cheat108')"><div class="cheatcode">//All S.Link Max
-<br>patch=1,EE,10836276,extended,00000A0A
-<br>patch=1,EE,40836278,extended,00070001
-<br>patch=1,EE,0A0A0A0A,extended,00000000</div></div></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3fes-allitems"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">All Items</font></b><br>P3FES Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This cheat gives you 99 of every possible item you can obtain, even some dummy items that don't do anything.</td><td><div id="cheat107" onclick="copyDivToClipboard('cheat107')"><div class="cheatcode">//Enable Code 
-<br>patch=1,EE,F0511884,extended,00511887
-<br>patch=1,EE,2017F6B8,word,24420001
-<br>
-<br>//All Items (Includes Dummy items Some Can be used)
-<br>patch=1,EE,410C2D90,extended,00700001
-<br>patch=1,EE,00630063,extended,00000000</div></div></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3fes-maxarmor"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Max Armor Stats</font></b><br>P3FES Cheat by <a href="https://amicitia.github.io/author/Unknown Author">Unknown Author</a></font></td><td width='25%'><center>6/9/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>These cheats give you the maximum stats for each item currently equipped by the protagonist. 
-</td><td><div id="cheat106" onclick="copyDivToClipboard('cheat106')"><div class="cheatcode">//Enable Code 
-<br>patch=1,EE,F0511884,extended,00511887
-<br>patch=1,EE,2017F6B8,word,24420001
-<br>
-<br>//All Weapon Max (When Equip By MC)
-<br>patch=1,EE,410C15F8,extended,00630005
-<br>patch=1,EE,03E74502,extended,00000000
-<br>
-<br>//All Armor Max (When Equip By MC)
-<br>patch=1,EE,410C15FC,extended,00630005
-<br>patch=1,EE,03E703E7,extended,00000000
-<br>
-<br>//All Footwear Max (When Equip By MC)
-<br>patch=1,EE,410C1600,extended,00630005
-<br>patch=1,EE,000003E7,extended,00000000</div></div></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><table><tr><td><a href="https:\\amicitia.github.io\tag\\5"><div class="unhide">Previous</div></a></td><td><a href="https:\\amicitia.github.io\tag\\7"><div class="unhide">Next</div></a></td></tr></table></div></div></div></td></tr></table></div>
+<br>patch=1,EE,10839070,extended,00000001</div></div></tr></tbody></table><a href="https://amicitia.github.io/tag/PNACH"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PNACH</p></div></a></div></div></div><table><tr><td><a href="https:\\amicitia.github.io\tag\\5"><div class="unhide">Previous</div></a></td><td><a href="https:\\amicitia.github.io\tag\\7"><div class="unhide">Next</div></a></td></tr></table></div></div></div></td></tr></table></div>
 <br />
 <br />
 <p style="font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;">
@@ -747,4 +751,4 @@ patch=1,EE,002A3FE8,word,10000004 // always branch to 0x002A3FFC regardless if v
 </body>
 <footer>
     <div class="footer">&copy; ShrineFox
-2020. Last updated 7/3/2020.</div></footer></html>
+2020. Last updated 7/10/2020.</div></footer></html>
