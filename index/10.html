@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+    <link rel='shortcut icon' href='favicon.png' type='image/x-icon' />
+    <meta charset="utf-8">
+    <title>Amicitia - Home</title>
+    <link href="../css/index.css" rel="stylesheet" type="text/css">
+    <link href="../css/waves.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/4c3075832a.js" crossorigin="anonymous"></script>
+    <script src="https://shrinefox.com/Scripts/Amicitia/jquery-3.3.1.min.js"></script>
+    <script src="../js/bubbles.js"></script>
+    <script src="../js/showhide.js"></script>
+    <script src="../js/navigation.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=News+Cycle|Open+Sans">
+</head>
+<body>
+    <span class="copied">Copied cheat to clipboard</span>
+    <canvas id='bgCanvas'></canvas>
+    <div class="ocean">
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    
+    <div class="navigation" style="text-align:center;">
+        <ul class="main-navigation" style="display:inline-table;">
+            <li style="display:inline;"><a href="#!"><img src="../images/amicitia.svg" width="20" height="20"> Mods</a> </li>
+            <li style="display:inline;"><a href="http://amicitia-team.tumblr.com"><i class="fas fa-newspaper"></i> News</a> </li>
+            <li style="display:inline;"><a href="https://shrinefox.com/guides/"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Guides</a> </li>
+            <li style="display:inline;"><a href="https://shrinefox.com/forum/"><i class="fa fa-comment" aria-hidden="true"></i> Forum</a> </li>
+            <li style="display:inline;"><a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-users" aria-hidden="true"></i> Wiki</a> </li>
+            <li style="display:inline;">
+                <a href="#"><i class="fa fa-toolbox"></i> Toolbox</a>
+                <ul>
+                    <li><a href="https://shrinefox.com/textsearch"><i class="fa fa-search"></i> Dialog Search</a></li>
+                    <li><a href="https://amicitia.github.io/docs/flowscript"><i class="fa fa-file-code"></i> Flowscript Docs</a></li>
+                    <li><a href="https://amicitia.github.io/files"><i class="fa fa-folder-open"></i> Files</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="logo">
+        <center>
+            <a href="https://amicitia.github.io/">
+                <img src="../images/logo.svg" width="179" height="179">
+            </a>
+        </center>
+    </div>
+    <div class="navbar2"><a href="https://shrinefox.com/"><i class="fa fa-home"></i> Home</a> ► <a href="https://amicitia.github.io/">Amicitia</a> ► 10</div>
+<div class="content">
+    <table id="wrap">
+        <tbody>
+            <tr>
+                <td width="25%" style="vertical-align:top">
+                    <div id="bloglinks">
+                        <div class"text">
+                            <h3><i class="fas fa-newspaper"></i> Latest News</h3>
+                            <script src="../js/blogposts.js"></script>
+                        </div>
+                    </div>
+                </td>
+                <td width="75%">
+                    <div class="text">
+                        <b>Type</b>:
+                        <select onchange="navigate()" id="type" name="type">
+                            <option value="All">All</option>
+                            <option value="Mod">Mods</option>
+                            <option value="Tool">Tools</option>
+                            <option value="Cheat">Cheats</option>
+                            <option value="Guide">Guides</option>
+                        </select>
+                        <b>Game</b>:
+                        <select onchange="navigate()" id="game" name="game">
+                            <option value="All">All</option>
+                            <option value="P5">Persona 5</option>
+                            <option value="P4">Persona 4</option>
+                            <option value="P3FES">Persona 3 FES</option>
+                            <option value="P3P">Persona 3 Portable</option>
+                            <option value="P4G">Persona 4 Golden</option>
+                            <option value="P3D">Persona 3 Dancing in Moonlight</option>
+                            <option value="P4D">Persona 4 Dancing All Night</option>
+                            <option value="P5D">Persona 5 Dancing in Starlight</option>
+                            <option value="PQ">Persona Q</option>
+                            <option value="PQ2">Persona Q2</option>
+                            <option value="CFB">Catherine Full Body</option>
+                            <option value="SMT3">Shin Megami Tensei Nocturne</option>
+                            <option value="P4AU">Persona 4 Arena Ultimax</option>
+                        </select>
+                        <br />
+                        <br /><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/makehistory"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><a href="https://www.youtube.com/watch?v=jqNGDkzK3cI"><img src="https://img.youtube.com/vi/jqNGDkzK3cI/default.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">P4 "Time to Make History" Mod</font></b><br>P4 Mod by <a href="https://amicitia.github.io/author/ShrineFox">ShrineFox</a></font></td><td width='25%'><center>7/18/2017</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>A mod that replaces the battle theme in P4 
+with "Time to Make History"</td><td><center><font size="4"><a href="https://drive.google.com/open?id=1i6V-Vauk3aLrCIMnATwrqzdUCeSa6-pA"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div></tr></tbody></table><a href="https://amicitia.github.io/tag/BGM"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">BGM</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/rmdmaxscript"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/4zqdXCI.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">RMD Maxscript</font></b><br>P4 Tool by <a href="https://amicitia.github.io/author/TGE">TGE</a></font></td><td width='25%'><center>7/9/2017</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>A tool for loading model and animation 
+data from RMDs in 3DSMax. 
+Extract the included scripts, EXE and folder to the same 
+directory together to extract textures when loading 
+the model. 
+Can be used with Amicitia for model hacking, but 
+make sure to export with the 
+axis set to Z-up instead of Y-up. </td><td><center><font size="4"><a href="https://cdn.discordapp.com/attachments/316238229948989450/398543176564211713/RMD_Maxscript_V4.7z"><i class="fas fa-file" aria-hidden="true"></i> Download Application</a><br></center></div></tr></tbody></table><a href="https://amicitia.github.io/tag/RMD"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">RMD</p></div></a><a href="https://amicitia.github.io/tag/PAC"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> PAC</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4gfreecam"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><a href="https://www.youtube.com/watch?v=rH9_0vCV2Ys"><img src="https://img.youtube.com/vi/rH9_0vCV2Ys/default.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">P4G Free Camera</font></b><br>P4G Mod by <a href="https://amicitia.github.io/author/Sierra">Sierra</a></font></td><td width='25%'><center>6/12/2017</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Unlimited camera control on every map.</td><td><center><font size="4"><a href="https://drive.google.com/file/u/0/d/1ICX-4OSBqduQWxwksMCpqJ3w-sVU3foN/view"><i class="fas fa-folder-open" aria-hidden="true"></i> Download (Vita)</a><br></center></div></tr></tbody></table><a href="https://amicitia.github.io/tag/Gameplay"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">Gameplay</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3pnarukami"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="http://i.imgur.com/XdO8OMG.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Narukami Mod</font></b><br>P3P Mod by <a href="https://amicitia.github.io/author/narcku">narcku</a></font></td><td width='25%'><center>6/12/2017</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>P3P Male MC into P4 MC, English Voice to Japanese Voice(Undub by Gracek-Xilo) 
+-Custom BGM tracks, New costumes, weapons, etc</td><td><center><font size="4"><a href="https://drive.google.com/open?id=1gUave6u3NZGByEaYNrfn6zCe4Kn7gtWe"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div></tr></tbody></table><a href="https://amicitia.github.io/tag/HUD"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">HUD</p></div></a><a href="https://amicitia.github.io/tag/UI"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> UI</p></div></a><a href="https://amicitia.github.io/tag/Player Model"><div class="tag" style="border-left: 4px solid #F3D979; "><p class="noselect"> Player Model</p></div></a><a href="https://amicitia.github.io/tag/Party Model"><div class="tag" style="border-left: 4px solid #7AF379; "><p class="noselect"> Party Model</p></div></a><a href="https://amicitia.github.io/tag/BGM"><div class="tag" style="border-left: 4px solid #7998F3; "><p class="noselect"> BGM</p></div></a><a href="https://amicitia.github.io/tag/Voice Clips"><div class="tag" style="border-left: 4px solid #DE79F3; "><p class="noselect"> Voice Clips</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5font"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">P5 Font for P4</font></b><br>P4 Mod by <a href="https://amicitia.github.io/author/narcku">narcku</a></font></td><td width='25%'><center>5/16/2017</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>A mod that replaces P4's font with 
+a custom one made from Persona 5's font.</td><td><center><font size="4"><a href="https://drive.google.com/open?id=1KbT09puwdQG4zfcbnvlP6TYZMPXDMo-A"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div></tr></tbody></table><a href="https://amicitia.github.io/tag/Font"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">Font</p></div></a><a href="https://amicitia.github.io/tag/HUD"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> HUD</p></div></a><a href="https://amicitia.github.io/tag/UI"><div class="tag" style="border-left: 4px solid #F3D979; "><p class="noselect"> UI</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/comicsans"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><a href="https://www.youtube.com/watch?v=SFEkR4eiL1c"><img src="https://img.youtube.com/vi/SFEkR4eiL1c/default.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Comic Sans Font</font></b><br>P5 Mod by <a href="https://amicitia.github.io/author/ShrineFox">ShrineFox</a></font></td><td width='25%'><center>5/15/2017</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Modifies the main font of the game to 
+use comic sans. Some might find this 
+option more legible, all jokes aside.</td><td><center><font size="4"><a href="https://drive.google.com/file/d/1ER0hO9NloxqGhDfByM7FT7ytNYAxYUEP/view?usp=sharing"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div></tr></tbody></table><a href="https://amicitia.github.io/tag/Font"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">Font</p></div></a><a href="https://amicitia.github.io/tag/HUD"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> HUD</p></div></a><a href="https://amicitia.github.io/tag/UI"><div class="tag" style="border-left: 4px solid #F3D979; "><p class="noselect"> UI</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/facilityvoices"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><a href="https://www.youtube.com/watch?v=roQsdmktYuw"><img src="https://img.youtube.com/vi/roQsdmktYuw/default.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Less Annoying Facility Voices</font></b><br>P5 Mod by <a href="https://amicitia.github.io/author/ShrineFox">ShrineFox</a></font></td><td width='25%'><center>5/4/2017</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Modified ACB/AWB files that mitigate 
+Iwai and the Velvet Room Warden's most 
+overused voice clips.</td><td><center><font size="4"><a href="https://drive.google.com/file/d/1Q4ePCdNucKHSfYR7HooYbWHGqryF9Mjq/view"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div></tr></tbody></table><a href="https://amicitia.github.io/tag/Voice Clips"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">Voice Clips</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3deinterlaced"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><a href="https://www.youtube.com/watch?v=U1k7jSAf5-A"><img src="https://img.youtube.com/vi/U1k7jSAf5-A/default.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Deinterlaced Video Mod</font></b><br>P3FES Mod by <a href="https://amicitia.github.io/author/ShrineFox">ShrineFox</a></font></td><td width='25%'><center>5/1/2017</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>A mod that replaces the original interlaced 
+animated cutscenes from Persona 3 with 
+new SFD files with interlacing edited out.</td><td><center><font size="4"><a href="https://drive.google.com/open?id=1LkkcuHv1k3w4Ij2vvVTUOChxQTnt_ZE6"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div></tr></tbody></table><a href="https://amicitia.github.io/tag/Cutscenes"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">Cutscenes</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3post"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">P3P Music in FES</font></b><br>P3FES Mod by <a href="https://amicitia.github.io/author/Evanjellydonut">Evanjellydonut</a></font></td><td width='25%'><center>5/1/2017</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>A mod that replaces some of the OST tracks 
+to match the female protagonist's BGM 
+from the PSP version of the game.
+</td><td><center><font size="4"><a href="https://drive.google.com/open?id=1NuA4TgvxHsUNd-ePC0nwvE4i6nF7_km8"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div></tr></tbody></table><a href="https://amicitia.github.io/tag/BGM"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">BGM</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/nonavi"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><a href="https://www.youtube.com/watch?v=TzrBuuXUBh4"><img src="https://img.youtube.com/vi/TzrBuuXUBh4/default.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">No Navigator Mod</font></b><br>P5 Mod by <a href="https://amicitia.github.io/author/ShrineFox">ShrineFox</a></font></td><td width='25%'><center>4/22/2017</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Modified ACB/AWB files that prevent Morgana, Futaba, and Makoto's navigator clips from playing in-battle.</td><td><center><font size="4"><a href="https://drive.google.com/open?id=0B3-7m2SbyW5QLUlpQzR0aEJRTzQ"><i class="fas fa-folder-open" aria-hidden="true"></i> Download mod.cpk</a><br></center></div></tr></tbody></table><a href="https://amicitia.github.io/tag/Voice Clips"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">Voice Clips</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4gsaveeditor"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="http://i.imgur.com/1Qe1hPK.gif" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">P4G Save Editor</font></b><br>P4G Tool by <a href="https://amicitia.github.io/author/Fendroidus">Fendroidus</a></font></td><td width='25%'><center>10/18/2016</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Edits decrypted savedata bin files dumped from P4G. </td><td><center><font size="4"><a href="http://www.mediafire.com/download/q3utqcbuqhbuaqi/P4G+Save+Tool.exe"><i class="fas fa-file" aria-hidden="true"></i> Download .exe</a><br><a href="https://github.com/Fendroidus/P4G-Save-Tool"><i class="fas fa-file-code" aria-hidden="true"></i> Source Code</a></center></div></tr></tbody></table><a href="https://amicitia.github.io/tag/Saves"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">Saves</p></div></a><a href="https://amicitia.github.io/tag/GUI"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> GUI</p></div></a></div></div></div><table><tr><td><a href="https:\\amicitia.github.io\index\9"><div class="unhide"><i class="fa fa-angle-double-left"></i> Previous Page</div></a></td><td></td></tr></table></div></div></div></td></tr></table></div>
+<br />
+<br />
+<p style="font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;">
+    We are not affiliated, associated, authorized, endorsed by, or in any way
+    <br>officially connected with ATLUS, SEGA, or any of its subsidiaries or its affiliates.
+    <br>The official ATLUS website can be found at <a href="https://atlus.com">https://atlus.com</a>. "Persona", as well
+    <br>as all characters referenced on this page are registered trademarks of ATLUS.
+</p>
+<br />
+<br />
+<div class="floatbottom">
+    <div class="ocean" style="bottom:180px">
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+</div>
+</body>
+<footer>
+    <div class="footer">&copy; ShrineFox
+2020. Last updated 8/18/2020. <a href="https://github.com/Amicitia/Amicitia.github.io"><i class="fa fa-github"></i> Source available on Github</a>.</div></footer></html>

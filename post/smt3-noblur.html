@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+    <link rel='shortcut icon' href='favicon.png' type='image/x-icon' />
+    <meta charset="utf-8">
+    <title>Amicitia - Home</title>
+    <link href="../css/index.css" rel="stylesheet" type="text/css">
+    <link href="../css/waves.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/4c3075832a.js" crossorigin="anonymous"></script>
+    <script src="https://shrinefox.com/Scripts/Amicitia/jquery-3.3.1.min.js"></script>
+    <script src="../js/bubbles.js"></script>
+    <script src="../js/showhide.js"></script>
+    <script src="../js/navigation.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=News+Cycle|Open+Sans">
+</head>
+<body>
+    <span class="copied">Copied cheat to clipboard</span>
+    <canvas id='bgCanvas'></canvas>
+    <div class="ocean">
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    
+    <div class="navigation" style="text-align:center;">
+        <ul class="main-navigation" style="display:inline-table;">
+            <li style="display:inline;"><a href="#!"><img src="../images/amicitia.svg" width="20" height="20"> Mods</a> </li>
+            <li style="display:inline;"><a href="http://amicitia-team.tumblr.com"><i class="fas fa-newspaper"></i> News</a> </li>
+            <li style="display:inline;"><a href="https://shrinefox.com/guides/"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Guides</a> </li>
+            <li style="display:inline;"><a href="https://shrinefox.com/forum/"><i class="fa fa-comment" aria-hidden="true"></i> Forum</a> </li>
+            <li style="display:inline;"><a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-users" aria-hidden="true"></i> Wiki</a> </li>
+            <li style="display:inline;">
+                <a href="#"><i class="fa fa-toolbox"></i> Toolbox</a>
+                <ul>
+                    <li><a href="https://shrinefox.com/textsearch"><i class="fa fa-search"></i> Dialog Search</a></li>
+                    <li><a href="https://amicitia.github.io/docs/flowscript"><i class="fa fa-file-code"></i> Flowscript Docs</a></li>
+                    <li><a href="https://amicitia.github.io/files"><i class="fa fa-folder-open"></i> Files</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="logo">
+        <center>
+            <a href="https://amicitia.github.io/">
+                <img src="../images/logo.svg" width="179" height="179">
+            </a>
+        </center>
+    </div>
+    <div class="navbar2"><a href="https://shrinefox.com/"><i class="fa fa-home"></i> Home</a> ► <a href="https://amicitia.github.io/">Amicitia</a> ► Post ► Smt3-noblur</div>
+<div class="content">
+    <table id="wrap">
+        <tbody>
+            <tr>
+                <td width="25%" style="vertical-align:top">
+                    <div id="bloglinks">
+                        <div class"text">
+                            <h3><i class="fas fa-newspaper"></i> Latest News</h3>
+                            <script src="../js/blogposts.js"></script>
+                        </div>
+                    </div>
+                </td>
+                <td width="75%">
+                    <div class="text">
+                        <b>Type</b>:
+                        <select onchange="navigate()" id="type" name="type">
+                            <option value="All">All</option>
+                            <option value="Mod">Mods</option>
+                            <option value="Tool">Tools</option>
+                            <option value="Cheat">Cheats</option>
+                            <option value="Guide">Guides</option>
+                        </select>
+                        <b>Game</b>:
+                        <select onchange="navigate()" id="game" name="game">
+                            <option value="All">All</option>
+                            <option value="P5">Persona 5</option>
+                            <option value="P4">Persona 4</option>
+                            <option value="P3FES">Persona 3 FES</option>
+                            <option value="P3P">Persona 3 Portable</option>
+                            <option value="P4G">Persona 4 Golden</option>
+                            <option value="P3D">Persona 3 Dancing in Moonlight</option>
+                            <option value="P4D">Persona 4 Dancing All Night</option>
+                            <option value="P5D">Persona 5 Dancing in Starlight</option>
+                            <option value="PQ">Persona Q</option>
+                            <option value="PQ2">Persona Q2</option>
+                            <option value="CFB">Catherine Full Body</option>
+                            <option value="SMT3" selected>Shin Megami Tensei Nocturne</option>
+                            <option value="P4AU">Persona 4 Arena Ultimax</option>
+                        </select>
+                        <br />
+                        <br /> (1 results)<br><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/smt3-noblur"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><div class="ribbon"><div class="new">NEW</div></div><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Remove Motion Blur</font></b><br>SMT3 Cheat by <a href="https://amicitia.github.io/author/Sergx12">Sergx12</a></font></td><td width='25%'><center>8/05/2020</center></td></tr></tbody></table></div><div class="cheat"><table><tbody><tr><td>Note: The Radial Blur can remove colors from some objects</td><td><div id="cheat238" onclick="copyDivToClipboard('cheat238')"><div class="cheatcode">// No Motion Blur (credit to Sergx12)
+<br>patch=1,EE,202FC0E4,word,00000000
+<br>
+<br>// No Radial Blur (credit to Sergx12)
+<br>patch=1,EE,202FC0E8,word,00000000</div></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=13&t=533"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/UI"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">UI</p></div></a></div></div></div><table><tr><td></td><td></td></tr></table></div></div></div></td></tr></table></div>
+<br />
+<br />
+<p style="font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;">
+    We are not affiliated, associated, authorized, endorsed by, or in any way
+    <br>officially connected with ATLUS, SEGA, or any of its subsidiaries or its affiliates.
+    <br>The official ATLUS website can be found at <a href="https://atlus.com">https://atlus.com</a>. "Persona", as well
+    <br>as all characters referenced on this page are registered trademarks of ATLUS.
+</p>
+<br />
+<br />
+<div class="floatbottom">
+    <div class="ocean" style="bottom:180px">
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+</div>
+</body>
+<footer>
+    <div class="footer">&copy; ShrineFox
+2020. Last updated 8/18/2020. <a href="https://github.com/Amicitia/Amicitia.github.io"><i class="fa fa-github"></i> Source available on Github</a>.</div></footer></html>
