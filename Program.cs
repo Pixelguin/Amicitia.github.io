@@ -247,7 +247,8 @@ namespace Amicitia.github.io
                     html += $" ► <a href=\"https://amicitia.github.io/{split}\">{FirstLetterToUpperCase(split)}</a>";
                 else if (gameList.Any(g => g.Equals(split)))
                     html += $" ► <a href=\"https://amicitia.github.io/game/{split}\">{FirstLetterToUpperCase(split)}</a>";
-                else if (split != "index") { }
+                else if (split != "index") 
+                    html += $" ► {FirstLetterToUpperCase(split.Replace(".html", ""))}";
             }
 
             //Blog posts, closing header div before content
