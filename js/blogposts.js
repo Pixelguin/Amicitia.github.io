@@ -15,4 +15,4 @@
     document.body.appendChild(a)
     }
 })
-    ("amicitia-team.tumblr.com", 12); //enter your settings here
+    ("amicitia-team.tumblr.com", 16); //enter your settings here

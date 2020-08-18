@@ -241,16 +241,17 @@ namespace Amicitia.github.io
         {
             //Header
             string html = Properties.Resources.IndexHeader;
-            html += "<br><a href=\"https://amicitia.github.io/\">index</a>";
             foreach (var split in url.Split('\\'))
             {
                 if (split == "mods" || split == "tools" || split == "guides" || split == "cheats")
-                    html += $" > <a href=\"https://amicitia.github.io/{split}\">{split}</a>";
+                    html += $" ► <a href=\"https://amicitia.github.io/{split}\">{FirstLetterToUpperCase(split)}</a>";
                 else if (gameList.Any(g => g.Equals(split)))
-                    html += $" > <a href=\"https://amicitia.github.io/game/{split}\">{split}</a>";
-                else if (split != "index")
-                    html += $" > {split.Replace(".html", "")}";
+                    html += $" ► <a href=\"https://amicitia.github.io/game/{split}\">{FirstLetterToUpperCase(split)}</a>";
+                else if (split != "index") { }
             }
+
+            //Blog posts, closing header div before content
+            html += Properties.Resources.IndexContent;
 
             //Auto-select game or type
             foreach (var game in gameList)
@@ -280,9 +281,9 @@ namespace Amicitia.github.io
             if (pageNumber > 1)
             {
                 if (pageNumber == 2)
-                    html += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", "")}\"><div class=\"unhide\">Previous</div></a></td>";
+                    html += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", "")}\"><div class=\"unhide\"><i class=\"fa fa-angle-double-left\"></i> Previous Page</div></a></td>";
                 else
-                    html += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", $"\\{pageNumber - 1}")}\"><div class=\"unhide\">Previous</div></a></td>";
+                    html += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", $"\\{pageNumber - 1}")}\"><div class=\"unhide\"><i class=\"fa fa-angle-double-left\"></i> Previous Page</div></a></td>";
             }
             else
                 html += "<td></td>";
@@ -290,12 +291,12 @@ namespace Amicitia.github.io
             if (morePages)
             {
                 if (pageNumber == 1)
-                    html += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2 + $"\\{pageNumber + 1}"}\"><div class=\"unhide\">Next</div></a></td>";
+                    html += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2 + $"\\{pageNumber + 1}"}\"><div class=\"unhide\">Next Page <i class=\"fa fa-angle-double-right\"></i></div></a></td>";
                 else
-                    html += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", $"\\{pageNumber + 1}")}\"><div class=\"unhide\">Next</div></a></td>";
+                    html += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", $"\\{pageNumber + 1}")}\"><div class=\"unhide\">Next Page <i class=\"fa fa-angle-double-right\"></i></div></a></td>";
             }
             else if (File.Exists(url2.Replace($"\\{pageNumber}", $"\\{pageNumber + 1}")))
-                html += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", $"\\{pageNumber + 1}")}\"><div class=\"unhide\">Next</div></a></td>";
+                html += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", $"\\{pageNumber + 1}")}\"><div class=\"unhide\">Next Page <i class=\"fa fa-angle-double-right\"></i></div></a></td>";
             else
                 html += "<td></td>";
 
@@ -304,8 +305,8 @@ namespace Amicitia.github.io
 
             //Footer
             html += Properties.Resources.IndexFooter;
-            html += $"{DateTime.Now.Year}. Last updated {DateTime.Now.Month}/{DateTime.Now.Day}/{DateTime.Now.Year}.</div></footer></html>";
-            
+            html += $"{DateTime.Now.Year}. Last updated {DateTime.Now.Month}/{DateTime.Now.Day}/{DateTime.Now.Year}. <a href=\"https://github.com/Amicitia/Amicitia.github.io\"><i class=\"fa fa-github\"></i> Source available on Github</a>.</div></footer></html>";
+
             //Replace relative links based on depth
             if (depth == 1)
             {
@@ -497,5 +498,15 @@ namespace Amicitia.github.io
         }
 
         public static string[] colors = { "F37E79", "F3BF79", "F3D979", "7AF379", "7998F3", "DE79F3" };
+
+        public static string FirstLetterToUpperCase(string s)
+        {
+            if (string.IsNullOrEmpty(s))
+                return string.Empty;
+
+            char[] a = s.ToCharArray();
+            a[0] = char.ToUpper(a[0]);
+            return new string(a);
+        }
     }
 }

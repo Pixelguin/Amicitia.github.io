@@ -84,6 +84,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ShrineFox.mdf</DependentUpon>
     </Content>
+    <Content Include="Templates\IndexContent.html" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

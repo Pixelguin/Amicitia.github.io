@@ -1,5 +1,6 @@
 html, body {
     height: 100%;
+	overflow-anchor: none;
 }
 
 #bgCanvas {
@@ -9,35 +10,31 @@ html, body {
     top: 0;
     left: 0;
     position: fixed;
-    float: top;
 }
 
 .ocean {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background: #015871;
-    z-index: -1;
-    float: bottom;
+	height: 0;
+	position: relative;
+	bottom: -20px;
+	z-index: -2;
 }
 
 .wave {
     background: url(../images/wave.svg) repeat-x;
-    position: absolute;
-    top: -198px;
+    position: relative;
     width: 6400px;
     height: 198px;
     animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
     transform: translate3d(0, 0, 0);
-    z-index: 2;
+    z-index: -2;
 }
 
 .wave:nth-of-type(2) {
-    top: -175px;
     animation: wave 4s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
     opacity: 1;
-    z-index: 1;
+    z-index: -1;
+	position: relative;
+	bottom: 198px;
 }
 
 @keyframes wave {
