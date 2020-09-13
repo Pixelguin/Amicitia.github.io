@@ -308,21 +308,24 @@ namespace Amicitia.github.io
                     html += $" ► {FirstLetterToUpperCase(split.Replace(".html", ""))}";
             }
 
-            //Blog posts, closing header div before content
+            //Blog posts, top contributors, closing header div before content
             html += Properties.Resources.IndexSidebar;
-            html += "<h3><i class=\"fas fa-users\"></i> Top Contributors</h3><table><tr><td style=\"padding: 0px;\">All Time</td><td style=\"padding: 0px;\">Past 2 Months</td></tr>";
-            for (int i = 0; i < 10; i++) {
-                if (sortedAuthors.Count >= i && sortedAuthors[i].Item2 >= 2)
-                    html += $"<tr><td style=\"padding: 0px;\">{i + 1}. <a href=\"https://amicitia.github.io/author/{sortedAuthors[i].Item1}\">{sortedAuthors[i].Item1}</a> ({sortedAuthors[i].Item2})</td>";
-                else
-                    html += "<tr><td style=\"padding: 0px;\"></td>";
-                if (sortedAuthorsMonthly.Count >= i && sortedAuthorsMonthly[i].Item2 >= 2)
-                    html += $"<td style=\"padding: 0px;\"><a href=\"https://amicitia.github.io/author/{sortedAuthorsMonthly[i].Item1}\">{sortedAuthorsMonthly[i].Item1}</a> ({sortedAuthorsMonthly[i].Item2})</td></tr>";
-                else
-                    html += "<td style=\"padding: 0px;\"></td></tr>";
+            if (!url.Contains("post"))
+            {
+                html += "<h3><i class=\"fas fa-users\"></i> Top Contributors</h3><table><tr><td style=\"padding: 0px;\">All Time</td><td style=\"padding: 0px;\">Past 2 Months</td></tr>";
+                for (int i = 0; i < 10; i++)
+                {
+                    if (sortedAuthors.Count >= i && sortedAuthors[i].Item2 >= 2)
+                        html += $"<tr><td style=\"padding: 0px;\">{i + 1}. <a href=\"https://amicitia.github.io/author/{sortedAuthors[i].Item1}\">{sortedAuthors[i].Item1}</a> ({sortedAuthors[i].Item2})</td>";
+                    else
+                        html += "<tr><td style=\"padding: 0px;\"></td>";
+                    if (sortedAuthorsMonthly.Count >= i && sortedAuthorsMonthly[i].Item2 >= 2)
+                        html += $"<td style=\"padding: 0px;\"><a href=\"https://amicitia.github.io/author/{sortedAuthorsMonthly[i].Item1}\">{sortedAuthorsMonthly[i].Item1}</a> ({sortedAuthorsMonthly[i].Item2})</td></tr>";
+                    else
+                        html += "<td style=\"padding: 0px;\"></td></tr>";
+                }
+                html += "</table>";
             }
-            html += "</table>";
-            
             html += Properties.Resources.IndexContent;
 
 
