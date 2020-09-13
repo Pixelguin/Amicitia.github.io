@@ -436,6 +436,10 @@ select {
     .widget {
         font-size: 50%;
     }
+	
+	.widget {
+        font-size: 50%;
+    }
 
     .sidenav {
         font-size: 50%;

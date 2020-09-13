@@ -16,13 +16,17 @@ namespace Amicitia.github.io
     class Program
     {
         public static string indexPath;
-        public static List<string> gameList = new List<string>() { "p3fes", "p4", "p5", "p4g", "p3p", "p3d", "p4d", "p5d", "pq", "pq2", "p4au", "smt3", "cfb"};
+        public static List<string> gameList = new List<string>() { "p3fes", "p4", "p5", "p4g", "p3p", "p3d", "p4d", "p5d", "pq", "pq2", "p4au", "smt3", "cfb" };
+        public static List<Tuple<string, int>> sortedAuthors = new List<Tuple<string, int>>();
+        public static List<Tuple<string, int>> sortedAuthorsMonthly = new List<Tuple<string, int>>();
 
         static void Main(string[] args)
         {
             indexPath = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()));
             List<PostInfo> data = GetData(indexPath).OrderBy(d => DateTime.Parse(d.Date, CultureInfo.CreateSpecificCulture("en-US"))).ToArray().Reverse().ToList();
-
+            //Sort Top Contributors
+            SortAuthors(data);
+            SortAuthorsMonthly(data);
             //List all mods, tools, cheats and guides
             Console.WriteLine("Creating index...");
             CreateIndex(data);
@@ -47,6 +51,58 @@ namespace Amicitia.github.io
 
             Console.WriteLine("Done!");
             Console.ReadKey();
+        }
+
+        private static void SortAuthors(List<PostInfo> data)
+        {
+            List<Tuple<string, int>> authors = new List<Tuple<string, int>>();
+            foreach (PostInfo post in data)
+            {
+                string[] splitAuthors = post.Author.Split(',');
+                //Add to authors list or increase count
+                foreach (var author in splitAuthors)
+                {
+                    if (author != "Unknown Author")
+                    {
+                        if (!authors.Any(x => x.Item1.Equals(author.Trim())))
+                            authors.Add(new Tuple<string, int>(author.Trim(), 1));
+                        else
+                        {
+                            int index = authors.IndexOf(authors.First(x => x.Item1.Equals(author.Trim())));
+                            authors[index] = new Tuple<string, int>(author.Trim(), authors[index].Item2 + 1);
+                        }
+                    }
+                }
+            }
+            sortedAuthors = authors.OrderBy(x => x.Item2).Reverse().ToList();
+        }
+
+        private static void SortAuthorsMonthly(List<PostInfo> data)
+        {
+            List<Tuple<string, int>> authors = new List<Tuple<string, int>>();
+            foreach (PostInfo post in data)
+            {
+                string[] splitAuthors = post.Author.Split(',');
+                //If post is within the past 30 days...
+                if (DateTime.Compare(DateTime.Now.AddDays(-60), DateTime.Parse(post.Date, CultureInfo.CreateSpecificCulture("en-US"))) <= 0)
+                {
+                    //Add to authors list or increase count
+                    foreach (var author in splitAuthors)
+                    {
+                        if (author != "Unknown Author")
+                        {
+                            if (!authors.Any(x => x.Item1.Equals(author.Trim())))
+                                authors.Add(new Tuple<string, int>(author.Trim(), 1));
+                            else
+                            {
+                                int index = authors.IndexOf(authors.First(x => x.Item1.Equals(author.Trim())));
+                                authors[index] = new Tuple<string, int>(author.Trim(), authors[index].Item2 + 1);
+                            }
+                        }
+                    }
+                }
+            }
+            sortedAuthorsMonthly = authors.OrderBy(x => x.Item2).Reverse().ToList();
         }
 
         private static void CreateGamePages(List<PostInfo> data)
@@ -99,8 +155,8 @@ namespace Amicitia.github.io
 
                 //Add to list of unique authors
                 foreach (var author in splitAuthors)
-                if (!uniqueAuthors.Contains(author))
-                    uniqueAuthors.Add(author);
+                    if (!uniqueAuthors.Contains(author))
+                        uniqueAuthors.Add(author);
             }
 
             //Create individual pages for each unique creator
@@ -109,7 +165,7 @@ namespace Amicitia.github.io
                 var newData = data.Where(p => p.Author.Contains(author)).ToList();
                 CreateHtml(newData, $"author\\{author}");
             }
-                
+
         }
 
         private static void CreateGuidePages(List<PostInfo> data)
@@ -184,11 +240,11 @@ namespace Amicitia.github.io
             }
             else if (url.Contains("post"))
             {
-                for(int i = 0; i < data.Count; i++)
+                for (int i = 0; i < data.Count; i++)
                 {
-                    if(data[i].Hyperlink == url.Split('\\').Last().Replace(".html","") && data[i].Type == "Mod")
+                    if (data[i].Hyperlink == url.Split('\\').Last().Replace(".html", "") && data[i].Type == "Mod")
                     {
-                        if(data[i].Game == "P5")
+                        if (data[i].Game == "P5")
                             content += "<br><center>To learn how to run P5 mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-setupguide\">this guide.</a></center>";
                         else if (data[i].Game == "P3FES" || data[i].Game == "P4" || data[i].Game == "SMT3")
                             content += "<br><center>To learn how to run these mods, see <a href=\"https://amicitia.github.io/post/hostfs-guide\">this guide.</a></center>";
@@ -200,6 +256,7 @@ namespace Amicitia.github.io
                 }
             }
 
+            List<Tuple<string, int>> authors = new List<Tuple<string, int>>();
             foreach (PostInfo post in data)
             {
                 postNumber++;
@@ -217,7 +274,7 @@ namespace Amicitia.github.io
                         CreatePage(content, $"{url}.html", pageNumber, (data.Count - postNumber >= 30));
                     else
                         CreatePage(content, $"{url}\\{pageNumber}.html", pageNumber, (data.Count - postNumber >= 30));
-                        
+
                     content = "";
 
                     if (data.Count - postNumber >= 30)
@@ -247,12 +304,27 @@ namespace Amicitia.github.io
                     html += $" ► <a href=\"https://amicitia.github.io/{split}\">{FirstLetterToUpperCase(split)}</a>";
                 else if (gameList.Any(g => g.Equals(split)))
                     html += $" ► <a href=\"https://amicitia.github.io/game/{split}\">{FirstLetterToUpperCase(split)}</a>";
-                else if (split != "index") 
+                else if (split != "index")
                     html += $" ► {FirstLetterToUpperCase(split.Replace(".html", ""))}";
             }
 
             //Blog posts, closing header div before content
+            html += Properties.Resources.IndexSidebar;
+            html += "<h3><i class=\"fas fa-users\"></i> Top Contributors</h3><table><tr><td style=\"padding: 0px;\">All Time</td><td style=\"padding: 0px;\">Past 2 Months</td></tr>";
+            for (int i = 0; i < 10; i++) {
+                if (sortedAuthors.Count >= i && sortedAuthors[i].Item2 >= 2)
+                    html += $"<tr><td style=\"padding: 0px;\">{i + 1}. <a href=\"https://amicitia.github.io/author/{sortedAuthors[i].Item1}\">{sortedAuthors[i].Item1}</a> ({sortedAuthors[i].Item2})</td>";
+                else
+                    html += "<tr><td style=\"padding: 0px;\"></td>";
+                if (sortedAuthorsMonthly.Count >= i && sortedAuthorsMonthly[i].Item2 >= 2)
+                    html += $"<td style=\"padding: 0px;\"><a href=\"https://amicitia.github.io/author/{sortedAuthorsMonthly[i].Item1}\">{sortedAuthorsMonthly[i].Item1}</a> ({sortedAuthorsMonthly[i].Item2})</td></tr>";
+                else
+                    html += "<td style=\"padding: 0px;\"></td></tr>";
+            }
+            html += "</table>";
+            
             html += Properties.Resources.IndexContent;
+
 
             //Auto-select game or type
             foreach (var game in gameList)

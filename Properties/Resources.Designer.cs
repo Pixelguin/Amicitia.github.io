@@ -62,20 +62,20 @@ namespace Amicitia.github.io.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;/div&gt;
-        ///&lt;br /&gt;
-        ///&lt;table&gt;
-        ///    &lt;tr&gt;
-        ///        &lt;td width=&quot;25%&quot; style=&quot;vertical-align:top&quot;&gt;
-        ///            &lt;div class=&quot;content-outer&quot;&gt;
-        ///                &lt;div class=&quot;content&quot; id=&quot;bloglinks&quot; runat=&quot;server&quot;&gt;
-        ///                    &lt;h3&gt;Latest News&lt;/h3&gt;
-        ///                    &lt;script src=&quot;js/blogposts.js&quot;&gt;&lt;/script&gt;
-        ///                    &lt;asp:ContentPlaceHolder ID=&quot;SideBarContent&quot; runat=&quot;server&quot;&gt;&lt;/asp:ContentPlaceHolder&gt;
-        ///                &lt;/div&gt;
-        ///            &lt;/div&gt;
-        ///        &lt;/td&gt;
-        ///        &lt;td width=&quot;75%&quot;&gt;
-        ///            &lt;div cla [rest of string was truncated]&quot;;.
+        ///&lt;div class=&quot;content&quot;&gt;
+        ///    &lt;table id=&quot;wrap&quot;&gt;
+        ///        &lt;tbody&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td width=&quot;25%&quot; style=&quot;vertical-align:top&quot;&gt;
+        ///                    &lt;div id=&quot;bloglinks&quot;&gt;
+        ///                        &lt;div class&quot;text&quot;&gt;
+        ///                            &lt;h3&gt;&lt;i class=&quot;fas fa-newspaper&quot;&gt;&lt;/i&gt; Latest News&lt;/h3&gt;
+        ///                            &lt;script src=&quot;js/blogposts.js&quot;&gt;&lt;/script&gt;
+        ///                        &lt;/div&gt;
+        ///                    &lt;/div&gt;
+        ///                &lt;/td&gt;
+        ///                &lt;td width=&quot;75%&quot;&gt;
+        ///         [rest of string was truncated]&quot;;.
         /// </summary>
         public static string IndexContent {
             get {
@@ -108,13 +108,36 @@ namespace Amicitia.github.io.Properties {
         ///    &lt;title&gt;Amicitia - Home&lt;/title&gt;
         ///    &lt;link href=&quot;css/index.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
         ///    &lt;link href=&quot;css/waves.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
-        ///    &lt;script defer src=&quot;https://use.fontawesome.com/releases/v5.9.0/js/all.js&quot;&gt;&lt;/script&gt;
-        ///    &lt;script src=&quot;https://shrinefox.com/Scripts/Amicitia/jquery-3.3.1.min.js&quot;&gt;&lt;/script&gt;
-        ///    &lt;script src=&quot;js/bubbles.js&quot;&gt;&lt; [rest of string was truncated]&quot;;.
+        ///    &lt;script src=&quot;https://kit.fontawesome.com/4c3075832a.js&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+        ///    &lt;script src=&quot;https://amicitia.github.io/js/jquery-3.3.1.min.js&quot;&gt;&lt;/script&gt;
+        ///    &lt;script src=&quot;js/bubbles.js&quot;&gt;&lt;/sc [rest of string was truncated]&quot;;.
         /// </summary>
         public static string IndexHeader {
             get {
                 return ResourceManager.GetString("IndexHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/div&gt;
+        ///&lt;div class=&quot;content&quot;&gt;
+        ///    &lt;table id=&quot;wrap&quot;&gt;
+        ///        &lt;tbody&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td width=&quot;25%&quot; style=&quot;vertical-align:top&quot;&gt;
+        ///                    &lt;div id=&quot;bloglinks&quot;&gt;
+        ///                        &lt;div class&quot;text&quot;&gt;
+        ///                            &lt;h3&gt;&lt;i class=&quot;fas fa-newspaper&quot;&gt;&lt;/i&gt; Latest News&lt;/h3&gt;
+        ///                            &lt;script src=&quot;js/blogposts.js&quot;&gt;&lt;/script&gt;
+        ///                        &lt;/div&gt;
+        ///                    &lt;/div&gt;
+        ///                &lt;/td&gt;
+        ///                &lt;td width=&quot;75%&quot;&gt;
+        ///         [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string IndexSidebar {
+            get {
+                return ResourceManager.GetString("IndexSidebar", resourceCulture);
             }
         }
     }

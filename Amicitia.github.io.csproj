@@ -84,6 +84,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ShrineFox.mdf</DependentUpon>
     </Content>
+    <Content Include="Templates\IndexSidebar.html" />
     <Content Include="Templates\IndexContent.html" />
   </ItemGroup>
   <ItemGroup>
