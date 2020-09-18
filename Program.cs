@@ -224,37 +224,38 @@ namespace Amicitia.github.io
             if (data.Count == 0)
                 content += $"<br><center>Sorry! No posts matching your query were found. Please check again later.</center>";
             else
+            {
                 content += $" ({data.Count} results)<br>";
+                if (url.Contains("p5r"))
+                    content += "<center>Special thanks to <a href=\"https://twitter.com/regularpanties\">@regularpanties</a> for the generous donation of a 6.72 PS4<br>and a plethora of documentation that made this section possible.<br><br>All P5R mods are for the JP version only due to firmware restraints.</center><br>";
 
-            if (url.Contains("p5r"))
-                content += "<center>Special thanks to <a href=\"https://twitter.com/regularpanties\">@regularpanties</a> for the generous donation of a 6.72 PS4<br>and a plethora of documentation that made this section possible.<br><br>All P5R mods are for the JP version only due to firmware restraints.</center><br>";
-
-            //Extra info on using mods
-            if (url.Contains("mods") || url.Contains("game"))
-            {
-                if (url.Contains("\\p5") && !url.Contains("\\p5r"))
-                    content += "<br><center>To learn how to run P5 mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-setupguide\">this guide.</a></center>";
-                else if (url.Contains("\\p3fes") || url.Contains("\\p4.html") || url.Contains("\\smt3.html"))
-                    content += "<br><center>To learn how to run these mods, see <a href=\"https://amicitia.github.io/post/hostfs-guide\">this guide.</a></center>";
-                else if (url.Contains("\\p4g"))
-                    content += "<br><center>To learn how to mod the PC version of P4G, see <a href=\"https://gamebanana.com/tuts/13379\">this guide.</a><br>More P4G PC mods available at <a href=\"https://gamebanana.com/games/8263\">gamebanana.com</a>.</center>";
-                else
-                    content += "<br><center>To learn how to use these mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-modcreationguide\">this guide.</a></center>";
-            }
-            else if (url.Contains("post"))
-            {
-                for (int i = 0; i < data.Count; i++)
+                //Extra info on using mods
+                if (url.Contains("mods") || url.Contains("game"))
                 {
-                    if (data[i].Hyperlink == url.Split('\\').Last().Replace(".html", "") && data[i].Type == "Mod")
+                    if (url.Contains("\\p5") && !url.Contains("\\p5r"))
+                        content += "<br><center>To learn how to run P5 mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-setupguide\">this guide.</a></center>";
+                    else if (url.Contains("\\p3fes") || url.Contains("\\p4.html") || url.Contains("\\smt3.html"))
+                        content += "<br><center>To learn how to run these mods, see <a href=\"https://amicitia.github.io/post/hostfs-guide\">this guide.</a></center>";
+                    else if (url.Contains("\\p4g"))
+                        content += "<br><center>To learn how to mod the PC version of P4G, see <a href=\"https://gamebanana.com/tuts/13379\">this guide.</a><br>More P4G PC mods available at <a href=\"https://gamebanana.com/games/8263\">gamebanana.com</a>.</center>";
+                    else
+                        content += "<br><center>To learn how to use these mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-modcreationguide\">this guide.</a></center>";
+                }
+                else if (url.Contains("post"))
+                {
+                    for (int i = 0; i < data.Count; i++)
                     {
-                        if (data[i].Game == "P5")
-                            content += "<br><center>To learn how to run P5 mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-setupguide\">this guide.</a></center>";
-                        else if (data[i].Game == "P3FES" || data[i].Game == "P4" || data[i].Game == "SMT3")
-                            content += "<br><center>To learn how to run these mods, see <a href=\"https://amicitia.github.io/post/hostfs-guide\">this guide.</a></center>";
-                        else if (data[i].Game == "P4G")
-                            content += "<br><center>To learn how to mod the PC version of P4G, see <a href=\"https://gamebanana.com/tuts/13379\">this guide.</a><br>More P4G PC mods available at <a href=\"https://gamebanana.com/games/8263\">gamebanana.com</a>.</center>";
-                        else
-                            content += "<br><center>To learn how to use these mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-modcreationguide\">this guide.</a></center>";
+                        if (data[i].Hyperlink == url.Split('\\').Last().Replace(".html", "") && data[i].Type == "Mod")
+                        {
+                            if (data[i].Game == "P5")
+                                content += "<br><center>To learn how to run P5 mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-setupguide\">this guide.</a></center>";
+                            else if (data[i].Game == "P3FES" || data[i].Game == "P4" || data[i].Game == "SMT3")
+                                content += "<br><center>To learn how to run these mods, see <a href=\"https://amicitia.github.io/post/hostfs-guide\">this guide.</a></center>";
+                            else if (data[i].Game == "P4G")
+                                content += "<br><center>To learn how to mod the PC version of P4G, see <a href=\"https://gamebanana.com/tuts/13379\">this guide.</a><br>More P4G PC mods available at <a href=\"https://gamebanana.com/games/8263\">gamebanana.com</a>.</center>";
+                            else
+                                content += "<br><center>To learn how to use these mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-modcreationguide\">this guide.</a></center>";
+                        }
                     }
                 }
             }
