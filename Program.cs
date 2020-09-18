@@ -16,7 +16,7 @@ namespace Amicitia.github.io
     class Program
     {
         public static string indexPath;
-        public static List<string> gameList = new List<string>() { "p3fes", "p4", "p5", "p4g", "p3p", "p3d", "p4d", "p5d", "pq", "pq2", "p4au", "smt3", "cfb" };
+        public static List<string> gameList = new List<string>() { "p3fes", "p4", "p5", "p5r", "p4g", "p3p", "p3d", "p4d", "p5d", "pq", "pq2", "p4au", "smt3", "cfb" };
         public static List<Tuple<string, int>> sortedAuthors = new List<Tuple<string, int>>();
         public static List<Tuple<string, int>> sortedAuthorsMonthly = new List<Tuple<string, int>>();
 
@@ -226,10 +226,13 @@ namespace Amicitia.github.io
             else
                 content += $" ({data.Count} results)<br>";
 
+            if (url.Contains("p5r"))
+                content += "<center>Special thanks to <a href=\"https://twitter.com/regularpanties\">@regularpanties</a> for the generous donation of a 6.72 PS4<br>and a plethora of documentation that made this section possible.<br><br>All P5R mods are for the JP version only due to firmware restraints.</center><br>";
+
             //Extra info on using mods
             if (url.Contains("mods") || url.Contains("game"))
             {
-                if (url.Contains("\\p5"))
+                if (url.Contains("\\p5") && !url.Contains("\\p5r"))
                     content += "<br><center>To learn how to run P5 mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-setupguide\">this guide.</a></center>";
                 else if (url.Contains("\\p3fes") || url.Contains("\\p4.html") || url.Contains("\\smt3.html"))
                     content += "<br><center>To learn how to run these mods, see <a href=\"https://amicitia.github.io/post/hostfs-guide\">this guide.</a></center>";
