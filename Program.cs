@@ -249,6 +249,8 @@ namespace Amicitia.github.io
                         {
                             if (data[i].Game == "P5")
                                 content += "<br><center>To learn how to run P5 mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-setupguide\">this guide.</a></center>";
+                            else if (data[i].Game == "P5R")
+                                content += "<br><center>To learn how to install and run P5R mods, see <a href=\"https://cdn.discordapp.com/attachments/473138169592938526/757957969823400029/CriPakGUI-P5R.7z\">this guide</a>.";
                             else if (data[i].Game == "P3FES" || data[i].Game == "P4" || data[i].Game == "SMT3")
                                 content += "<br><center>To learn how to run these mods, see <a href=\"https://amicitia.github.io/post/hostfs-guide\">this guide.</a></center>";
                             else if (data[i].Game == "P4G")
