@@ -301,9 +301,9 @@ namespace Amicitia.github.io
                 else
                 {
                     if (pageNumber == 1)
-                        CreatePage(content, $"{url}.html", pageNumber, (data.Count - postNumber >= maxPosts));
+                        CreatePage(content, $"{url}.html", pageNumber, (data.Count > maxPosts));
                     else
-                        CreatePage(content, $"{url}\\{pageNumber}.html", pageNumber, (data.Count >= maxPosts * (pageNumber + 1)));
+                        CreatePage(content, $"{url}\\{pageNumber}.html", pageNumber, (data.Count > (maxPosts * pageNumber)));
 
                     content = "";
 
@@ -316,7 +316,7 @@ namespace Amicitia.github.io
             }
 
             if (pageNumber == 1)
-                CreatePage(content, $"{url}.html", pageNumber, false);
+                CreatePage(content, $"{url}.html", pageNumber, (data.Count > maxPosts));
         }
 
         private static void CreateIndex(List<PostInfo> data)
@@ -423,8 +423,6 @@ namespace Amicitia.github.io
                 else
                     html += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", $"\\{pageNumber + 1}")}\"><div class=\"unhide\">Next Page <i class=\"fa fa-angle-double-right\"></i></div></a></td>";
             }
-            else if (File.Exists(url2.Replace($"\\{pageNumber}", $"\\{pageNumber + 1}")))
-                html += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", $"\\{pageNumber + 1}")}\"><div class=\"unhide\">Next Page <i class=\"fa fa-angle-double-right\"></i></div></a></td>";
             else
                 html += "<td></td>";
 
