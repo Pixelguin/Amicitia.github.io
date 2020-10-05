@@ -18,15 +18,18 @@ namespace Amicitia.github.io
         public static string indexPath;
         public static List<string> gameList = new List<string>() { "p3fes", "p4", "p5", "p5r", "p4g", "p3p", "p3d", "p4d", "p5d", "pq", "pq2", "p4au", "smt3", "cfb" };
         public static List<Tuple<string, int>> sortedAuthors = new List<Tuple<string, int>>();
+        public static List<Tuple<string, int>> sortedTags = new List<Tuple<string, int>>();
         public static List<Tuple<string, int>> sortedAuthorsMonthly = new List<Tuple<string, int>>();
+        public static int maxPosts = 15;
 
         static void Main(string[] args)
         {
             indexPath = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()));
             List<PostInfo> data = GetData(indexPath).OrderBy(d => DateTime.Parse(d.Date, CultureInfo.CreateSpecificCulture("en-US"))).ToArray().Reverse().ToList();
-            //Sort Top Contributors
+            //Sort Top Contributors and Tags
             SortAuthors(data);
             SortAuthorsMonthly(data);
+            SortTags(data);
             //List all mods, tools, cheats and guides
             Console.WriteLine("Creating index...");
             CreateIndex(data);
@@ -103,6 +106,27 @@ namespace Amicitia.github.io
                 }
             }
             sortedAuthorsMonthly = authors.OrderBy(x => x.Item2).Reverse().ToList();
+        }
+
+        private static void SortTags(List<PostInfo> data)
+        {
+            List<Tuple<string, int>> tags = new List<Tuple<string, int>>();
+            foreach (PostInfo post in data)
+            {
+                string[] splitTags = post.Tags.Split(',');
+                //Add to authors list or increase count
+                foreach (var tag in splitTags)
+                {
+                    if (!tags.Any(x => x.Item1.Equals(tag.Trim())))
+                        tags.Add(new Tuple<string, int>(tag.Trim(), 1));
+                    else
+                    {
+                        int index = tags.IndexOf(tags.First(x => x.Item1.Equals(tag.Trim())));
+                        tags[index] = new Tuple<string, int>(tag.Trim(), tags[index].Item2 + 1);
+                    }
+                }
+            }
+            sortedTags = tags.OrderBy(x => x.Item2).Reverse().ToList();
         }
 
         private static void CreateGamePages(List<PostInfo> data)
@@ -266,7 +290,7 @@ namespace Amicitia.github.io
             foreach (PostInfo post in data)
             {
                 postNumber++;
-                if (postLimit < 30)
+                if (postLimit < maxPosts)
                 {
                     if (url.Contains("post"))
                         content += WritePost(post, false);
@@ -277,13 +301,13 @@ namespace Amicitia.github.io
                 else
                 {
                     if (pageNumber == 1)
-                        CreatePage(content, $"{url}.html", pageNumber, (data.Count - postNumber >= 30));
+                        CreatePage(content, $"{url}.html", pageNumber, (data.Count - postNumber >= maxPosts));
                     else
-                        CreatePage(content, $"{url}\\{pageNumber}.html", pageNumber, (data.Count - postNumber >= 30));
+                        CreatePage(content, $"{url}\\{pageNumber}.html", pageNumber, (data.Count >= maxPosts * (pageNumber + 1)));
 
                     content = "";
 
-                    if (data.Count - postNumber >= 30)
+                    if (data.Count - postNumber >= maxPosts)
                         postLimit = 0;
                     else
                         postLimit = data.Count - postNumber;
@@ -304,21 +328,34 @@ namespace Amicitia.github.io
         {
             //Header
             string html = Properties.Resources.IndexHeader;
+            string pageName = "";
             foreach (var split in url.Split('\\'))
             {
                 if (split == "mods" || split == "tools" || split == "guides" || split == "cheats")
+                {
                     html += $" ► <a href=\"https://amicitia.github.io/{split}\">{FirstLetterToUpperCase(split)}</a>";
+                    pageName += $" {FirstLetterToUpperCase(split.Replace(".html", ""))}";
+                }
                 else if (gameList.Any(g => g.Equals(split)))
+                {
                     html += $" ► <a href=\"https://amicitia.github.io/game/{split}\">{FirstLetterToUpperCase(split)}</a>";
+                    pageName += $" {FirstLetterToUpperCase(split.Replace(".html", ""))}";
+                }
                 else if (split != "index")
+                {
                     html += $" ► {FirstLetterToUpperCase(split.Replace(".html", ""))}";
+                    pageName += $" {FirstLetterToUpperCase(split.Replace(".html", ""))}";
+                }
             }
+            if (!String.IsNullOrEmpty(pageName))
+                html = html.Replace("Amicitia</title>", $"Amicitia -{pageName}</title>");
 
             //Blog posts, top contributors, closing header div before content
             html += Properties.Resources.IndexSidebar;
             if (!url.Contains("post"))
             {
-                html += "<h3><i class=\"fas fa-users\"></i> Top Contributors</h3><table><tr><td style=\"padding: 0px;\">All Time</td><td style=\"padding: 0px;\">Past 2 Months</td></tr>";
+                //Top Contributors
+                html += "<h3><i class=\"fas fa-users\"></i> Top Contributors</h3><br><table><tr><td style=\"padding: 0px;\">All Time</td><td style=\"padding: 0px;\">Past 2 Months</td></tr>";
                 for (int i = 0; i < 10; i++)
                 {
                     if (sortedAuthors.Count >= i && sortedAuthors[i].Item2 >= 2)
@@ -331,9 +368,18 @@ namespace Amicitia.github.io
                         html += "<td style=\"padding: 0px;\"></td></tr>";
                 }
                 html += "</table>";
+                //Popular Tags
+                html += "<h3><i class=\"fas fa-tags\"></i> Popular Tags</h3><br>";
+                int color = 0;
+                for (int i = 0; i < 8; i++)
+                {
+                    if (color == colors.Count())
+                        color = 0;
+                    if (sortedTags.Count >= i && sortedTags[i].Item2 >= 2)
+                        html += $"<a href=\"https://amicitia.github.io/tag/{sortedTags[i].Item1}\"><div class=\"tag\" style=\"border-left: 4px solid #{colors[color++]}; \"><p class=\"noselect\">{sortedTags[i].Item1}</p></div></a>";
+                }
             }
             html += Properties.Resources.IndexContent;
-
 
             //Auto-select game or type
             foreach (var game in gameList)
@@ -387,7 +433,7 @@ namespace Amicitia.github.io
 
             //Footer
             html += Properties.Resources.IndexFooter;
-            html += $"{DateTime.Now.Year}. Last updated {DateTime.Now.Month}/{DateTime.Now.Day}/{DateTime.Now.Year}. <a href=\"https://github.com/Amicitia/Amicitia.github.io\"><i class=\"fa fa-github\"></i> Source available on Github</a>.</div></footer></html>";
+            html += $"{DateTime.Now.Year}. Last updated {DateTime.Now.Month}/{DateTime.Now.Day}/{DateTime.Now.Year}. <a href=\"https://github.com/Amicitia/Amicitia.github.io\"><i class=\"fa fa-github\"></i> Source available on Github</a>. <a href=\"https://twitter.com/AmicitiaTeam\"><i class=\"fa fa-twitter\"></i> Follow</a> for updates!</div></footer></html>";
 
             //Replace relative links based on depth
             if (depth == 1)
