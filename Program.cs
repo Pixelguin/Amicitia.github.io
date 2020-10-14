@@ -6,10 +6,11 @@ using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.CodeDom.Compiler;
 
 namespace Amicitia.github.io
 {
@@ -134,7 +135,7 @@ namespace Amicitia.github.io
             //Create single-post pages for hyperlinks
             foreach (var game in gameList)
             {
-                CreateHtml(data.Where(p => p.Game.Equals(game.ToUpper())).ToList(), $"game\\{game}");
+                CreateHtml(data.Where(p => p.Game.Equals(game.ToUpper()) || p.Game.Contains(game.ToUpper() + ", ") || p.Game.Contains(" " + game.ToUpper())).ToList(), $"game\\{game}");
             }
         }
 
@@ -200,9 +201,9 @@ namespace Amicitia.github.io
             foreach (var game in gameList)
             {
                 if (game == "p3fes")
-                    CreateHtml(data.Where(p => p.Game.Equals("P4") || p.Game.Equals("")).ToList(), $"guides\\p3fes");
+                    CreateHtml(data.Where(p => p.Game.Equals(game.ToUpper()) || p.Game.Contains(" " + p.Game.ToUpper()) || p.Game.Contains(p.Game.ToUpper() + ", ")).ToList(), $"guides\\p3fes");
                 else
-                    CreateHtml(data.Where(p => p.Game.Equals(game.ToUpper()) || p.Game.Equals("")).ToList(), $"guides\\{game}");
+                    CreateHtml(data.Where(p => p.Game.Equals(game.ToUpper()) || p.Game.Contains(" " + p.Game.ToUpper()) || p.Game.Contains(p.Game.ToUpper() + ", ")).ToList(), $"guides\\{game}");
             }
         }
 
@@ -211,7 +212,7 @@ namespace Amicitia.github.io
             CreateHtml(data, "cheats");
             foreach (var game in gameList)
             {
-                CreateHtml(data.Where(p => p.Game.Equals(game.ToUpper())).ToList(), $"cheats\\{game}");
+                CreateHtml(data.Where(p => p.Game.Equals(game.ToUpper()) || p.Game.Contains(" " + p.Game.ToUpper()) || p.Game.Contains(p.Game.ToUpper() + ", ")).ToList(), $"cheats\\{game}");
             }
         }
 
@@ -221,9 +222,9 @@ namespace Amicitia.github.io
             foreach (var game in gameList)
             {
                 if (game == "p3fes")
-                    CreateHtml(data.Where(p => p.Game.Equals("P4") || p.Game.Equals("")).ToList(), $"tools\\p3fes");
+                    CreateHtml(data.Where(p => p.Game.Equals("") || p.Game.Equals(game.ToUpper()) || p.Game.Contains(" " + p.Game.ToUpper()) || p.Game.Contains(p.Game.ToUpper() + ", ")).ToList(), $"tools\\p3fes");
                 else
-                    CreateHtml(data.Where(p => p.Game.Equals(game.ToUpper()) || p.Game.Equals("")).ToList(), $"tools\\{game}");
+                    CreateHtml(data.Where(p => p.Game.Equals("") || p.Game.Equals(game.ToUpper()) || p.Game.Contains(" " + p.Game.ToUpper()) || p.Game.Contains(p.Game.ToUpper() + ", ")).ToList(), $"tools\\{game}");
             }
         }
 
@@ -232,7 +233,7 @@ namespace Amicitia.github.io
             CreateHtml(data, "mods");
             foreach (var game in gameList)
             {
-                CreateHtml(data.Where(p => p.Game.Equals(game.ToUpper())).ToList(), $"mods\\{game}");
+                CreateHtml(data.Where(p => p.Game.Equals(game.ToUpper()) || p.Game.Contains(" " + p.Game.ToUpper()) || p.Game.Contains(p.Game.ToUpper() + ", ")).ToList(), $"mods\\{game}");
             }
         }
 
@@ -466,8 +467,7 @@ namespace Amicitia.github.io
         private static string WritePost(PostInfo data, bool toggle = true)
         {
             string result;
-            string[] splitGames = data.Game.Split(' ');
-
+            List<string> splitGames = data.Game.Split(',').ToList();
             List<string> tagsList = data.Tags.Split(',').ToList();
             List<string> authorList = data.Author.Split(',').ToList();
 
@@ -520,9 +520,9 @@ namespace Amicitia.github.io
             //Download
             if (data.Type == "Mod" || data.Type == "Tool")
             {
-                result += $"<center><font size=\"4\"><a href=\"{data.DownloadURL}\"><i class=\"{data.DownloadIcon}\" aria-hidden=\"true\"></i> {data.DownloadText}</a><br>";
+                result += $"<center><font size=\"4\"><a href=\"{data.DownloadURL}\"><i class=\"fas fa-{data.DownloadIcon}\" aria-hidden=\"true\"></i> Download {data.DownloadText}</a><br>";
                 if (data.DownloadURL2 != "")
-                    result += $"<a href=\"{data.DownloadURL2}\"><i class=\"{data.DownloadIcon2}\" aria-hidden=\"true\"></i> {data.DownloadText2}</a><br>";
+                    result += $"<a href=\"{data.DownloadURL2}\"><i class=\"fas fa-{data.DownloadIcon2}\" aria-hidden=\"true\"></i> Download {data.DownloadText2}</a><br>";
                 if (data.SourceURL != "")
                     result += $"<a href=\"{data.SourceURL}\"><i class=\"fas fa-file-code\" aria-hidden=\"true\"></i> Source Code</a>";
                 result += "</center></div>";
@@ -608,18 +608,25 @@ namespace Amicitia.github.io
         public static List<PostInfo> GetData(string indexPath)
         {
             List<PostInfo> data = new List<PostInfo>();
-            string connection = $"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"{indexPath}\\db\\ShrineFox.mdf\";Integrated Security=True";
-
-            SqlConnection con = new SqlConnection(connection);
-            SqlCommand command = new SqlCommand("SELECT * FROM Post", con);
-            con.Open();
-            SqlDataReader sdr = command.ExecuteReader();
-            while (sdr.Read())
+            int index = 0;
+            foreach (var tsv in Directory.GetFiles($"{indexPath}\\db").Where(x => Path.GetExtension(x).Equals(".tsv")))
             {
-                PostInfo pi = new PostInfo(Convert.ToInt32(sdr["ID"]), sdr["Type"].ToString(), sdr["Title"].ToString(), sdr["Game"].ToString(), sdr["Author"].ToString(), Convert.ToSingle(sdr["Version"]), sdr["Date"].ToString(), sdr["Tags"].ToString(), sdr["Hyperlink"].ToString(), sdr["Description"].ToString(), sdr["Embed"].ToString(), sdr["DownloadURL"].ToString(), sdr["DownloadText"].ToString(), sdr["DownloadIcon"].ToString(), sdr["DownloadURL2"].ToString(), sdr["DownloadText2"].ToString(), sdr["DownloadIcon2"].ToString(), sdr["UpdateText"].ToString(), sdr["SourceURL"].ToString(), sdr["GuideURL"].ToString(), sdr["GuideText"].ToString(), sdr["ThreadURL"].ToString());
-                data.Add(pi);
+                string type = FirstLetterToUpperCase(Path.GetFileNameWithoutExtension(tsv).Replace("s", ""));
+                string[] tsvFile = File.ReadAllLines(tsv);
+                for (int i = 1; i < tsvFile.Length; i++)
+                {
+                    var split = tsvFile[i].Split('\t');
+                    PostInfo pi = new PostInfo(0, "", "", "", "", 0, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+                    if (type == "Mod" || type == "Tool")
+                        pi = new PostInfo(index, type, split[1], split[2], split[3], Convert.ToSingle(split[4]), split[5], split[6], split[0], split[7], split[9], split[10], split[11], split[12], split[15], split[16], split[17], split[8], split[13], split[18], split[19], split[14]);
+                    else if (type == "Cheat")
+                        pi = new PostInfo(index, type, split[1], split[2], split[3], 1, split[4], split[5], split[0], split[6], "", "", "", "", "", "", "", split[7], "", "", "", split[8]);
+                    else if (type == "Guide")
+                        pi = new PostInfo(index, type, split[1], split[2], split[3], 1, split[4], split[5], split[0], split[6], split[7], "", "", "", "", "", "", "", "", split[8], split[9], "");
+                    index++;
+                    data.Add(pi);
+                }
             }
-            con.Close();
             return data;
         }
 
