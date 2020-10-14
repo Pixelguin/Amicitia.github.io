@@ -11,7 +11,7 @@ Now the community can work together to host material without relying on a single
 # How to Contribute to the Database?
 - Clone the repository using Git or Github Desktop.
 - Open the solution in Visual Studio (or your preferred IDE).
-- Click on the .mdf and right click "Post" under "Tables".
-- Choose "Show Table Data."
+- Open the TSV files in /db/ (using Google Sheets, Excel, Notepad++ etc.)
 - Add new rows or edit existing ones as needed.
-- Commit changes to your own fork and open a pull request
+- Run the program to generate new pages.
+- Commit changes to your own fork and open a pull request.
