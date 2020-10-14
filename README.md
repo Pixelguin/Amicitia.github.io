@@ -9,9 +9,20 @@ Project Collaborators can submit their own changes to the page building code or 
 Now the community can work together to host material without relying on a single webmaster.
 
 # How to Contribute to the Database?
+## Google Sheets
 - Clone the repository using Git or Github Desktop.
-- Open the solution in Visual Studio (or your preferred IDE).
-- Open the TSV files in /db/ (using Google Sheets, Excel, Notepad++ etc.)
-- Add new rows or edit existing ones as needed.
+- Upload the .tsv files in the "db" folder to your Google Drive account.
+- Open them in Google Sheets, add/edit rows as needed.
+- Download as .tsv when finished and replace the files in the "db" folder.
+## Microsoft Excel
+- Clone the repository using Git or Github Desktop.
+- Open the .xlsx file.
+- In each tab, add/edit rows as needed.
+- Enable the Developer Tab, go to it and choose Visual Basic.
+- Use the included ExportTsvExcel.cls script to export each tab as .tsv.
+- This should replace the files in the "db" folder.
+
+# How to Generate New Pages?
+- Open the solution (.sln) in Visual Studio (or your preferred IDE).
 - Run the program to generate new pages.
 - Commit changes to your own fork and open a pull request.
