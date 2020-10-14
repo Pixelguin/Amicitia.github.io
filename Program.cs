@@ -176,7 +176,7 @@ namespace Amicitia.github.io
                 //Split multiple authors per post and sanitize
                 string[] splitAuthors = post.Author.Split(',');
                 for (int i = 0; i < splitAuthors.Count(); i++)
-                    splitAuthors[i] = splitAuthors[i].Trim();
+                    splitAuthors[i] = Sanitize(splitAuthors[i]);
 
                 //Add to list of unique authors
                 foreach (var author in splitAuthors)
@@ -615,16 +615,23 @@ namespace Amicitia.github.io
                 string[] tsvFile = File.ReadAllLines(tsv);
                 for (int i = 1; i < tsvFile.Length; i++)
                 {
+                    //Separate tabs and remove whitespace/quotation marks
                     var split = tsvFile[i].Split('\t');
-                    PostInfo pi = new PostInfo(0, "", "", "", "", 0, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
-                    if (type == "Mod" || type == "Tool")
-                        pi = new PostInfo(index, type, split[1], split[2], split[3], Convert.ToSingle(split[4]), split[5], split[6], split[0], split[7], split[9], split[10], split[11], split[12], split[15], split[16], split[17], split[8], split[13], split[18], split[19], split[14]);
-                    else if (type == "Cheat")
-                        pi = new PostInfo(index, type, split[1], split[2], split[3], 1, split[4], split[5], split[0], split[6], "", "", "", "", "", "", "", split[7], "", "", "", split[8]);
-                    else if (type == "Guide")
-                        pi = new PostInfo(index, type, split[1], split[2], split[3], 1, split[4], split[5], split[0], split[6], split[7], "", "", "", "", "", "", "", "", split[8], split[9], "");
-                    index++;
-                    data.Add(pi);
+                    for (int x = 0; x < split.Count(); x++)
+                        split[x] = Sanitize(split[x]);
+
+                    if (split.Any(x => !String.IsNullOrEmpty(x)))
+                    {
+                        PostInfo pi = new PostInfo(0, "", "", "", "", 0, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+                        if (type == "Mod" || type == "Tool")
+                            pi = new PostInfo(index, type, split[1], split[2], split[3], Convert.ToSingle(split[4]), split[5], split[6], split[0], split[7], split[9], split[10], split[11], split[12], split[15], split[16], split[17], split[8], split[13], split[18], split[19], split[14]);
+                        else if (type == "Cheat")
+                            pi = new PostInfo(index, type, split[1], split[2], split[3], 1, split[4], split[5], split[0], split[6], "", "", "", "", "", "", "", split[7], "", "", "", split[8]);
+                        else if (type == "Guide")
+                            pi = new PostInfo(index, type, split[1], split[2], split[3], 1, split[4], split[5], split[0], split[6], split[7], "", "", "", "", "", "", "", "", split[8], split[9], "");
+                        index++;
+                        data.Add(pi);
+                    }
                 }
             }
             return data;
@@ -640,6 +647,14 @@ namespace Amicitia.github.io
             char[] a = s.ToCharArray();
             a[0] = char.ToUpper(a[0]);
             return new string(a);
+        }
+
+        public static string Sanitize(string s)
+        {
+            if (string.IsNullOrEmpty(s) || string.IsNullOrWhiteSpace(s))
+                return string.Empty;
+
+            return s.TrimStart('\"').TrimEnd('\"').Trim();
         }
     }
 }
