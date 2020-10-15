@@ -16,7 +16,7 @@ Now the community can work together to host material without relying on a single
 - Download as .tsv when finished and replace the files in the "db" folder.
 ## Microsoft Excel
 - Clone the repository using Git or Github Desktop.
-- Open the .xlsx file.
+- Open the .xlsx file in the "db" folder.
 - In each tab, add/edit rows as needed.
 - Enable the Developer Tab, go to it and choose Visual Basic.
 - Use the included ExportTsvExcel.cls script to export each tab as .tsv.
