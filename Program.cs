@@ -66,7 +66,7 @@ namespace Amicitia.github.io
                 //Add to authors list or increase count
                 foreach (var author in splitAuthors)
                 {
-                    if (author != "Unknown Author")
+                    if (author != "Unknown Author" && author != "")
                     {
                         if (!authors.Any(x => x.Item1.Equals(author.Trim())))
                             authors.Add(new Tuple<string, int>(author.Trim(), 1));
@@ -93,7 +93,7 @@ namespace Amicitia.github.io
                     //Add to authors list or increase count
                     foreach (var author in splitAuthors)
                     {
-                        if (author != "Unknown Author")
+                        if (author != "Unknown Author" && author != "")
                         {
                             if (!authors.Any(x => x.Item1.Equals(author.Trim())))
                                 authors.Add(new Tuple<string, int>(author.Trim(), 1));
@@ -491,10 +491,10 @@ namespace Amicitia.github.io
             {
                 result += $"<div style=\"width:100%;height:0px;position:relative;padding-bottom:56.250%;\"><iframe src=\"{data.Embed}\" frameborder=\"0\"width=\"100%\"height=\"100%\"allowfullscreen style=\"width:100%;height:100%;position:absolute;\"></iframe></div>";
             }
-            else if (data.Embed != null)
+            else if (data.Embed != null && data.Embed.Trim() != "")
                 result += $"<img src=\"{data.Embed}\" height=\"auto\" width=\"auto\"></td>";
             else
-                result += "</td>";
+                result += "<img src=\"https://i.imgur.com/5I5Vos8.png\" height=\"auto\" width=\"auto\"></td>";
 
             //Visible Post Details
             result += $"<td width='50%'><font size=\"3\"><b><font size=\"5\">{data.Title}</font></b><br>{splitGames[0]} {data.Type} by ";
