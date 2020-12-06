@@ -476,92 +476,89 @@ select {
     color: #FB9E3B;
 }
 
-@media (prefers-color-scheme: dark) {
+select {
+	color: #FFF;
+	background-color: #000;
+	border-width: 0px;
+}
 
-    select {
-        color: #FFF;
-        background-color: #000;
-        border-width: 0px;
-    }
+.widgetcontainer {
+	background-color: #222222;
+}
 
-    .widgetcontainer {
-        background-color: #222222;
-    }
+body {
+	background-color: #0B2653;
+	color: #ccc;
+}
 
-    body {
-        background-color: #0B2653;
-        color: #ccc;
-    }
+.logo {
+	opacity: 0.5;
+}
 
-    .logo {
-        opacity: 0.5;
-    }
+.navigation {
+	background-color: #111;
+	color: #fff;
+}
+
+.navbar2 {
+	background-color: #111;
+	color: #fff;
+}
+
+.content {
+	background-color: #1111117F;
+	color: #fff;
+}
+
+.content a {
+	color: #009FFF;
+}
+
+.content a:visited {
+	color: #009FFF;
+}
 	
-	.navigation {
-		background-color: #111;
-		color: #fff;
-	}
+.content a:link {
+	color: #009FFF;
+}
 
-	.navbar2 {
-		background-color: #111;
-		color: #fff;
-	}
+.content a:hover {
+	color: #FB9E3B;
+}
 
-    .content {
-        background-color: #1111117F;
-		color: #fff;
-    }
-	
-	.content a {
-		color: #009FFF;
-    }
-	
-	.content a:visited {
-		color: #009FFF;
-    }
-		
-	.content a:link {
-		color: #009FFF;
-    }
-	
-	.content a:hover {
-		color: #FB9E3B;
-	}
+.tag {
+	background: #00000087;
+}
 
-    .tag {
-        background: #00000087;
-    }
+.tag:hover {
+	background: #ffffff27;
+}
 
-    .tag:hover {
-        background: #ffffff27;
-    }
+.content img {
+	opacity: 0.7;
+}
 
-    .content img {
-        opacity: 0.7;
-    }
+.pagelink {
+	background: #111111;
+}
 
-    .pagelink {
-        background: #111111;
-    }
+.pagelink:hover {
+	background: #000000;
+}
 
-    .pagelink:hover {
-        background: #000000;
-    }
+.unhide:after {
+	background-color: #009FFF;
+}
 
-    .unhide:after {
-        background-color: #009FFF;
-    }
+.getlink {
+	background: #4e4e4e;
+	opacity: 0.3;
+}
 
-    .getlink {
-        background: #4e4e4e;
-        opacity: 0.3;
-    }
+.getlink:hover {
+	background: #000;
+}
 
-    .getlink:hover {
-        background: #000;
-    }
-	
-	.unhide {
-		background-color: #111;
-	}
+.unhide {
+	background-color: #111;
 }
