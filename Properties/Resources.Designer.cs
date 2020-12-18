@@ -61,8 +61,8 @@ namespace Amicitia.github.io.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ID	Title	Game	Author	Version	Date	Tags	Description	Update	Thread
-        ///smt3-noshadow	Remove Shadow	SMT3	Krisan Thyme	1	8/05/2020	UI		//Remove Shadow (credit to Krisan Thyme) &lt;br&gt;patch=1,EE,202FBD80,extended,00000000 &lt;br&gt;patch=1,EE,202FBD84,extended,00000000 &lt;br&gt;patch=1,EE,202FBD88,extended,00000000 &lt;br&gt;patch=1,EE,202FBD8C,extended,00000000 &lt;br&gt;patch=1,EE,202FBD90,extended,00000000 &lt;br&gt;patch=1,EE,202FBD94,extended,00000000 &lt;br&gt;patch=1,EE,202FBD98,extended,00000000 &lt;br&gt;patch=1,EE,202FBD9C,extended,00000000 &lt;br&gt;pat [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to ID	Title	Game	Author	Date	Tags	Description	Update Text	ThreadID
+        ///p3fes-controllableparty	P3FES Controllable Party Members	P3FES	TGE	6/9/2018	PNACH	&quot;This cheat allows you to choose a skill or item on your party member&apos;s turn, similar to in Persona 4 and 5. Known side effects: the protagonist&apos;s fusion skills can be used by everyone on their turns.&quot;	&quot;//Controllable Party Members by TGE&lt;br&gt;&lt;br&gt;patch=1,EE,0029AFC8,word,00000000 // nop check for if battle unit is not mc -&gt; ai&lt;br&gt;patch=1,EE,0020207C,word,00000000  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string cheats {
             get {
@@ -72,7 +72,8 @@ namespace Amicitia.github.io.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to ID	Title	Game	Author	Date	Tags	Description	Embed	Guide URL	Guide Text
-        ///modcompendium	Mod Compendium		TGE, ShrineFox, lipsum	9/30/2020	CPK, CVM, SLUS	Easily create, combine and install multiple mods  for Persona 3, 4, 5, P3P, P4G, P5R,  PQ, PQ2, Catherine Full Body and the Dancing games. 	&lt;b&gt;Update 9/30/2020&lt;/b&gt;: Add P5R Update PKG Creation&lt;br&gt;&lt;b&gt;Update 6/22/2020&lt;/b&gt;: Add P4G PC Support&lt;br&gt;&lt;b&gt;Update 4/12/2020&lt;/b&gt;: Fix P3/4 patching, add HostFS output, add option to sort mods by subfolder	https://i.imgur.com/ [rest of string was truncated]&quot;;.
+        ///mod-cpk	Loading Modded files in Persona 5 (PS3)	P5	ShrineFox	3/22/2019	&quot;PS3, Mod, CPK&quot;	This guide walks you through the fundamentals of datamining and replacing files for any region/version of Persona 5 on PS3.	https://i.imgur.com/wYEuTvc.png	https://shrinefox.com/guides/mod-cpk	Loading Modded files in Persona 5 (PS3)
+        ///p5-rpcs3-setupguide	Persona 5 RPCS3 Modding Guide 1: Downloads and Setup	P5	Cryptoss	4/19/2019	&quot;CRIPAKGUI, MOD COMPENDIU [rest of string was truncated]&quot;;.
         /// </summary>
         public static string guides {
             get {
@@ -85,18 +86,17 @@ namespace Amicitia.github.io.Properties {
         ///                        &lt;/div&gt;
         ///                    &lt;/div&gt;
         ///                &lt;/td&gt;
-        ///                &lt;td width=&quot;75%&quot;&gt;
+        ///                &lt;td width=&quot;75%&quot; style=&quot;background-color:#0000007F; border-radius:12px;&quot;&gt;
         ///                    &lt;div class=&quot;text&quot;&gt;
         ///                        &lt;b&gt;Type&lt;/b&gt;:
         ///                        &lt;select onchange=&quot;navigate()&quot; id=&quot;type&quot; name=&quot;type&quot;&gt;
         ///                            &lt;option value=&quot;All&quot;&gt;All&lt;/option&gt;
         ///                            &lt;option value=&quot;Mod&quot;&gt;Mods&lt;/option&gt;
-        ///                            &lt;option value=&quot;Tool&quot;&gt;Tools&lt;/option&gt;
-        ///              [rest of string was truncated]&quot;;.
+        ///                       [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string IndexContent {
+        public static string IndexContentHeader {
             get {
-                return ResourceManager.GetString("IndexContent", resourceCulture);
+                return ResourceManager.GetString("IndexContentHeader", resourceCulture);
             }
         }
         
@@ -105,10 +105,10 @@ namespace Amicitia.github.io.Properties {
         ///&lt;br /&gt;
         ///&lt;br /&gt;
         ///&lt;p style=&quot;font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;&quot;&gt;
-        ///    We are not affiliated, associated, authorized, endorsed by, or in any way
+        ///    We are NOT affiliated, associated, authorized, endorsed by, or in any way
         ///    &lt;br&gt;officially connected with ATLUS, SEGA, or any of its subsidiaries or its affiliates.
-        ///    &lt;br&gt;The official ATLUS website can be found at &lt;a href=&quot;https://atlus.com&quot;&gt;https://atlus.com&lt;/a&gt;. &quot;Persona&quot;, as well
-        ///    &lt;br&gt;as all characters referenced on this page are registere [rest of string was truncated]&quot;;.
+        ///    &lt;br&gt;The official ATLUS website can be found at &lt;a href=&quot;https://atlus.com&quot;&gt;https://atlus.com&lt;/a&gt;.
+        ///    &lt;br&gt;ATLUS and SEGA are registered in the U.S. Patent and Trademark Office. ATL [rest of string was truncated]&quot;;.
         /// </summary>
         public static string IndexFooter {
             get {
@@ -120,15 +120,14 @@ namespace Amicitia.github.io.Properties {
         ///   Looks up a localized string similar to &lt;!doctype html&gt;
         ///&lt;html&gt;
         ///&lt;head&gt;
-        ///    &lt;link rel=&apos;shortcut icon&apos; href=&apos;favicon.png&apos; type=&apos;image/x-icon&apos; /&gt;
+        ///    &lt;link rel=&apos;shortcut icon&apos; href=&apos;https://amicitia.github.io/images/favicon.png&apos; type=&apos;image/x-icon&apos; /&gt;
         ///    &lt;meta charset=&quot;utf-8&quot;&gt;
         ///    &lt;title&gt;Amicitia&lt;/title&gt;
         ///    &lt;link href=&quot;css/index.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
         ///    &lt;link href=&quot;css/waves.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
         ///    &lt;script src=&quot;https://kit.fontawesome.com/4c3075832a.js&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
         ///    &lt;script src=&quot;https://amicitia.github.io/js/jquery-3.3.1.min.js&quot;&gt;&lt;/script&gt;
-        ///    &lt;script src=&quot;js/bubbles.js&quot;&gt;&lt;/script&gt;
-        /// [rest of string was truncated]&quot;;.
+        ///    &lt;scri [rest of string was truncated]&quot;;.
         /// </summary>
         public static string IndexHeader {
             get {
@@ -156,8 +155,9 @@ namespace Amicitia.github.io.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ID	Title	Game	Author	Version	Date	Tags	Description	Update	Embed	URL	Text	Icon	Source	Thread	Alt URL	Alt Text	Alt Icon	Guide URL	Guide Text
-        ///p4d-jotaro-naoto	Jotaro Costume (Naoto)	P4D	80constant	1	10/11/2020	Player Model, GMD	This is a model import for Naoto that adds a costume with the clothes of Jotaro Kujo from Jojo&apos;s Bizarre Adventure: Stardust Crusaders. Enjoy!		https://www.youtube.com/watch?v=rsOjBhsJf7M	https://drive.google.com/file/d/172-A5KYyS5ywuZK89vAw7tCk4DYkGEhI/view?usp=sharing	Download Mod	fa [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to ID	Title	Game	Author	Version	Date	Tags	Description	Update	Embed	URL	Text	Icon	Source	Thread	Alt URL	Alt Text	Alt Icon	Guide URL	Guide Text		
+        ///p4adachinavi	P4 Adachi Navigator	P4	ShrineFox	1	1/3/2016	&quot;Voice Clips, HUD, UI, Text&quot;	A mod that replaces Teddie&apos;s navigator dialog with Tohru Adachi&apos;s clips from Persona 4 Arena Ultimax.	 	https://www.youtube.com/watch?v=nukx1gSCF4c	https://drive.google.com/open?id=1nrml3H3qFUfZUarUEyvEno-2xqKfofF1	Mod	folder-open	 	 	 	 	 	 	 		
+        ///p3adachi	P3FES Playable Adachi	P3FES [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mods {
             get {
@@ -167,7 +167,7 @@ namespace Amicitia.github.io.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to ID	Title	Game	Author	Version	Date	Tags	Description	Update	Embed	URL	Text	Icon	Source	Thread	Alt URL	Alt Text	Alt Icon	Guide URL	Guide Text
-        ///modcompendium	Mod Compendium		TGE, ShrineFox, lipsum	1.5	9/30/2020	CPK, CVM, SLUS	Easily create, combine and install multiple mods  for Persona 3, 4, 5, P3P, P4G, P5R,  PQ, PQ2, Catherine Full Body and the Dancing games. 	&lt;b&gt;Update 9/30/2020&lt;/b&gt;: Add P5R Update PKG Creation&lt;br&gt;&lt;b&gt;Update 6/22/2020&lt;/b&gt;: Add P4G PC Support&lt;br&gt;&lt;b&gt;Update 4/12/2020&lt;/b&gt;: Fix P3/4 patching, add [rest of string was truncated]&quot;;.
+        ///atomencd	AtomEncd	&quot;P3FES, P4, P4D, P4G, P5, P5D, P5R, CFB, PQ, PQ2&quot;	Du&apos;Slingr	1	8/31/2016	&quot;ADX, WAV&quot;	&quot;A GUI interface for creating custom ADX and HCA audio files using &lt;a href=&quot;&quot;https://www.mediafire.com/?9f7d1oydfccf95v&quot;&quot;&gt;CriAtomEncoder&lt;/a&gt;.&quot;		http://i.imgur.com/FpXO5a3.png	https://drive.google.com/open?id=0B1u1OW7aCWULcENyRTNlUUFad1U	Application	file	https://github.co [rest of string was truncated]&quot;;.
         /// </summary>
         public static string tools {
             get {

@@ -206,8 +206,7 @@ select {
 }
 
 .unhide {
-	background-color: #fff;
-    padding: 20px;
+	background-color: transparent !important;
     position: relative;
     margin: 10px;
     font-size: 30px;
@@ -560,5 +559,5 @@ body {
 }
 
 .unhide {
-	background-color: #111;
+    background-color: background-color: transparent !important;
 }

@@ -57,12 +57,10 @@ html, body {
     }
 }
 
-@media (prefers-color-scheme: dark) {
-    .wave {
-        opacity: 0.5;
-    }
+.wave {
+    opacity: 0.5;
+}
 
-    .wave:nth-of-type(2) {
-        opacity: 0.4;
-    }
+.wave:nth-of-type(2) {
+    opacity: 0.4;
 }

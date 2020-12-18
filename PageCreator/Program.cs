@@ -267,8 +267,10 @@ namespace Amicitia.github.io
                 //Start of page
                 if (pagePosts == 0)
                 {
+                    content += Properties.Resources.IndexContentHeader; //Head tags, static body content
                     //Show total number of results
-                    content = $" ({postData.Count} results)<br>";
+                    if (!url.Contains("\\post\\"))
+                        content += $"{url.Split('\\').Last()} ({postData.Count} results)<br>";
                     if (postData.Count == 0) //Inform user if no posts found
                         content += $"<br><center>Sorry! No posts matching your query were found. Please check again later.</center>";
                     else if (url.Contains("p5r")) //Show Pan thank you message
@@ -304,24 +306,24 @@ namespace Amicitia.github.io
                     pages++;
                     pagePosts = 0;
                     if (pages == 1)
-                        CreatePage(content, $"{url}.html", pages, (postData.Count - i > maxPosts));
+                        CreatePage(content, $"{url}.html", pages, (postData.Count - i > 0));
                     else
-                        CreatePage(content, $"{url}\\{pages}.html", pages, (postData.Count - i > maxPosts));
+                        CreatePage(content, $"{url}\\{pages}.html", pages, (postData.Count - i > 0));
                     content = "";
                 }
             }
         }
 
-        public static bool IsDivisible(int x, int n)
-        {
-            return (x % n) == 0;
-        }
-
         private static void CreatePage(string content, string url, int pageNumber, bool morePages)
         {
-            //Header and navigation
+            /*
+             *   Header and Navigation
+             */
+
+            //Top of page (head tags)
             string html = Properties.Resources.IndexHeader;
             string pageName = "";
+            //Top of content navigation
             foreach (var split in url.Split('\\'))
             {
                 if (split == "mods" || split == "tools" || split == "guides" || split == "cheats")
@@ -373,7 +375,6 @@ namespace Amicitia.github.io
                         html += $"<a href=\"https://amicitia.github.io/tag/{sortedTags[i].Item1}\"><div class=\"tag\" style=\"border-left: 4px solid #{colors[color++]}; \"><p class=\"noselect\">{sortedTags[i].Item1}</p></div></a>";
                 }
             }
-            html += Properties.Resources.IndexContent;
 
             //Auto-select game and/or type from dropdown
             foreach (var game in gameList)
@@ -388,46 +389,52 @@ namespace Amicitia.github.io
             if (url.Contains("cheats"))
                 html = html.Replace($"option value=\"Cheat\"", "option value=\"Cheat\" selected");
 
-            //Add Body Content to HTML after header
-            html += content;
+            /*
+             *   Pagination
+             */
 
             //Set up for pagination and ref link depth
             int depth = url.Count(c => c == '\\');
             string url2 = url.Replace(".html","");
             if (depth == 1)
                 url2 = url2.Replace($"{url}\\{url}",$"{url}");
-
             //Table for pagination
-            html += "<table><tr>";
-            //Page Back
+            string paginaion = "<table><tr>";
+            //Previous Page
             if (pageNumber > 1)
             {
                 if (pageNumber == 2)
-                    html += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", "")}\"><div class=\"unhide\"><i class=\"fa fa-angle-double-left\"></i> Previous Page</div></a></td>";
+                    paginaion += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", "")}\"><div class=\"unhide\"><i class=\"fa fa-angle-double-left\"></i> Previous Page</div></a></td>";
                 else
-                    html += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", $"\\{pageNumber - 1}")}\"><div class=\"unhide\"><i class=\"fa fa-angle-double-left\"></i> Previous Page</div></a></td>";
+                    paginaion += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", $"\\{pageNumber - 1}")}\"><div class=\"unhide\"><i class=\"fa fa-angle-double-left\"></i> Previous Page</div></a></td>";
             }
             else
-                html += "<td></td>";
-            //Page Forward if further pages found
+                paginaion += "<td></td>";
+            //Next Page
             if (morePages)
             {
                 if (pageNumber == 1)
-                    html += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2 + $"\\{pageNumber + 1}"}\"><div class=\"unhide\">Next Page <i class=\"fa fa-angle-double-right\"></i></div></a></td>";
+                    paginaion += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2 + $"\\{pageNumber + 1}"}\"><div class=\"unhide\">Next Page <i class=\"fa fa-angle-double-right\"></i></div></a></td>";
                 else
-                    html += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", $"\\{pageNumber + 1}")}\"><div class=\"unhide\">Next Page <i class=\"fa fa-angle-double-right\"></i></div></a></td>";
+                    paginaion += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", $"\\{pageNumber + 1}")}\"><div class=\"unhide\">Next Page <i class=\"fa fa-angle-double-right\"></i></div></a></td>";
             }
             else
-                html += "<td></td>";
-
+                paginaion += "<td></td>";
             //End pagination table
-            html += "</tr></table>";
+            paginaion += "</tr></table><br>";
 
-            //Footer
-            html += Properties.Resources.IndexFooter;
+            /*
+             *   Page Building
+             */
+
+            //Append content header, navigation and footer to content
+            html += paginaion; //Top of page navigation
+            html += content; //Body Content
+            html += paginaion; //Bottom of page navigation
+            html += Properties.Resources.IndexFooter; //Footer
             html += $"{DateTime.Now.Year}. Last updated {DateTime.Now.Month}/{DateTime.Now.Day}/{DateTime.Now.Year}. <a href=\"https://github.com/Amicitia/Amicitia.github.io\"><i class=\"fa fa-github\"></i> Source available on Github</a>. <a href=\"https://twitter.com/AmicitiaTeam\"><i class=\"fa fa-twitter\"></i> Follow</a> for updates!</div></footer></html>";
 
-            //Replace relative links based on depth
+            //Replace links based on depth
             if (depth == 1)
             {
                 html = html.Replace("\"css", "\"../css");

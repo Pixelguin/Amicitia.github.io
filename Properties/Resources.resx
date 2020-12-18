@@ -124,8 +124,8 @@
   <data name="guides" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\db\guides.tsv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="IndexContent" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Templates\IndexContent.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="IndexContentHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Templates\IndexContentHeader.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="IndexFooter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Templates\IndexFooter.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

@@ -81,8 +81,10 @@
     <None Include="PageCreator\packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\index.css" />
+    <Content Include="css\waves.css" />
     <Content Include="Templates\IndexSidebar.html" />
-    <Content Include="Templates\IndexContent.html" />
+    <Content Include="Templates\IndexContentHeader.html" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -104,5 +106,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
