@@ -432,7 +432,7 @@ namespace Amicitia.github.io
             html += content; //Body Content
             html += paginaion; //Bottom of page navigation
             html += Properties.Resources.IndexFooter; //Footer
-            html += $"{DateTime.Now.Year}. Last updated {DateTime.Now.Month}/{DateTime.Now.Day}/{DateTime.Now.Year}. <a href=\"https://github.com/Amicitia/Amicitia.github.io\"><i class=\"fa fa-github\"></i> Source available on Github</a>. <a href=\"https://twitter.com/AmicitiaTeam\"><i class=\"fa fa-twitter\"></i> Follow</a> for updates!</div></footer></html>";
+            html += $"2020 - {DateTime.Now.Year}. Last updated {DateTime.Now.Month}/{DateTime.Now.Day}/{DateTime.Now.Year}. <a href=\"https://github.com/Amicitia/Amicitia.github.io\"><i class=\"fa fa-github\"></i> Source available on Github</a>. <a href=\"https://twitter.com/AmicitiaTeam\"><i class=\"fa fa-twitter\"></i> Follow</a> for updates!</div></footer></html>";
 
             //Replace links based on depth
             if (depth == 1)
