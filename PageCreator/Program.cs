@@ -21,7 +21,7 @@ namespace Amicitia.github.io
             //Exe Directory
             indexPath = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()));
             //Order post post from .tsv files by most recent)
-            /*posts = Post.Get(indexPath).OrderBy(p => DateTime.Parse(p.Date, CultureInfo.CreateSpecificCulture("en-US"))).ToArray().Reverse().ToList();
+            posts = Post.Get(indexPath).OrderBy(p => DateTime.Parse(p.Date, CultureInfo.CreateSpecificCulture("en-US"))).ToArray().Reverse().ToList();
             //Delete files if they exist already
             Page.DeleteExisting(indexPath);
             //Create main page with all mods, tools, guides and cheats
