@@ -1,51 +1,89 @@
 <!doctype html>
 <html>
 <head>
-    <link rel='shortcut icon' href='favicon.png' type='image/x-icon' />
+    <link rel='shortcut icon' href='images/favicon.png' type='image/x-icon' />
     <meta charset="utf-8">
-    <title>Amicitia - Importing</title>
-    <script src="https://kit.fontawesome.com/4c3075832a.js" crossorigin="anonymous"></script>
-    <script src="https://amicitia.github.io/js/jquery-3.3.1.min.js"></script>
-	<link href="../css/index.css" rel="stylesheet" type="text/css">
+    <title>Amicitia - Flowscript</title>
     <link href="../css/waves.css" rel="stylesheet" type="text/css">
+    <link href="../css/index.css" rel="stylesheet" type="text/css">
+    <link href="../css/sidebar.css" rel="stylesheet" type="text/css">
+    <link href="../css/select.css" rel="stylesheet" type="text/css">
+    <link href="../css/amicitia.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/4c3075832a.js" crossorigin="anonymous"></script>
+    <script src="https://shrinefox.com/Scripts/Amicitia/jquery-3.3.1.min.js"></script>
     <script src="../js/bubbles.js"></script>
     <script src="../js/showhide.js"></script>
-    <script src="../js/navigation.js"></script>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=News+Cycle|Open+Sans">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <canvas id='bgCanvas'></canvas>
-    <div class="ocean">
-        <div class="wave"></div>
-        <div class="wave"></div>
-    </div>
-
-    <div class="navigation" style="text-align:center;">
-        <ul class="main-navigation" style="display:inline-table;">
-            <li style="display:inline;"><a href="#!"><img src="../images/amicitia.svg" width="20" height="20"> Mods</a> </li>
-            <li style="display:inline;"><a href="http://amicitia-team.tumblr.com"><i class="fas fa-newspaper"></i> News</a> </li>
-            <li style="display:inline;"><a href="https://shrinefox.com/guides/"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Guides</a> </li>
-            <li style="display:inline;"><a href="https://shrinefox.com/forum/"><i class="fa fa-comment" aria-hidden="true"></i> Forum</a> </li>
-            <li style="display:inline;"><a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-users" aria-hidden="true"></i> Wiki</a> </li>
-            <li style="display:inline;">
-                <a href="#"><i class="fa fa-toolbox"></i> Toolbox</a>
-                <ul>
-                    <li><a href="https://shrinefox.com/textsearch"><i class="fa fa-search"></i> Dialog Search</a></li>
-                    <li><a href="https://amicitia.github.io/docs/flowscript"><i class="fa fa-file-code"></i> Flowscript Docs</a></li>
-                    <li><a href="https://amicitia.github.io/files"><i class="fa fa-folder-open"></i> Files</a></li>
-                </ul>
-            </li>
+    <div class="copied">Cheat copied to clipboard!</div>
+    <!--Sidebar Toggle-->
+    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+    <label for="openSidebarMenu" class="sidebarIconToggle">
+        <div class="spinner diagonal part-1"></div>
+        <div class="spinner horizontal"></div>
+        <div class="spinner diagonal part-2"></div>
+    </label>
+    <!--Sidebar Menu-->
+    <div id="sidebarMenu">
+        <ul class="sidebarMenuInner">
+            <p style="color:#FFFFFF7F;padding-left:14px;">Amicitia Network</p>
+            <li class="active"><a href="https://amicitia.github.io/"><i class="fa fa-desktop"></i> amicitia.github.io</a></li>
+            <li><a href="https://shrinefox.com/forum"><i class="fa fa-comments-o"></i> Forum</a></li>
+            <li><a href="https://shrinefox.com/guides/"><i class="fa fa-graduation-cap"></i> Guides</a></li>
+            <li><a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-users"></i> Wiki</a></li>
+            <li><a href="https://amicitia-team.tumblr.com/"><i class="fa fa-newspaper"></i> News</a></li>
+            <li><a href="https://shrinefox.com/forum/app.php/faqpage"><i class="fa fa-question-circle"></i> FAQs</a></li>
+            <p style="color:#FFFFFF7F;padding-left:14px;margin-bottom: 0px;">Apps</p>
+            <li><a href="https://shrinefox.com/textsearch"><i class="fa fa-search"></i> Text Search</a></li>
+            <li><a href="https://amicitia.github.io/docs/flowscript"><i class="fa fa-file-code"></i> Flowscript Docs</a></li>
+            <li><a href="https://amicitia.github.io/files"><i class="fa fa-folder-open"></i> Files</a></li>
+            <li><a href="https://shrinefox.com/PatchCreator"><i class="fa fa-check-square"></i> Patch.yml Creator</a></li>
         </ul>
     </div>
-    <div class="logo">
-        <center>
-            <a href="https://amicitia.github.io/">
-                <img src="../images/logo.svg" width="179" height="179">
-            </a>
-        </center>
+    <!--Header-->
+    <div class="header">
+        <canvas id="bgCanvas"></canvas>
+        <!--Logo and Header Text-->
+        <div>
+            <center>
+                <table>
+                    <tr>
+                        <td style="text-align:right;">
+                            <div class="logo"><img src="https://amicitia.github.io/images/logo.svg"></div>
+                        </td>
+                        <td>
+                            <h1>amicitia.github.io</h1>
+                            <h2>flowscript documentation</h2>
+                        </td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+        <!--Waves-->
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(17,17,17,0.33)" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(17,17,17,0.6)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(17,17,17,0.6)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(17,17,17,1)" />
+                </g>
+            </svg>
+        </div>
+        <!--Waves End-->
     </div>
-    <div class="navbar2"><a href="https://shrinefox.com/"><i class="fa fa-home"></i> Home</a> &#9658; <a href="https://amicitia.github.io/">Amicitia</a> &#9658; <a href="https://amicitia.github.io/docs/flowscript"></a>Flowscript &#9658; Importing</div>
-<div class="container body-content">
+    <!--Header End--></div>
+    <div class="content">
+        <table>
+            <tbody>
+                <tr>
+                    <td width="25%" style="vertical-align:top"><div class="container body-content">
 	<table>
         <tr>
             <td width="25%" style="vertical-align:top">
@@ -88,11 +126,7 @@ As seen in the <a href="https://amicitia.github.io/docs/messagescript">Messagesc
 			</td>
 		</tr>
 	</table>
-</div>
-
-<p style="font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;">We are not affiliated, associated, authorized, endorsed by, or in any way 
-    <br>officially connected with ATLUS, SEGA, or any of its subsidiaries or its affiliates.
-    <br>The official ATLUS website can be found at https://atlus.com. "Persona", as well
-    <br>as all characters referenced on this page are registered trademarks of ATLUS.</p>
-
-<div class="footer">© ShrineFox 2020. Last updated 6/7/2020.</div>
+</div>            </td>
+        </tr>
+    </tbody>
+</table>

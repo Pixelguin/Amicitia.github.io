@@ -71,9 +71,102 @@ namespace Amicitia.github.io.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;container body-content&quot;&gt;
+        ///	&lt;table&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td width=&quot;25%&quot; style=&quot;vertical-align:top&quot;&gt;
+        ///                &lt;div class=&quot;content-outer&quot;&gt;
+        ///                    &lt;div class=&quot;content&quot;&gt;&lt;br&gt;
+        ///						Basics
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amicitia.github.io/docs/flowscript&quot;&gt;Flowscript&lt;/a&gt;
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amicitia.github.io/docs/messagescript&quot;&gt;Messagescript&lt;/a&gt;
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amicitia.github.io/docs/decompiling&quot;&gt;Decompiling&lt;/a&gt;
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amiciti [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string compiling {
+            get {
+                return ResourceManager.GetString("compiling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;container body-content&quot;&gt;
+        ///	&lt;table&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td width=&quot;25%&quot; style=&quot;vertical-align:top&quot;&gt;
+        ///                &lt;div class=&quot;content-outer&quot;&gt;
+        ///                    &lt;div class=&quot;content&quot;&gt;&lt;br&gt;
+        ///						Basics
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amicitia.github.io/docs/flowscript&quot;&gt;Flowscript&lt;/a&gt;
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amicitia.github.io/docs/messagescript&quot;&gt;Messagescript&lt;/a&gt;
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amicitia.github.io/docs/decompiling&quot;&gt;Decompiling&lt;/a&gt;
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amiciti [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string decompiling {
+            get {
+                return ResourceManager.GetString("decompiling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;container body-content&quot;&gt;
+        ///	&lt;table&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td width=&quot;25%&quot; style=&quot;vertical-align:top&quot;&gt;
+        ///                &lt;div class=&quot;content-outer&quot;&gt;
+        ///                    &lt;div class=&quot;content&quot;&gt;&lt;br&gt;
+        ///						Basics
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amicitia.github.io/docs/flowscript&quot;&gt;Flowscript&lt;/a&gt;
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amicitia.github.io/docs/messagescript&quot;&gt;Messagescript&lt;/a&gt;
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amicitia.github.io/docs/decompiling&quot;&gt;Decompiling&lt;/a&gt;
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amiciti [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string flowscript {
+            get {
+                return ResourceManager.GetString("flowscript", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;br&gt;
+        ///&lt;br&gt;
+        ///&lt;br&gt;
+        ///&lt;p style=&quot;font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;&quot;&gt;
+        ///    We are NOT affiliated, associated, authorized, endorsed by, or in any way
+        ///    &lt;br&gt;officially connected with ATLUS, SEGA, or any of its subsidiaries or its affiliates.
+        ///    &lt;br&gt;The official ATLUS website can be found at &lt;a href=&quot;https://atlus.com&quot;&gt;https://atlus.com&lt;/a&gt;.
+        ///    &lt;br&gt;ATLUS and SEGA are registered in the U.S. Patent and Trademark Office. ATLUS and PERSONA are
+        ///    &lt;br&gt;either registe [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string FlowscriptFooter {
+            get {
+                return ResourceManager.GetString("FlowscriptFooter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!doctype html&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;link rel=&apos;shortcut icon&apos; href=&apos;images/favicon.png&apos; type=&apos;image/x-icon&apos; /&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
+        ///    &lt;title&gt;Amicitia - Flowscript&lt;/title&gt;
+        ///    &lt;link href=&quot;../css/waves.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+        ///    &lt;link href=&quot;../css/index.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+        ///    &lt;link href=&quot;../css/sidebar.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+        ///    &lt;link href=&quot;../css/select.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+        ///    &lt;link href=&quot;../css/amicitia.css&quot; rel=&quot;styleshe [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string FlowscriptHeader {
+            get {
+                return ResourceManager.GetString("FlowscriptHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ID	Title	Game	Author	Date	Tags	Description	Embed	Guide URL	Guide Text
-        ///mod-cpk	Loading Modded files in Persona 5 (PS3)	P5	ShrineFox	3/22/2019	&quot;PS3, Mod, CPK&quot;	This guide walks you through the fundamentals of datamining and replacing files for any region/version of Persona 5 on PS3.	https://i.imgur.com/wYEuTvc.png	https://shrinefox.com/guides/mod-cpk	Loading Modded files in Persona 5 (PS3)
-        ///p5-rpcs3-setupguide	Persona 5 RPCS3 Modding Guide 1: Downloads and Setup	P5	Cryptoss	4/19/2019	&quot;CRIPAKGUI, MOD COMPENDIU [rest of string was truncated]&quot;;.
+        ///p5-rpcs3-setupguide	Persona 5 RPCS3: Setup &amp; Installing Mods	P5	&quot;Cryptoss, ShrineFox&quot;	4/19/2019	&quot;CRIPAKGUI, MOD COMPENDIUM, MOD LOADER, MOD.CPK, PATCH.YML, PERSONA 5, RPCS3&quot;	This straightforward tutorial lists everything you need in order to run Persona 5 mods on RPCS3.		https://shrinefox.com/guides/persona-5-rpcs3-modding-guide-1-downloads-and-setup	P5 RPCS3: Setup &amp; Installing Mods
+        ///p5-rpcs3-modcreationguide	Persona 5 RPCS3: Creating M [rest of string was truncated]&quot;;.
         /// </summary>
         public static string guides {
             get {
@@ -82,17 +175,56 @@ namespace Amicitia.github.io.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to                             &lt;/div&gt;
-        ///                        &lt;/div&gt;
-        ///                    &lt;/div&gt;
-        ///                &lt;/td&gt;
-        ///                &lt;td width=&quot;75%&quot; style=&quot;background-color:#0000007F; border-radius:12px;&quot;&gt;
-        ///                    &lt;div class=&quot;text&quot;&gt;
-        ///                        &lt;b&gt;Type&lt;/b&gt;:
-        ///                        &lt;select onchange=&quot;navigate()&quot; id=&quot;type&quot; name=&quot;type&quot;&gt;
-        ///                            &lt;option value=&quot;All&quot;&gt;All&lt;/option&gt;
-        ///                            &lt;option value=&quot;Mod&quot;&gt;Mods&lt;/option&gt;
-        ///                       [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;div class=&quot;container body-content&quot;&gt;
+        ///	&lt;table&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td width=&quot;25%&quot; style=&quot;vertical-align:top&quot;&gt;
+        ///                &lt;div class=&quot;content-outer&quot;&gt;
+        ///                    &lt;div class=&quot;content&quot;&gt;&lt;br&gt;
+        ///						Basics
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amicitia.github.io/docs/flowscript&quot;&gt;Flowscript&lt;/a&gt;
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amicitia.github.io/docs/messagescript&quot;&gt;Messagescript&lt;/a&gt;
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amicitia.github.io/docs/decompiling&quot;&gt;Decompiling&lt;/a&gt;
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amiciti [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string hookingfunctions {
+            get {
+                return ResourceManager.GetString("hookingfunctions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;container body-content&quot;&gt;
+        ///	&lt;table&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td width=&quot;25%&quot; style=&quot;vertical-align:top&quot;&gt;
+        ///                &lt;div class=&quot;content-outer&quot;&gt;
+        ///                    &lt;div class=&quot;content&quot;&gt;&lt;br&gt;
+        ///						Basics
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amicitia.github.io/docs/flowscript&quot;&gt;Flowscript&lt;/a&gt;
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amicitia.github.io/docs/messagescript&quot;&gt;Messagescript&lt;/a&gt;
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amicitia.github.io/docs/decompiling&quot;&gt;Decompiling&lt;/a&gt;
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amiciti [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string importing {
+            get {
+                return ResourceManager.GetString("importing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to     &lt;td width=&quot;75%&quot;&gt;
+        ///        &lt;div class=&quot;text&quot;&gt;
+        ///            &lt;b&gt;Type&lt;/b&gt;:
+        ///            &lt;select class=&quot;select-css&quot; onchange=&quot;navigate()&quot; id=&quot;type&quot; name=&quot;type&quot;&gt;
+        ///                &lt;option value=&quot;All&quot;&gt;All&lt;/option&gt;
+        ///                &lt;option value=&quot;Mod&quot;&gt;Mods&lt;/option&gt;
+        ///                &lt;option value=&quot;Tool&quot;&gt;Tools&lt;/option&gt;
+        ///                &lt;option value=&quot;Cheat&quot;&gt;Cheats&lt;/option&gt;
+        ///                &lt;option value=&quot;Guide&quot;&gt;Guides&lt;/option&gt;
+        ///            &lt;/select&gt;
+        ///            &lt;b&gt;Game&lt;/b&gt;:
+        ///            &lt;select class=&quot;select-css&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string IndexContentHeader {
             get {
@@ -101,14 +233,14 @@ namespace Amicitia.github.io.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
-        ///&lt;br /&gt;
-        ///&lt;br /&gt;
+        ///   Looks up a localized string similar to &lt;br&gt;
+        ///&lt;br&gt;
         ///&lt;p style=&quot;font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;&quot;&gt;
         ///    We are NOT affiliated, associated, authorized, endorsed by, or in any way
         ///    &lt;br&gt;officially connected with ATLUS, SEGA, or any of its subsidiaries or its affiliates.
         ///    &lt;br&gt;The official ATLUS website can be found at &lt;a href=&quot;https://atlus.com&quot;&gt;https://atlus.com&lt;/a&gt;.
-        ///    &lt;br&gt;ATLUS and SEGA are registered in the U.S. Patent and Trademark Office. ATL [rest of string was truncated]&quot;;.
+        ///    &lt;br&gt;ATLUS and SEGA are registered in the U.S. Patent and Trademark Office. ATLUS and PERSONA are
+        ///    &lt;br&gt;either registered tr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string IndexFooter {
             get {
@@ -120,14 +252,15 @@ namespace Amicitia.github.io.Properties {
         ///   Looks up a localized string similar to &lt;!doctype html&gt;
         ///&lt;html&gt;
         ///&lt;head&gt;
-        ///    &lt;link rel=&apos;shortcut icon&apos; href=&apos;https://amicitia.github.io/images/favicon.png&apos; type=&apos;image/x-icon&apos; /&gt;
+        ///    &lt;link rel=&apos;shortcut icon&apos; href=&apos;images/favicon.png&apos; type=&apos;image/x-icon&apos; /&gt;
         ///    &lt;meta charset=&quot;utf-8&quot;&gt;
         ///    &lt;title&gt;Amicitia&lt;/title&gt;
-        ///    &lt;link href=&quot;css/index.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
         ///    &lt;link href=&quot;css/waves.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
-        ///    &lt;script src=&quot;https://kit.fontawesome.com/4c3075832a.js&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
-        ///    &lt;script src=&quot;https://amicitia.github.io/js/jquery-3.3.1.min.js&quot;&gt;&lt;/script&gt;
-        ///    &lt;scri [rest of string was truncated]&quot;;.
+        ///    &lt;link href=&quot;css/index.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+        ///    &lt;link href=&quot;css/sidebar.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+        ///    &lt;link href=&quot;css/select.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+        ///    &lt;link href=&quot;css/amicitia.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+        ///    &lt;s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string IndexHeader {
             get {
@@ -138,7 +271,7 @@ namespace Amicitia.github.io.Properties {
         /// <summary>
         ///   Looks up a localized string similar to &lt;/div&gt;
         ///&lt;div class=&quot;content&quot;&gt;
-        ///    &lt;table id=&quot;wrap&quot;&gt;
+        ///    &lt;table&gt;
         ///        &lt;tbody&gt;
         ///            &lt;tr&gt;
         ///                &lt;td width=&quot;25%&quot; style=&quot;vertical-align:top&quot;&gt;
@@ -151,6 +284,25 @@ namespace Amicitia.github.io.Properties {
         public static string IndexSidebar {
             get {
                 return ResourceManager.GetString("IndexSidebar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;container body-content&quot;&gt;
+        ///	&lt;table&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td width=&quot;25%&quot; style=&quot;vertical-align:top&quot;&gt;
+        ///                &lt;div class=&quot;content-outer&quot;&gt;
+        ///                    &lt;div class=&quot;content&quot;&gt;&lt;br&gt;
+        ///						Basics
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amicitia.github.io/docs/flowscript&quot;&gt;Flowscript&lt;/a&gt;
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amicitia.github.io/docs/messagescript&quot;&gt;Messagescript&lt;/a&gt;
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amicitia.github.io/docs/decompiling&quot;&gt;Decompiling&lt;/a&gt;
+        ///						&lt;br&gt;↳ &lt;a href=&quot;https://amiciti [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string messagescript {
+            get {
+                return ResourceManager.GetString("messagescript", resourceCulture);
             }
         }
         

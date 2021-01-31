@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+    <link rel='shortcut icon' href='images/favicon.png' type='image/x-icon' />
+    <meta charset="utf-8">
+    <title>Amicitia - tag Events</title>
+    <link href="../css/waves.css" rel="stylesheet" type="text/css">
+    <link href="../css/index.css" rel="stylesheet" type="text/css">
+    <link href="../css/sidebar.css" rel="stylesheet" type="text/css">
+    <link href="../css/select.css" rel="stylesheet" type="text/css">
+    <link href="../css/amicitia.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/4c3075832a.js" crossorigin="anonymous"></script>
+    <script src="https://shrinefox.com/Scripts/Amicitia/jquery-3.3.1.min.js"></script>
+    <script src="../js/bubbles.js"></script>
+    <script src="../js/showhide.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+</head>
+    <body>
+    <div class="copied">Cheat copied to clipboard!</div>
+        <!--Sidebar Toggle-->
+        <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+        <label for="openSidebarMenu" class="sidebarIconToggle">
+            <div class="spinner diagonal part-1"></div>
+            <div class="spinner horizontal"></div>
+            <div class="spinner diagonal part-2"></div>
+        </label>
+        <!--Sidebar Menu-->
+        <div id="sidebarMenu">
+            <ul class="sidebarMenuInner">
+                <p style="color:#FFFFFF7F;padding-left:14px;">Amicitia Network</p>
+                <li class="active"><a href="https://amicitia.github.io/"><i class="fa fa-desktop"></i> amicitia.github.io</a></li>
+                <li><a href="https://shrinefox.com/forum"><i class="fa fa-comments-o"></i> Forum</a></li>
+                <li><a href="https://shrinefox.com/guides/"><i class="fa fa-graduation-cap"></i> Guides</a></li>
+                <li><a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-users"></i> Wiki</a></li>
+                <li><a href="https://amicitia-team.tumblr.com/"><i class="fa fa-newspaper"></i> News</a></li>
+                <li><a href="https://shrinefox.com/forum/app.php/faqpage"><i class="fa fa-question-circle"></i> FAQs</a></li>
+                <p style="color:#FFFFFF7F;padding-left:14px;margin-bottom: 0px;">Apps</p>
+                <li><a href="https://shrinefox.com/textsearch"><i class="fa fa-search"></i> Text Search</a></li>
+                <li><a href="https://amicitia.github.io/docs/flowscript"><i class="fa fa-file-code"></i> Flowscript Docs</a></li>
+                <li><a href="https://amicitia.github.io/files"><i class="fa fa-folder-open"></i> Files</a></li>
+                <li><a href="https://shrinefox.com/PatchCreator"><i class="fa fa-check-square"></i> Patch.yml Creator</a></li>
+            </ul>
+        </div>
+        <!--Header-->
+        <div class="header">
+            <canvas id="bgCanvas"></canvas>
+            <!--Logo and Header Text-->
+            <div>
+                <center>
+                    <table>
+                        <tr>
+                            <td style="text-align:right;">
+                                <div class="logo"><img src="https://amicitia.github.io/images/logo.svg"></div>
+                            </td>
+                            <td>
+                                <h1>amicitia.github.io</h1>
+                                <h2>mods • tools • guides</h2>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </div>
+            <!--Waves-->
+            <div>
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(17,17,17,0.33)" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(17,17,17,0.6)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(17,17,17,0.6)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(17,17,17,1)" />
+                    </g>
+                </svg>
+            </div>
+            <!--Waves End-->
+        </div>
+        <!--Header End--></div>
+<div class="content">
+    <table>
+        <tbody>
+            <tr>
+                <td width="25%" style="vertical-align:top">
+                    <div id="bloglinks">
+                        <div class"text">
+                            <h3><i class="fas fa-newspaper"></i> Latest News</h3>
+                            <script src="../js/blogposts.js"></script>
+                        <br /><div class="widget"><table><tr><td></td><td></td></tr></table><br>    <td width="75%">
+        <div class="text">
+            <b>Type</b>:
+            <select class="select-css" onchange="navigate()" id="type" name="type">
+                <option value="All">All</option>
+                <option value="Mod">Mods</option>
+                <option value="Tool">Tools</option>
+                <option value="Cheat">Cheats</option>
+                <option value="Guide">Guides</option>
+            </select>
+            <b>Game</b>:
+            <select class="select-css" onchange="navigate()" id="game" name="game">
+                <option value="All">All</option>
+                <option value="P5">Persona 5</option>
+                <option value="P5R">Persona 5 Royal</option>
+                <option value="P4">Persona 4</option>
+                <option value="P3FES">Persona 3 FES</option>
+                <option value="P3P">Persona 3 Portable</option>
+                <option value="P4G">Persona 4 Golden</option>
+                <option value="P3D">Persona 3 Dancing in Moonlight</option>
+                <option value="P4D">Persona 4 Dancing All Night</option>
+                <option value="P5D">Persona 5 Dancing in Starlight</option>
+                <option value="PQ">Persona Q</option>
+                <option value="PQ2">Persona Q2</option>
+                <option value="CFB">Catherine Full Body</option>
+                <option value="SMT3">Shin Megami Tensei Nocturne</option>
+                <option value="P4AU">Persona 4 Arena Ultimax</option>
+            </select> <b> <a href="https://shrinefox.com/forum/viewtopic.php?f=4&t=682&p=2649#p2649"> <span style="color: #fb9e3b"> <i class="fa fa-upload"></i> Submit</span></a></b>
+            <br>
+            <br>
+(2 results)<br><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/akechidate"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><a href="https://www.youtube.com/watch?v=NHy3TTAj-Fw"><img src="https://img.youtube.com/vi/NHy3TTAj-Fw/default.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Akechi Valentine's Day Date</font></b><br>P5 mod by <a href="https://amicitia.github.io/author/rover">rover</a>, <a href="https://amicitia.github.io/author/yangster">yangster</a></font></td><td width='25%'><center>2/15/2019</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This is a demo for a gay romance mod that is still in progress.</td><td><center><font size="4"><a href="https://cdn.discordapp.com/attachments/410951708274065409/545867401909108748/Akechi_Valentines_Day_Date.zip"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div></tr></tbody></table><a href="https://amicitia.github.io/tag/Events"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">Events</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3psapphofemc"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/orbLqAM.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Sappho Mod (gay FeMC)</font></b><br>P3P mod by <a href="https://amicitia.github.io/author/WhiteLightning">WhiteLightning</a></font></td><td width='25%'><center>9/23/2018</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This mod replaces the last few ranks of the Priestess, Empress, and Lovers social links for the FeMC with the corresponding ones from the MMC.</td><td><center><font size="4"><a href="https://drive.google.com/file/d/1O-ldW0G5rtCmwT0s7Aj1fdqLkoSTwHvQ/view"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div></tr></tbody></table><a href="https://amicitia.github.io/tag/Text"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">Text</p></div></a><a href="https://amicitia.github.io/tag/Scripts"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> Scripts</p></div></a><a href="https://amicitia.github.io/tag/Events"><div class="tag" style="border-left: 4px solid #F3D979; "><p class="noselect"> Events</p></div></a></div></div></div><table><tr><td></td><td></td></tr></table><br><br>
+<br>
+<p style="font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;">
+    We are NOT affiliated, associated, authorized, endorsed by, or in any way
+    <br>officially connected with ATLUS, SEGA, or any of its subsidiaries or its affiliates.
+    <br>The official ATLUS website can be found at <a href="https://atlus.com">https://atlus.com</a>.
+    <br>ATLUS and SEGA are registered in the U.S. Patent and Trademark Office. ATLUS and PERSONA are
+    <br>either registered trademarks or trademarks of ATLUS Co., Ltd. or its affiliates.
+</p>
+<br>
+<br>
+</table>
+<center><a href="https://shrinefox.com/" style="color:#FFF;">ShrineFox</a>
+2020 - 2021. Last updated 1/31/2021. <a href="https://github.com/Amicitia/Amicitia.github.io"><i class="fa fa-github"></i> Source available on Github</a>.<br><a href="https://twitter.com/AmicitiaTeam"><i class="fa fa-twitter"></i> Follow</a> for updates!</div></footer></html><br><br>
