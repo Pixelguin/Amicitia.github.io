@@ -17,69 +17,72 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
-    <body>
+<body>
+<div id="wrapper">
     <div class="copied">Cheat copied to clipboard!</div>
-        <!--Sidebar Toggle-->
-        <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
-        <label for="openSidebarMenu" class="sidebarIconToggle">
-            <div class="spinner diagonal part-1"></div>
-            <div class="spinner horizontal"></div>
-            <div class="spinner diagonal part-2"></div>
-        </label>
-        <!--Sidebar Menu-->
-        <div id="sidebarMenu">
-            <ul class="sidebarMenuInner">
-                <p style="color:#FFFFFF7F;padding-left:14px;">Amicitia Network</p>
-                <li class="active"><a href="https://amicitia.github.io/"><i class="fa fa-desktop"></i> amicitia.github.io</a></li>
-                <li><a href="https://shrinefox.com/forum"><i class="fa fa-comments-o"></i> Forum</a></li>
-                <li><a href="https://shrinefox.com/guides/"><i class="fa fa-graduation-cap"></i> Guides</a></li>
-                <li><a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-users"></i> Wiki</a></li>
-                <li><a href="https://amicitia-team.tumblr.com/"><i class="fa fa-newspaper"></i> News</a></li>
-                <li><a href="https://shrinefox.com/forum/app.php/faqpage"><i class="fa fa-question-circle"></i> FAQs</a></li>
-                <p style="color:#FFFFFF7F;padding-left:14px;margin-bottom: 0px;">Apps</p>
-                <li><a href="https://shrinefox.com/textsearch"><i class="fa fa-search"></i> Text Search</a></li>
-                <li><a href="https://amicitia.github.io/docs/flowscript"><i class="fa fa-file-code"></i> Flowscript Docs</a></li>
-                <li><a href="https://amicitia.github.io/files"><i class="fa fa-folder-open"></i> Files</a></li>
-                <li><a href="https://shrinefox.com/PatchCreator"><i class="fa fa-check-square"></i> Patch.yml Creator</a></li>
-            </ul>
+    <!--Sidebar Toggle-->
+    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu" style="position: fixed;display:none;">
+    <label for="openSidebarMenu" class="sidebarIconToggle">
+        <div class="spinner diagonal part-1"></div>
+        <div class="spinner horizontal"></div>
+        <div class="spinner diagonal part-2"></div>
+    </label>
+    <!--Sidebar Menu-->
+    <div id="sidebarMenu">
+        <ul class="sidebarMenuInner">
+            <p>Amicitia Network</p>
+            <a href="https://shrinefox.com/"><li class="inactive"><i class="fa fa-home"></i> ShrineFox.com</li></a>
+            <a href="https://amicitia.github.io/"><li class="active"><i class="fa fa-desktop"></i> amicitia.github.io</li></a>
+            <a href="https://shrinefox.com/forum"><li class="inactive"><i class="fa fa-comments-o"></i> Forum</li></a>
+            <a href="https://shrinefox.com/guides/"><li class="inactive"><i class="fa fa-graduation-cap"></i> Guides</li></a>
+            <a href="https://amicitia.miraheze.org/wiki/Main_Page"><li class="inactive"><i class="fa fa-users"></i> Wiki</li></a>
+            <a href="https://amicitia-team.tumblr.com/"><li class="inactive"><i class="fa fa-newspaper"></i> News</li></a>
+            <a href="https://shrinefox.com/forum/app.php/faqpage"><li class="inactive"><i class="fa fa-question-circle"></i> FAQs</li></a>
+            <p>Apps</p>
+            <a href="https://shrinefox.com/textsearch"><li class="inactive"><i class="fa fa-search"></i> Text Search</li></a>
+            <a href="https://amicitia.github.io/docs/flowscript"><li class="inactive"><i class="fa fa-file-code"></i> Flowscript Docs</li></a>
+            <a href="https://amicitia.github.io/files"><li class="inactive"><i class="fa fa-folder-open"></i> Files</li></a>
+            <a href="https://shrinefox.com/PatchCreator"><li class="inactive"><i class="fa fa-check-square"></i> Patch.yml Creator</li></a>
+        </ul>
+    </div>
+    <!--Header-->
+    <div class="header">
+        <canvas id="bgCanvas"></canvas>
+        <!--Logo and Header Text-->
+        <div>
+            <center>
+                <table>
+                    <tr>
+                        <td style="text-align:right;">
+                            <a href="https://amicitia.github.io"><div class="logo"><img src="https://amicitia.github.io/images/logo.svg"></div></a>
+                        </td>
+                        <td>
+                            <h1>amicitia.github.io</h1>
+                            <h2>mods • tools • guides</h2>
+                        </td>
+                    </tr>
+                </table>
+            </center>
         </div>
-        <!--Header-->
-        <div class="header">
-            <canvas id="bgCanvas"></canvas>
-            <!--Logo and Header Text-->
-            <div>
-                <center>
-                    <table>
-                        <tr>
-                            <td style="text-align:right;">
-                                <div class="logo"><img src="https://amicitia.github.io/images/logo.svg"></div>
-                            </td>
-                            <td>
-                                <h1>amicitia.github.io</h1>
-                                <h2>mods • tools • guides</h2>
-                            </td>
-                        </tr>
-                    </table>
-                </center>
-            </div>
-            <!--Waves-->
-            <div>
-                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                     viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                    <defs>
-                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                    </defs>
-                    <g class="parallax">
-                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(17,17,17,0.33)" />
-                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(17,17,17,0.6)" />
-                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(17,17,17,0.6)" />
-                        <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(17,17,17,1)" />
-                    </g>
-                </svg>
-            </div>
-            <!--Waves End-->
+        <!--Waves-->
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(17,17,17,0.33)" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(17,17,17,0.6)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(17,17,17,0.6)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(17,17,17,1)" />
+                </g>
+            </svg>
         </div>
-        <!--Header End--></div>
+        <!--Waves End-->
+    </div>
+    <!--Header End-->
+</div>
 <div class="content">
     <table>
         <tbody>
@@ -119,17 +122,24 @@
             </select> <b> <a href="https://shrinefox.com/forum/viewtopic.php?f=4&t=682&p=2649#p2649"> <span style="color: #fb9e3b"> <i class="fa fa-upload"></i> Submit</span></a></b>
             <br>
             <br>
-(3 results)<br><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4g-p3protag"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/jfCRQxG.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">P3 Protagonist</font></b><br>P4G mod by <a href="https://amicitia.github.io/author/mylifesalie">mylifesalie</a></font></td><td width='25%'><center>5/7/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This mod replaces the Protagonist's Gekkuokan outfit with P3P's Male Protagonist in his SEES Outfit with voice replacements, fixed animations, and effects.<br>Known issue: -The critical attack animation is too long and needs to be readjusted.</td><td><center><font size="4"><a href="http://www.mediafire.com/file/xx9sc5vedo9yt5m/P4G_P3P_MC_mod.zip/file"><i class="fas fa-folder-open" aria-hidden="true"></i> Download (Vita)</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=19&p=676#p676"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/Player Model"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">Player Model</p></div></a><a href="https://amicitia.github.io/tag/Voices"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> Voices</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3-okami"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><a href="https://www.youtube.com/watch?v=Y-G7Cb3dhng"><img src="https://img.youtube.com/vi/Y-G7Cb3dhng/default.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Persona 3 Okami</font></b><br>P3FES mod by <a href="https://amicitia.github.io/author/CrazyGM">CrazyGM</a></font></td><td width='25%'><center>4/27/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Yu appears in 90% of the cutcenes, Izanagi-no-Okami, Izanagi, Magatsu Izanagi and Yoshitsune added to the game, 14 P4 OST tracks added, menu/UI changes, Myriad Truths added (replaces Morning Star)</td><td><center><font size="4"><a href="https://drive.google.com/uc?id=1gtSayPi9QwZr69uqpy5c-MS1XwOAV_PD&export=download"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=11&t=193"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/Player Model"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">Player Model</p></div></a><a href="https://amicitia.github.io/tag/BGM"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> BGM</p></div></a><a href="https://amicitia.github.io/tag/HUD"><div class="tag" style="border-left: 4px solid #F3D979; "><p class="noselect"> HUD</p></div></a><a href="https://amicitia.github.io/tag/UI"><div class="tag" style="border-left: 4px solid #7AF379; "><p class="noselect"> UI</p></div></a><a href="https://amicitia.github.io/tag/Voices"><div class="tag" style="border-left: 4px solid #7998F3; "><p class="noselect"> Voices</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5-darkechi"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Darkechi Replacer</font></b><br>P5 mod by <a href="https://amicitia.github.io/author/ciolnirrep">ciolnirrep</a>, <a href="https://amicitia.github.io/author/lonelyCrow">lonelyCrow</a></font></td><td width='25%'><center>11/3/2019</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Replaces Akechi's in-battle animations with his boss animations, tints his sword red, gives him new voice lines, changes several Mementos bustups, adds new dialog when adding him to the team and works with every costume. Designed to work with the Alternate Costumes Mod by ShrineFox.<br><div class="update"><b>Update 11/3/2019:</b><br>-Multiple improvements by the author, see included readme.txt</div></td><td><center><font size="4"><a href="https://www.mediafire.com/file/wo77qrwa6tfjhts/Darkechi_V2fix.rar/file"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br><a href="https://mega.nz/#!v2YDHS4Q!-QNwkn42jdh50rvmQlclfmNEyPt-657DZH8wBXABAgc"><i class="fas fa-" aria-hidden="true"></i> Download v1.0 (Outdated)</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=15&t=39"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/Party Model"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">Party Model</p></div></a><a href="https://amicitia.github.io/tag/Voices"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> Voices</p></div></a><a href="https://amicitia.github.io/tag/Bustup"><div class="tag" style="border-left: 4px solid #F3D979; "><p class="noselect"> Bustup</p></div></a><a href="https://amicitia.github.io/tag/Scripts"><div class="tag" style="border-left: 4px solid #7AF379; "><p class="noselect"> Scripts</p></div></a><a href="https://amicitia.github.io/tag/Text"><div class="tag" style="border-left: 4px solid #7998F3; "><p class="noselect"> Text</p></div></a></div></div></div><table><tr><td></td><td></td></tr></table><br><br>
-<br>
-<p style="font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;">
-    We are NOT affiliated, associated, authorized, endorsed by, or in any way
-    <br>officially connected with ATLUS, SEGA, or any of its subsidiaries or its affiliates.
-    <br>The official ATLUS website can be found at <a href="https://atlus.com">https://atlus.com</a>.
-    <br>ATLUS and SEGA are registered in the U.S. Patent and Trademark Office. ATLUS and PERSONA are
-    <br>either registered trademarks or trademarks of ATLUS Co., Ltd. or its affiliates.
-</p>
-<br>
-<br>
-</table>
-<center><a href="https://shrinefox.com/" style="color:#FFF;">ShrineFox</a>
-2020 - 2021. Last updated 1/31/2021. <a href="https://github.com/Amicitia/Amicitia.github.io"><i class="fa fa-github"></i> Source available on Github</a>.<br><a href="https://twitter.com/AmicitiaTeam"><i class="fa fa-twitter"></i> Follow</a> for updates!</div></footer></html><br><br>
+(3 results)<br><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4g-p3protag"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/jfCRQxG.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">P3 Protagonist</font></b><br>P4G mod by <a href="https://amicitia.github.io/author/mylifesalie">mylifesalie</a></font></td><td width='25%'><center>5/7/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This mod replaces the Protagonist's Gekkuokan outfit with P3P's Male Protagonist in his SEES Outfit with voice replacements, fixed animations, and effects.<br>Known issue: -The critical attack animation is too long and needs to be readjusted.</td><td><center><font size="4"><a href="http://www.mediafire.com/file/xx9sc5vedo9yt5m/P4G_P3P_MC_mod.zip/file"><i class="fas fa-folder-open" aria-hidden="true"></i> Download (Vita)</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=19&p=676#p676"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/Player Model"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">Player Model</p></div></a><a href="https://amicitia.github.io/tag/Voices"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> Voices</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3-okami"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><a href="https://www.youtube.com/watch?v=Y-G7Cb3dhng"><img src="https://img.youtube.com/vi/Y-G7Cb3dhng/default.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Persona 3 Okami</font></b><br>P3FES mod by <a href="https://amicitia.github.io/author/CrazyGM">CrazyGM</a></font></td><td width='25%'><center>4/27/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Yu appears in 90% of the cutcenes, Izanagi-no-Okami, Izanagi, Magatsu Izanagi and Yoshitsune added to the game, 14 P4 OST tracks added, menu/UI changes, Myriad Truths added (replaces Morning Star)</td><td><center><font size="4"><a href="https://drive.google.com/uc?id=1gtSayPi9QwZr69uqpy5c-MS1XwOAV_PD&export=download"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=11&t=193"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/Player Model"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">Player Model</p></div></a><a href="https://amicitia.github.io/tag/BGM"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> BGM</p></div></a><a href="https://amicitia.github.io/tag/HUD"><div class="tag" style="border-left: 4px solid #F3D979; "><p class="noselect"> HUD</p></div></a><a href="https://amicitia.github.io/tag/UI"><div class="tag" style="border-left: 4px solid #7AF379; "><p class="noselect"> UI</p></div></a><a href="https://amicitia.github.io/tag/Voices"><div class="tag" style="border-left: 4px solid #7998F3; "><p class="noselect"> Voices</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5-darkechi"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Darkechi Replacer</font></b><br>P5 mod by <a href="https://amicitia.github.io/author/ciolnirrep">ciolnirrep</a>, <a href="https://amicitia.github.io/author/lonelyCrow">lonelyCrow</a></font></td><td width='25%'><center>11/3/2019</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Replaces Akechi's in-battle animations with his boss animations, tints his sword red, gives him new voice lines, changes several Mementos bustups, adds new dialog when adding him to the team and works with every costume. Designed to work with the Alternate Costumes Mod by ShrineFox.<br><div class="update"><b>Update 11/3/2019:</b><br>-Multiple improvements by the author, see included readme.txt</div></td><td><center><font size="4"><a href="https://www.mediafire.com/file/wo77qrwa6tfjhts/Darkechi_V2fix.rar/file"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br><a href="https://mega.nz/#!v2YDHS4Q!-QNwkn42jdh50rvmQlclfmNEyPt-657DZH8wBXABAgc"><i class="fas fa-" aria-hidden="true"></i> Download v1.0 (Outdated)</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=15&t=39"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/Party Model"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">Party Model</p></div></a><a href="https://amicitia.github.io/tag/Voices"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> Voices</p></div></a><a href="https://amicitia.github.io/tag/Bustup"><div class="tag" style="border-left: 4px solid #F3D979; "><p class="noselect"> Bustup</p></div></a><a href="https://amicitia.github.io/tag/Scripts"><div class="tag" style="border-left: 4px solid #7AF379; "><p class="noselect"> Scripts</p></div></a><a href="https://amicitia.github.io/tag/Text"><div class="tag" style="border-left: 4px solid #7998F3; "><p class="noselect"> Text</p></div></a></div></div></div><table><tr><td></td><td></td></tr></table><br>    <br>
+    <br>
+    <p style="font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;">
+        We are NOT affiliated, associated, authorized, endorsed by, or in any way
+        <br>officially connected with ATLUS, SEGA, or any of its subsidiaries or its affiliates.
+            <br>The official ATLUS website can be found at <a href="https://atlus.com">https://atlus.com</a>.
+            <br>ATLUS and SEGA are registered in the U.S. Patent and Trademark Office. ATLUS and PERSONA are
+            <br>either registered trademarks or trademarks of ATLUS Co., Ltd. or its affiliates.
+        </p>
+        </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <center>© ShrineFox 2020 - 2021. Last updated 2/1/2021. <a href="https://github.com/Amicitia/Amicitia.github.io"><i class="fa fa-github"></i> Source available on Github</a>.<br><a href="https://twitter.com/AmicitiaTeam"><i class="fa fa-twitter"></i> Follow</a> for updates! <a href="https://ko-fi.com/shrinefox"><i class="fa fa-coffee" aria-hidden="true"></i> Support</a></center>
+        <br>
+    </div>
+    <!--Content End-->
+    <div class="footer"></div>
+    <!--Footer End-->
+</div>

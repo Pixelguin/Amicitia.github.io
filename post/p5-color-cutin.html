@@ -17,69 +17,72 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
-    <body>
+<body>
+<div id="wrapper">
     <div class="copied">Cheat copied to clipboard!</div>
-        <!--Sidebar Toggle-->
-        <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
-        <label for="openSidebarMenu" class="sidebarIconToggle">
-            <div class="spinner diagonal part-1"></div>
-            <div class="spinner horizontal"></div>
-            <div class="spinner diagonal part-2"></div>
-        </label>
-        <!--Sidebar Menu-->
-        <div id="sidebarMenu">
-            <ul class="sidebarMenuInner">
-                <p style="color:#FFFFFF7F;padding-left:14px;">Amicitia Network</p>
-                <li class="active"><a href="https://amicitia.github.io/"><i class="fa fa-desktop"></i> amicitia.github.io</a></li>
-                <li><a href="https://shrinefox.com/forum"><i class="fa fa-comments-o"></i> Forum</a></li>
-                <li><a href="https://shrinefox.com/guides/"><i class="fa fa-graduation-cap"></i> Guides</a></li>
-                <li><a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-users"></i> Wiki</a></li>
-                <li><a href="https://amicitia-team.tumblr.com/"><i class="fa fa-newspaper"></i> News</a></li>
-                <li><a href="https://shrinefox.com/forum/app.php/faqpage"><i class="fa fa-question-circle"></i> FAQs</a></li>
-                <p style="color:#FFFFFF7F;padding-left:14px;margin-bottom: 0px;">Apps</p>
-                <li><a href="https://shrinefox.com/textsearch"><i class="fa fa-search"></i> Text Search</a></li>
-                <li><a href="https://amicitia.github.io/docs/flowscript"><i class="fa fa-file-code"></i> Flowscript Docs</a></li>
-                <li><a href="https://amicitia.github.io/files"><i class="fa fa-folder-open"></i> Files</a></li>
-                <li><a href="https://shrinefox.com/PatchCreator"><i class="fa fa-check-square"></i> Patch.yml Creator</a></li>
-            </ul>
+    <!--Sidebar Toggle-->
+    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu" style="position: fixed;display:none;">
+    <label for="openSidebarMenu" class="sidebarIconToggle">
+        <div class="spinner diagonal part-1"></div>
+        <div class="spinner horizontal"></div>
+        <div class="spinner diagonal part-2"></div>
+    </label>
+    <!--Sidebar Menu-->
+    <div id="sidebarMenu">
+        <ul class="sidebarMenuInner">
+            <p>Amicitia Network</p>
+            <a href="https://shrinefox.com/"><li class="inactive"><i class="fa fa-home"></i> ShrineFox.com</li></a>
+            <a href="https://amicitia.github.io/"><li class="active"><i class="fa fa-desktop"></i> amicitia.github.io</li></a>
+            <a href="https://shrinefox.com/forum"><li class="inactive"><i class="fa fa-comments-o"></i> Forum</li></a>
+            <a href="https://shrinefox.com/guides/"><li class="inactive"><i class="fa fa-graduation-cap"></i> Guides</li></a>
+            <a href="https://amicitia.miraheze.org/wiki/Main_Page"><li class="inactive"><i class="fa fa-users"></i> Wiki</li></a>
+            <a href="https://amicitia-team.tumblr.com/"><li class="inactive"><i class="fa fa-newspaper"></i> News</li></a>
+            <a href="https://shrinefox.com/forum/app.php/faqpage"><li class="inactive"><i class="fa fa-question-circle"></i> FAQs</li></a>
+            <p>Apps</p>
+            <a href="https://shrinefox.com/textsearch"><li class="inactive"><i class="fa fa-search"></i> Text Search</li></a>
+            <a href="https://amicitia.github.io/docs/flowscript"><li class="inactive"><i class="fa fa-file-code"></i> Flowscript Docs</li></a>
+            <a href="https://amicitia.github.io/files"><li class="inactive"><i class="fa fa-folder-open"></i> Files</li></a>
+            <a href="https://shrinefox.com/PatchCreator"><li class="inactive"><i class="fa fa-check-square"></i> Patch.yml Creator</li></a>
+        </ul>
+    </div>
+    <!--Header-->
+    <div class="header">
+        <canvas id="bgCanvas"></canvas>
+        <!--Logo and Header Text-->
+        <div>
+            <center>
+                <table>
+                    <tr>
+                        <td style="text-align:right;">
+                            <a href="https://amicitia.github.io"><div class="logo"><img src="https://amicitia.github.io/images/logo.svg"></div></a>
+                        </td>
+                        <td>
+                            <h1>amicitia.github.io</h1>
+                            <h2>mods • tools • guides</h2>
+                        </td>
+                    </tr>
+                </table>
+            </center>
         </div>
-        <!--Header-->
-        <div class="header">
-            <canvas id="bgCanvas"></canvas>
-            <!--Logo and Header Text-->
-            <div>
-                <center>
-                    <table>
-                        <tr>
-                            <td style="text-align:right;">
-                                <div class="logo"><img src="https://amicitia.github.io/images/logo.svg"></div>
-                            </td>
-                            <td>
-                                <h1>amicitia.github.io</h1>
-                                <h2>mods • tools • guides</h2>
-                            </td>
-                        </tr>
-                    </table>
-                </center>
-            </div>
-            <!--Waves-->
-            <div>
-                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                     viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                    <defs>
-                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                    </defs>
-                    <g class="parallax">
-                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(17,17,17,0.33)" />
-                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(17,17,17,0.6)" />
-                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(17,17,17,0.6)" />
-                        <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(17,17,17,1)" />
-                    </g>
-                </svg>
-            </div>
-            <!--Waves End-->
+        <!--Waves-->
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(17,17,17,0.33)" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(17,17,17,0.6)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(17,17,17,0.6)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(17,17,17,1)" />
+                </g>
+            </svg>
         </div>
-        <!--Header End--></div>
+        <!--Waves End-->
+    </div>
+    <!--Header End-->
+</div>
 <div class="content">
     <table>
         <tbody>
@@ -119,17 +122,24 @@
             </select> <b> <a href="https://shrinefox.com/forum/viewtopic.php?f=4&t=682&p=2649#p2649"> <span style="color: #fb9e3b"> <i class="fa fa-upload"></i> Submit</span></a></b>
             <br>
             <br>
-(1 results)<br><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5-color-cutin"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><a href="https://youtu.be/FB5fG_CIYQ8"><img src="https://img.youtube.com/vi/ttps://youtu.be/FB5fG_CIYQ8/default.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Colorful Cutins</font></b><br>P5 mod by <a href="https://amicitia.github.io/author/AnotherNicholas">AnotherNicholas</a></font></td><td width='25%'><center>12/20/2020</center></td></tr></tbody></table></div><div><div class="cheat"><table><tbody><tr><td>Adds each characters thematic color to the background of their own cutin portraits. Inspired by and based off of theflightofarobyn's video.</td><td><center><font size="4"><a href="https://drive.google.com/file/d/1UFEDvzH0VbAmiYdM8vRzLmuzwTqZSXOs/view?usp=sharing"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=15&p=2948#p2948"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/DDS"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">DDS</p></div></a></div></div></div><table><tr><td></td><td></td></tr></table><br><br>
-<br>
-<p style="font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;">
-    We are NOT affiliated, associated, authorized, endorsed by, or in any way
-    <br>officially connected with ATLUS, SEGA, or any of its subsidiaries or its affiliates.
-    <br>The official ATLUS website can be found at <a href="https://atlus.com">https://atlus.com</a>.
-    <br>ATLUS and SEGA are registered in the U.S. Patent and Trademark Office. ATLUS and PERSONA are
-    <br>either registered trademarks or trademarks of ATLUS Co., Ltd. or its affiliates.
-</p>
-<br>
-<br>
-</table>
-<center><a href="https://shrinefox.com/" style="color:#FFF;">ShrineFox</a>
-2020 - 2021. Last updated 1/31/2021. <a href="https://github.com/Amicitia/Amicitia.github.io"><i class="fa fa-github"></i> Source available on Github</a>.<br><a href="https://twitter.com/AmicitiaTeam"><i class="fa fa-twitter"></i> Follow</a> for updates!</div></footer></html><br><br>
+(1 results)<br><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5-color-cutin"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><a href="https://youtu.be/FB5fG_CIYQ8"><img src="https://img.youtube.com/vi/ttps://youtu.be/FB5fG_CIYQ8/default.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Colorful Cutins</font></b><br>P5 mod by <a href="https://amicitia.github.io/author/AnotherNicholas">AnotherNicholas</a></font></td><td width='25%'><center>12/20/2020</center></td></tr></tbody></table></div><div><div class="cheat"><table><tbody><tr><td>Adds each characters thematic color to the background of their own cutin portraits. Inspired by and based off of theflightofarobyn's video.</td><td><center><font size="4"><a href="https://drive.google.com/file/d/1UFEDvzH0VbAmiYdM8vRzLmuzwTqZSXOs/view?usp=sharing"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=15&p=2948#p2948"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/DDS"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">DDS</p></div></a></div></div></div><table><tr><td></td><td></td></tr></table><br>    <br>
+    <br>
+    <p style="font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;">
+        We are NOT affiliated, associated, authorized, endorsed by, or in any way
+        <br>officially connected with ATLUS, SEGA, or any of its subsidiaries or its affiliates.
+            <br>The official ATLUS website can be found at <a href="https://atlus.com">https://atlus.com</a>.
+            <br>ATLUS and SEGA are registered in the U.S. Patent and Trademark Office. ATLUS and PERSONA are
+            <br>either registered trademarks or trademarks of ATLUS Co., Ltd. or its affiliates.
+        </p>
+        </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <center>© ShrineFox 2020 - 2021. Last updated 2/1/2021. <a href="https://github.com/Amicitia/Amicitia.github.io"><i class="fa fa-github"></i> Source available on Github</a>.<br><a href="https://twitter.com/AmicitiaTeam"><i class="fa fa-twitter"></i> Follow</a> for updates! <a href="https://ko-fi.com/shrinefox"><i class="fa fa-coffee" aria-hidden="true"></i> Support</a></center>
+        <br>
+    </div>
+    <!--Content End-->
+    <div class="footer"></div>
+    <!--Footer End-->
+</div>

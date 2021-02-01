@@ -20,17 +20,38 @@ body, html {
 	height:auto !important;
 }
 
-/* Tables */
-table { 
-    table-layout:fixed;
+#wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+.footer {
+	color: var(--textwhite);
 	width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+	background-color: var(--bgblack);
+	height: 100%;
+	position: fixed;
+}
+
+.image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+/* Tables */
+table {
+	table-layout: fixed;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 td {
 	margin: 0;
-	padding: 0;
+	padding: 7px;
+	word-break: break-word;
 }
 
 /* Headers */
@@ -71,6 +92,10 @@ a:hover {
 }
 
 /* ShowHide.js */
+.toggle-title {
+	cursor: pointer;
+}
+
 .toggle-inner {
 	display: none;
 }

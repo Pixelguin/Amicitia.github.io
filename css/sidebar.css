@@ -1,7 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
 
+.active {
+    background-color: #111;
+}
+
+.inactive {
+    background-color: transparent;
+}
+
+.active:hover, .inactive:hover {
+    background-color: #FFF;
+    color: #111;
+}
+
+.sidebarMenuInner p {
+    color: #FFFFFF7F;
+    padding-left: 14px;
+}
+
 #sidebarMenu {
-	z-index:99;
+    z-index: 99;
     height: 100%;
     position: fixed;
     left: 0;
@@ -9,21 +27,21 @@
     margin-top: 60px;
     transform: translateX(-250px);
     transition: transform 250ms ease-in-out;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 15%, rgba(0,0,0,0.8)  100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 15%, rgba(0,0,0,0.8) 100%);
 }
 
 .sidebarMenuInner{
     margin:0;
     padding:0;
-    border-top: 1px solid rgba(255, 255, 255, 0.10);
 }
 
-.sidebarMenuInner li{
+.sidebarMenuInner li {
     list-style: none;
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
     padding: 10px;
+    padding-left: 20px;
     cursor: pointer;
     border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 }
@@ -52,13 +70,11 @@
 
 input[type="checkbox"]:checked ~ #sidebarMenu {
     transform: translateX(0);
-	position: fixed;
 }
 
 input[type=checkbox] {
     transition: all 0.3s;
     box-sizing: border-box;
-    display: none;
 }
 
 .sidebarIconToggle {
@@ -67,29 +83,22 @@ input[type=checkbox] {
     cursor: pointer;
     position: fixed;
     z-index: 99;
-    height: 100%;
-    width: 100%;
+    width: 50px;
     top: 22px;
     left: 15px;
     height: 22px;
-    width: 22px;
 }
 
 .spinner {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    position: absolute;
     height: 3px;
     width: 100%;
     background-color: #fff;
 }
 
 .horizontal {
-    transition: all 0.3s;
-    box-sizing: border-box;
     position: relative;
     float: left;
-    margin-top: 3px;
+    margin-top: 10px;
 }
 
 .diagonal.part-1 {
@@ -104,7 +113,7 @@ input[type=checkbox] {
     box-sizing: border-box;
     position: relative;
     float: left;
-    margin-top: 3px;
+    margin-top: 10px;
 }
 
 input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
@@ -129,17 +138,20 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
-	.sidebarMenuInner li {
-		font-size: 8pt;
-		padding: 4px;
-	}
-	
-	.sidebarIconToggle {
-		top: 4px;
-	}
+    .sidebarMenuInner li {
+        font-size: 8pt;
+        padding: 4px;
+        padding-left: 12px;
+    }
+
+    .sidebarIconToggle {
+        top: 4px;
+        width: 38px;
+    }
 	
 	#sidebarMenu {
-	    margin-top: 25px;
+	    margin-top: 44px;
+        width: 25%;
 	}
 	
 	.sidebarMenuInner p {

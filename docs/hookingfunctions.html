@@ -17,9 +17,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
+<div id="wrapper">
     <div class="copied">Cheat copied to clipboard!</div>
     <!--Sidebar Toggle-->
-    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu" style="position: fixed;display:none;">
     <label for="openSidebarMenu" class="sidebarIconToggle">
         <div class="spinner diagonal part-1"></div>
         <div class="spinner horizontal"></div>
@@ -28,18 +29,19 @@
     <!--Sidebar Menu-->
     <div id="sidebarMenu">
         <ul class="sidebarMenuInner">
-            <p style="color:#FFFFFF7F;padding-left:14px;">Amicitia Network</p>
-            <li class="active"><a href="https://amicitia.github.io/"><i class="fa fa-desktop"></i> amicitia.github.io</a></li>
-            <li><a href="https://shrinefox.com/forum"><i class="fa fa-comments-o"></i> Forum</a></li>
-            <li><a href="https://shrinefox.com/guides/"><i class="fa fa-graduation-cap"></i> Guides</a></li>
-            <li><a href="https://amicitia.miraheze.org/wiki/Main_Page"><i class="fa fa-users"></i> Wiki</a></li>
-            <li><a href="https://amicitia-team.tumblr.com/"><i class="fa fa-newspaper"></i> News</a></li>
-            <li><a href="https://shrinefox.com/forum/app.php/faqpage"><i class="fa fa-question-circle"></i> FAQs</a></li>
-            <p style="color:#FFFFFF7F;padding-left:14px;margin-bottom: 0px;">Apps</p>
-            <li><a href="https://shrinefox.com/textsearch"><i class="fa fa-search"></i> Text Search</a></li>
-            <li><a href="https://amicitia.github.io/docs/flowscript"><i class="fa fa-file-code"></i> Flowscript Docs</a></li>
-            <li><a href="https://amicitia.github.io/files"><i class="fa fa-folder-open"></i> Files</a></li>
-            <li><a href="https://shrinefox.com/PatchCreator"><i class="fa fa-check-square"></i> Patch.yml Creator</a></li>
+            <p>Amicitia Network</p>
+            <a href="https://shrinefox.com/"><li class="inactive"><i class="fa fa-home"></i> ShrineFox.com</li></a>
+            <a href="https://amicitia.github.io/"><li class="inactive"><i class="fa fa-desktop"></i> amicitia.github.io</li></a>
+            <a href="https://shrinefox.com/forum"><li class="inactive"><i class="fa fa-comments-o"></i> Forum</li></a>
+            <a href="https://shrinefox.com/guides/"><li class="inactive"><i class="fa fa-graduation-cap"></i> Guides</li></a>
+            <a href="https://amicitia.miraheze.org/wiki/Main_Page"><li class="inactive"><i class="fa fa-users"></i> Wiki</li></a>
+            <a href="https://amicitia-team.tumblr.com/"><li class="inactive"><i class="fa fa-newspaper"></i> News</li></a>
+            <a href="https://shrinefox.com/forum/app.php/faqpage"><li class="inactive"><i class="fa fa-question-circle"></i> FAQs</li></a>
+            <p>Apps</p>
+            <a href="https://shrinefox.com/textsearch"><li class="inactive"><i class="fa fa-search"></i> Text Search</li></a>
+            <a href="https://amicitia.github.io/docs/flowscript"><li class="active"><i class="fa fa-file-code"></i> Flowscript Docs</li></a>
+            <a href="https://amicitia.github.io/files"><li class="inactive"><i class="fa fa-folder-open"></i> Files</li></a>
+            <a href="https://shrinefox.com/PatchCreator"><li class="inactive"><i class="fa fa-check-square"></i> Patch.yml Creator</li></a>
         </ul>
     </div>
     <!--Header-->
@@ -51,7 +53,7 @@
                 <table>
                     <tr>
                         <td style="text-align:right;">
-                            <div class="logo"><img src="https://amicitia.github.io/images/logo.svg"></div>
+                            <a href="https://amicitia.github.io"><div class="logo"><img src="https://amicitia.github.io/images/logo.svg"></div></a>
                         </td>
                         <td>
                             <h1>amicitia.github.io</h1>
@@ -78,12 +80,13 @@
         </div>
         <!--Waves End-->
     </div>
-    <!--Header End--></div>
+    <!--Header End-->
     <div class="content">
         <table>
             <tbody>
                 <tr>
-                    <td width="25%" style="vertical-align:top"><div class="container body-content">
+                    <td width="25%" style="vertical-align:top">
+<div class="container body-content">
 	<table>
         <tr>
             <td width="25%" style="vertical-align:top">
@@ -155,3 +158,13 @@ Follow the same steps as the <a href="https://amicitia.github.io/docs/compiling"
         </tr>
     </tbody>
 </table>
+<br>
+<br>
+<br>
+<br>
+<center>© ShrineFox 2020 - 2021. <a href="https://ko-fi.com/shrinefox"><i class="fa fa-coffee" aria-hidden="true"></i> Support</a></center>
+<br>
+<!--Content End-->
+<div class="footer"></div>
+<!--Footer End-->
+</div>

@@ -34,3 +34,19 @@
 	color: #fff;
 	background: rgba(17, 17, 17, 1);
 }
+
+.button-css {
+	background-color: var(--bgblack);
+	color: var(--textwhite);
+	border-color: var(--textwhite);
+	border-radius: 7px;
+	height: 26px;
+}
+
+.textbox-css {
+	background: var(--bgblack);
+	border: none;
+	color: var(--textwhite);
+	border-radius: 20px;
+	height: 23px;
+}

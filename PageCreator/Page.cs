@@ -107,7 +107,7 @@ namespace Amicitia.github.io.PageCreator
             html += content; //Body Content
             html += paginaion; //Bottom of page navigation
             html += Properties.Resources.IndexFooter; //Footer
-            html += $"2020 - {DateTime.Now.Year}. Last updated {DateTime.Now.Month}/{DateTime.Now.Day}/{DateTime.Now.Year}. <a href=\"https://github.com/Amicitia/Amicitia.github.io\"><i class=\"fa fa-github\"></i> Source available on Github</a>.<br><a href=\"https://twitter.com/AmicitiaTeam\"><i class=\"fa fa-twitter\"></i> Follow</a> for updates!</div></footer></html><br><br>";
+            html = html.Replace("ShrineFox 2020 - 2021.", $"ShrineFox 2020 - {DateTime.Now.Year}. Last updated {DateTime.Now.Month}/{DateTime.Now.Day}/{DateTime.Now.Year}. <a href=\"https://github.com/Amicitia/Amicitia.github.io\"><i class=\"fa fa-github\"></i> Source available on Github</a>.<br><a href=\"https://twitter.com/AmicitiaTeam\"><i class=\"fa fa-twitter\"></i> Follow</a> for updates!");
 
             //Replace links based on depth
             if (depth == 1)
@@ -182,7 +182,7 @@ namespace Amicitia.github.io.PageCreator
                     if (postpost.Count == 0) //Inform user if no posts found
                         content += $"<br><center>Sorry! No posts matching your query were found. Please check again later.</center>";
                     else if (url.Contains("p5r")) //Show Pan thank you message
-                        content += "<center>Special thanks to <a href=\"https://twitter.com/regularpanties\">@regularpanties</a> for the generous donation of a 6.72 PS4<br>and a plethora of documentation that made this section possible.<br><br>All P5R mods are for the JP version only due to firmware restraints.</center><br>";
+                        content += "<center>Special thanks to <a href=\"https://twitter.com/regularpanties\">@regularpanties</a> for the generous donation of a 6.72 PS4<br>and a plethora of documentation that made this section possible.</center><br>";
 
                     bool matchFound = false; //Show more resources if post is a mod or tool
                     if (!matchFound && (url.Contains("mods") || url.Contains("game")))
