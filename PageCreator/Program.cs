@@ -11,7 +11,7 @@ namespace Amicitia.github.io
     class Program
     {
         public static string indexPath; //Path to website root directory
-        public static List<string> gameList = new List<string>() { "p3fes", "p4", "p5", "p5r", "p4g", "p3p", "p3d", "p4d", "p5d", "pq", "pq2", "p4au", "smt3", "cfb" }; //Games in dropdown
+        public static List<string> gameList = new List<string>() { "p5", "p5r", "p5s", "p5d", "p4", "p4g", "p4au", "p4d", "p3fes", "p3p", "p3d", "pq", "pq2", "p4au", "cfb", "smt3" }; //Games in dropdown
         public static List<string> tagColors = new List<string>() { "F37E79", "F3BF79", "F3D979", "7AF379", "7998F3", "DE79F3" }; //Hex color values for tags
         public static List<Post> posts; //Posts
         public static int maxPosts = 15; //Number of posts per page
