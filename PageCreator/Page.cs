@@ -187,16 +187,16 @@ namespace Amicitia.github.io.PageCreator
                     bool matchFound = false; //Show more resources if post is a mod or tool
                     if (!matchFound && (url.Contains("mods") || url.Contains("game")))
                     {
-                        if (url.Contains("\\p5") && !url.Contains("\\p5r"))
-                            content += "<br><center>To learn how to run P5 mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-setupguide\">this guide.</a></center>";
+                        if (url.Contains("\\p5") && !url.Contains("\\p5r") && !url.Contains("\\p5s"))
+                            content += "<br><center>To learn how to run P5 mods, see <a href=\"https://shrinefox.com/guides/2019/04/19/persona-5-rpcs3-modding-guide-1-downloads-and-setup\">this guide.</a></center>";
                         else if (url.Contains("\\p5r"))
-                            content += "<br><center>To learn how to install and run P5R mods, see <a href=\"https://cdn.discordapp.com/attachments/473138169592938526/757957969823400029/CriPakGUI-P5R.7z\">this guide</a>.";
+                            content += "<br><center>To learn how to install and run P5R mods, see <a href=\"https://shrinefox.com/guides/2020/09/30/modding-persona-5-royal-jp-on-ps4-fw-6-72\">this guide</a>.";
                         else if (url.Contains("\\p3fes") || url.Contains("\\p4.html") || url.Contains("\\smt3.html"))
                             content += "<br><center>To learn how to run these mods, see <a href=\"https://amicitia.github.io/post/hostfs-guide\">this guide.</a></center>";
                         else if (url.Contains("\\p4g"))
                             content += "<br><center>To learn how to mod the PC version of P4G, see <a href=\"https://gamebanana.com/tuts/13379\">this guide.</a><br>More P4G PC mods available at <a href=\"https://gamebanana.com/games/8263\">gamebanana.com</a>.</center>";
                         else
-                            content += "<br><center>To learn how to use these mods, see <a href=\"https://amicitia.github.io/post/p5-rpcs3-modcreationguide\">this guide.</a></center>";
+                            content += "<br><center>To learn how to use these mods, see <a href=\"https://shrinefox.com/guides/2019/04/19/persona-5-rpcs3-modding-guide-1-downloads-and-setup\">this guide.</a> Although it's focused on Persona 5, the latter half applies to other games as well.</center>";
                         matchFound = true;
                     }
                 }
