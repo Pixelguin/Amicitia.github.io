@@ -18,70 +18,203 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="wrapper">
-    <div class="copied">Cheat copied to clipboard!</div>
-    <!--Sidebar Toggle-->
-    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu" style="position: fixed;display:none;">
-    <label for="openSidebarMenu" class="sidebarIconToggle">
-        <div class="spinner diagonal part-1"></div>
-        <div class="spinner horizontal"></div>
-        <div class="spinner diagonal part-2"></div>
-    </label>
-    <!--Sidebar Menu-->
-    <div id="sidebarMenu">
-        <ul class="sidebarMenuInner">
-            <p>Amicitia Network</p>
-            <a href="https://shrinefox.com/"><li class="inactive"><i class="fa fa-home"></i> ShrineFox.com</li></a>
-            <a href="https://amicitia.github.io/"><li class="active"><i class="fa fa-desktop"></i> amicitia.github.io</li></a>
-            <a href="https://shrinefox.com/forum"><li class="inactive"><i class="fa fa-comments-o"></i> Forum</li></a>
-            <a href="https://shrinefox.com/guides/"><li class="inactive"><i class="fa fa-graduation-cap"></i> Guides</li></a>
-            <a href="https://amicitia.miraheze.org/wiki/Main_Page"><li class="inactive"><i class="fa fa-users"></i> Wiki</li></a>
-            <a href="https://amicitia-team.tumblr.com/"><li class="inactive"><i class="fa fa-newspaper"></i> News</li></a>
-            <a href="https://shrinefox.com/forum/app.php/faqpage"><li class="inactive"><i class="fa fa-question-circle"></i> FAQs</li></a>
-            <p>Apps</p>
-            <a href="https://shrinefox.com/textsearch"><li class="inactive"><i class="fa fa-search"></i> Text Search</li></a>
-            <a href="https://amicitia.github.io/docs/flowscript"><li class="inactive"><i class="fa fa-file-code"></i> Flowscript Docs</li></a>
-            <a href="https://amicitia.github.io/files"><li class="inactive"><i class="fa fa-folder-open"></i> Files</li></a>
-            <a href="https://shrinefox.com/PatchCreator"><li class="inactive"><i class="fa fa-check-square"></i> Patch.yml Creator</li></a>
-        </ul>
-    </div>
-    <!--Header-->
-    <div class="header">
-        <canvas id="bgCanvas"></canvas>
-        <!--Logo and Header Text-->
-        <div>
-            <center>
-                <table>
-                    <tr>
-                        <td style="text-align:right;">
-                            <div class="logo"><a href="https://amicitia.github.io/"><img src="https://amicitia.github.io/images/logo.svg"></a></div>
-                        </td>
-                        <td>
-                            <h1>amicitia.github.io</h1>
-                            <h2>mods • tools • guides</h2>
-                        </td>
-                    </tr>
-                </table>
-            </center>
-        </div>
-        <!--Waves-->
-        <div>
-            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                 viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                <defs>
-                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                </defs>
-                <g class="parallax">
-                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(17,17,17,0.33)" />
-                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(17,17,17,0.6)" />
-                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(17,17,17,0.6)" />
-                    <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(17,17,17,1)" />
-                </g>
-            </svg>
-        </div>
-        <!--Waves End-->
-    </div>
-    <!--Header End-->
+<main>
+    <div id="wrapper">
+        <div class="copied">Cheat copied to clipboard!</div>
+        <!--Sidebar Toggle-->
+        <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu" style="position: fixed;display:none;">
+        <label for="openSidebarMenu" class="sidebarIconToggle">
+            <div class="spinner diagonal part-1"></div>
+            <div class="spinner horizontal"></div>
+            <div class="spinner diagonal part-2"></div>
+        </label>
+        <!--Sidebar Menu-->
+        <aside class="sidebar">
+            <div class="component">
+                <div class="sidebarheader"></div>
+                <div class="contents">
+                    <ul class="items list">
+                        <a href="https://shrinefox.com/">
+                            <div class="item">
+                                <div class="thumbnail"><i class="fa fa-home" aria-hidden="true"></i></div>
+                                <div class="info">
+                                    <div class="title">ShrineFox.com</div>
+                                    <div class="subtitle">Home Page</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://shrinefox.com/blog">
+                            <div class="item">
+                                <div class="thumbnail"><i class="fa fa-wordpress" aria-hidden="true"></i></div>
+                                <div class="info">
+                                    <div class="title">ShrineFox.com Blog</div>
+                                    <div class="subtitle">Misc Development</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://shrinefox.com/projects">
+                            <div class="item">
+                                <div class="thumbnail"><i class="fa fa-cogs" aria-hidden="true"></i></div>
+                                <div class="info">
+                                    <div class="title">Projects</div>
+                                    <div class="subtitle">Things I Made</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://shrinefox.com/amicitia">
+                            <div class="item">
+                                <div class="thumbnail"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                                <div class="info">
+                                    <div class="title">Amicitia</div>
+                                    <div class="subtitle">About the Project</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://shrinefox.com/credits">
+                            <div class="item">
+                                <div class="thumbnail"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                                <div class="info">
+                                    <div class="title">Credits</div>
+                                    <div class="subtitle"></div>
+                                </div>
+                            </div>
+                        </a>
+                        <h5>Amicitia Network</h5>
+                        <br>
+                        <a href="https://amicitia.github.io">
+                            <div class="item">
+                                <div class="thumbnail"><i class="fa fa-desktop" aria-hidden="true"></i></div>
+                                <div class="info">
+                                    <div class="title">amicitia.github.io</div>
+                                    <div class="subtitle">Mods & Tools</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://amicitia-team.tumblr.com">
+                            <div class="item">
+                                <div class="thumbnail"><i class="fa fa-newspaper" aria-hidden="true"></i></div>
+                                <div class="info">
+                                    <div class="title">News</div>
+                                    <div class="subtitle">Modding Announcements</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://amicitia.miraheze.org/wiki/Main_Page">
+                            <div class="item">
+                                <div class="thumbnail"><i class="fa fa-users" aria-hidden="true"></i></div>
+                                <div class="info">
+                                    <div class="title">Wiki</div>
+                                    <div class="subtitle">Documentation</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://shrinefox.com/forum">
+                            <div class="item">
+                                <div class="thumbnail"><i class="fa fa-comments-o" aria-hidden="true"></i></div>
+                                <div class="info">
+                                    <div class="title">Forum</div>
+                                    <div class="subtitle">Support & Submissions</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://shrinefox.com/guides/">
+                            <div class="item">
+                                <div class="thumbnail"><i class="fa fa-graduation-cap" aria-hidden="true"></i></div>
+                                <div class="info">
+                                    <div class="title">Guides</div>
+                                    <div class="subtitle">Modding Tutorials</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://shrinefox.com/forum/app.php/faqpage">
+                            <div class="item">
+                                <div class="thumbnail"><i class="fa fa-question-circle" aria-hidden="true"></i></div>
+                                <div class="info">
+                                    <div class="title">FAQs</div>
+                                    <div class="subtitle">Frequently Asked Q&A</div>
+                                </div>
+                            </div>
+                        </a>
+                        <h5>Apps</h5>
+                        <br>
+                        <a href="https://shrinefox.com/textsearch">
+                            <div class="item">
+                                <div class="thumbnail"><i class="fa fa-search" aria-hidden="true"></i></div>
+                                <div class="info">
+                                    <div class="title">Text Search</div>
+                                    <div class="subtitle">Locate Files With Dialog</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://amicitia.github.io/docs/flowscript">
+                            <div class="item">
+                                <div class="thumbnail"><i class="fa fa-file-code" aria-hidden="true"></i></div>
+                                <div class="info">
+                                    <div class="title">Flowscript Docs</div>
+                                    <div class="subtitle">Learn .flow/.msg</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://amicitia.github.io/files">
+                            <div class="item">
+                                <div class="thumbnail"><i class="fa fa-folder-open" aria-hidden="true"></i></div>
+                                <div class="info">
+                                    <div class="title">Files</div>
+                                    <div class="subtitle">Download assets</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://shrinefox.com/PatchCreator">
+                            <div class="item">
+                                <div class="thumbnail"><i class="fa fa-check-square" aria-hidden="true"></i></div>
+                                <div class="info">
+                                    <div class="title">Patch.yml Creator</div>
+                                    <div class="subtitle">P5 RPCS3 Patches</div>
+                                </div>
+                            </div>
+                        </a>
+                    </ul>
+                </div> <!--End Contents-->
+            </div>  <!--End Component-->
+        </aside>  <!--End Sidebar Menu-->
+        <article class="article">
+            <!--Header-->
+            <div class="header">
+                <canvas id="bgCanvas"></canvas>
+                <!--Logo and Header Text-->
+                <div>
+                    <center>
+                        <table>
+                            <tr>
+                                <td style="text-align:right;">
+                                    <div class="logo"><a href="https://amicitia.github.io/"><img src="https://amicitia.github.io/images/logo.svg"></a></div>
+                                </td>
+                                <td>
+                                    <h1>amicitia.github.io</h1>
+                                    <h2>mods • tools • guides</h2>
+                                </td>
+                            </tr>
+                        </table>
+                    </center>
+                </div>
+                <!--Waves-->
+                <div>
+                    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                        <defs>
+                            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                        </defs>
+                        <g class="parallax">
+                            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(17,17,17,0.33)" />
+                            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(17,17,17,0.6)" />
+                            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(17,17,17,0.6)" />
+                            <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(17,17,17,1)" />
+                        </g>
+                    </svg>
+                </div>
+                <!--Waves End-->
+            </div>
+            <!--Header End-->
 </div>
 <div class="content">
     <table>
@@ -92,7 +225,7 @@
                         <div class"text">
                             <h3><i class="fas fa-newspaper"></i> Latest News</h3>
                             <script src="../js/blogposts.js"></script>
-                        <br /><div class="widget"><table><tr><td><a href="https:\\amicitia.github.io\index\2"><div class="unhide"><i class="fa fa-angle-double-left"></i> Previous Page</div></a></td><td><a href="https:\\amicitia.github.io\index\4"><div class="unhide">Next Page <i class="fa fa-angle-double-right"></i></div></a></td></tr></table><br>    <td width="75%">
+                        <br /><div class="widget"><table><tr><td><a href="https:\\amicitia.github.io\index\2"><div class="unhide"><i class="fa fa-angle-double-left"></i></div></a></td><td><a href="https:\\amicitia.github.io\index\4"><div class="unhide"> <i class="fa fa-angle-double-right"></i></div></a></td></tr></table><br>    <td width="75%">
         <div class="text">
             <b>Type</b>:
             <select class="select-css" onchange="navigate()" id="type" name="type">
@@ -123,24 +256,27 @@
             </select> <b> <a href="https://shrinefox.com/forum/viewtopic.php?f=4&t=682&p=2649#p2649"> <span style="color: #fb9e3b"> <i class="fa fa-upload"></i> Submit</span></a></b>
             <br>
             <br>
-(364 results)<br><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/modcompendium"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/Ndhy2ai.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Mod Compendium</font></b><br>P3FES tool by <a href="https://amicitia.github.io/author/TGE">TGE</a>, <a href="https://amicitia.github.io/author/ShrineFox">ShrineFox</a>, <a href="https://amicitia.github.io/author/lipsum">lipsum</a></font></td><td width='25%'><center>1/11/2021</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Easily create, combine and install multiple mods for Persona 3, 4, 5, P3P, P4G, P5R, PQ, PQ2, Catherine Full Body and the Dancing games.<br><div class="update"><b>Update 1/11/2021:</b> Add P5R EUR support, add patches by lipsum for USA mod support and JP/USA intro skip<b>Update 12/20/2020</b>: Add P5R USA support<br><b>Update 9/30/2020</b>: Add P5R Update PKG Creation<br><b>Update 6/22/2020</b>: Add P4G PC Support<br><b>Update 4/12/2020</b>: Fix P3/4 patching, add HostFS output, add option to sort mods by subfolder</div></td><td><center><font size="4"><a href="https://github.com/TGEnigma/Mod-Compendium/releases/"><i class="fas fa-file" aria-hidden="true"></i> Download Application</a><br><a href="https://github.com/TGEnigma/Mod-Compendium"><i class="fas fa-file-code" aria-hidden="true"></i> Source Code</a></center></div><br><center><a href="https://shrinefox.com/guides/persona-5-rpcs3-modding-guide-2-creating-and-installing-mods"><i class="fas fa-info-circle" aria-hidden="true"></i> Creating and Installing Mods</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/CPK"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">CPK</p></div></a><a href="https://amicitia.github.io/tag/CVM"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> CVM</p></div></a><a href="https://amicitia.github.io/tag/SLUS"><div class="tag" style="border-left: 4px solid #F3D979; "><p class="noselect"> SLUS</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3fes-p3p-cutins"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://imgur.com/a/owP53qV" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">P3P Cut-Ins</font></b><br>P3FES mod by <a href="https://amicitia.github.io/author/ghxzt">ghxzt</a></font></td><td width='25%'><center>1/11/2021</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Replaces the cut-ins in P3Fes with the cut-ins from P3</td><td><center><font size="4"><a href="https://drive.google.com/file/d/1gDqlEzpFSasFlBnGy-U7to2D97cnVGmF/view?usp=sharing"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod (Regular)</a><br><a href="https://drive.google.com/file/d/1SfN0HFp8fEcahWqdO2IEHuMrOe4Y39ZL/view"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod (Blue Outlines)</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=11&p=3025#p3025"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/TMX"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">TMX</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3deinterlaced"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://screenshots.gamebanana.com/img/ss/wips/5fe5a6744ca55.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Deinterlaced Cutscenes (The Second?)</font></b><br>P3FES mod by <a href="https://amicitia.github.io/author/ARandomGuy231">ARandomGuy231</a></font></td><td width='25%'><center>1/11/2021</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This mod replaces the FMVs in the game with Deinterlaced ones.</td><td><center><font size="4"><a href="https://gamebanana.com/wips/52854"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=11&p=3026#p3026"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/FMV"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">FMV</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5r-modding-guide"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Modding Persona 5 Royal on PS4 FW 5.05, 6.72 & 7.02</font></b><br>P5R guide by <a href="https://amicitia.github.io/author/ShrineFox">ShrineFox</a></font></td><td width='25%'><center>1/11/2021</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>A full walkthrough for generate modded P5R Updates using the Mod Compendium and exploiting the PS4 to install them.</td><td><br><center><a href="https://shrinefox.com/guides/2020/09/30/modding-persona-5-royal-jp-on-ps4-fw-6-72/"><i class="fas fa-info-circle" aria-hidden="true"></i> Modding P5R on PS4</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/PKG"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PKG</p></div></a><a href="https://amicitia.github.io/tag/CPK"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> CPK</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3fes-p3d-tracks"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://lh3.googleusercontent.com/CKgmXjF5EZfcCqerABjWO1FoA5THFilezsZi0f1drCFm6o2RqFHlmAdqeVNEn1VXxAxkwyHaWb6GWp_86jXB=w880-h660-rw" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Persona 3 Dancing Tracks for Persona 3 FES</font></b><br>P3FES mod by <a href="https://amicitia.github.io/author/ghxzt">ghxzt</a></font></td><td width='25%'><center>1/7/2021</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Replaces some of the tracks with the versions that play in Persona 3 Dancing in Moonlight</td><td><center><font size="4"><a href="https://drive.google.com/file/d/13vR2UszAMwXxeFz1eiotAgPMPQGJ7RXG/view"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=11&p=3001#p3001"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/ADX"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">ADX</p></div></a><a href="https://amicitia.github.io/tag/BGM"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> BGM</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/P3FES-HQMusic"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/7nuaDT5.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">High Quality Soundtrack Mod</font></b><br>P3FES mod by <a href="https://amicitia.github.io/author/ShiningRed">ShiningRed</a></font></td><td width='25%'><center>1/4/2021</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>High Quality Music replacement mod for Persona 3 FES.</td><td><center><font size="4"><a href="https://mega.nz/file/HT5QgSbS#R9JWCj3-cuzjfYtvNvvjPY25gljnHcnQZmUXo-3g1h8"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=11&t=789"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/BGM"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">BGM</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3-master-chief"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/820Us2s.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">P3 Master Chief</font></b><br>P3FES mod by <a href="https://amicitia.github.io/author/Pioziomgames">Pioziomgames</a></font></td><td width='25%'><center>1/4/2021</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Replaces mc battle models with Low-poly Chief</td><td><center><font size="4"><a href="https://drive.google.com/drive/folders/17SA6xHYks6iupXqoRLfvLMxBzZSdx5Fj?usp=sharing"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=11&t=790"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/RMD"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">RMD</p></div></a><a href="https://amicitia.github.io/tag/PAC"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> PAC</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5r-mod-menu"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://cdn.discordapp.com/attachments/428021649246388224/447597680018063372/unknown.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Persona 5 Royal Mod Menu</font></b><br>P5R mod by <a href="https://amicitia.github.io/author/ShrineFox">ShrineFox</a>, <a href="https://amicitia.github.io/author/TGE">TGE</a>, <a href="https://amicitia.github.io/author/CaptainSwag101">CaptainSwag101</a>, <a href="https://amicitia.github.io/author/RayFireFist">RayFireFist</a></font></td><td width='25%'><center>1/4/2021</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>A multi-purpose custom menu that gets loaded when you press the Square button. Edit cameras, flags, the calendar, player stats, personas and skills-- as well as view animations, models, fields, events and more.<br><div class="update"><b>Update 1.1</b>: Adds English UI and uses English field/dungeon text. Descriptions don't match at the moment, will be fixed in the next update</div></td><td><center><font size="4"><a href="https://github.com/Amicitia/Persona-5-Royal-Mod-Menu/releases"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br><a href="https://github.com/Amicitia/Persona-5-Royal-Mod-Menu"><i class="fas fa-file-code" aria-hidden="true"></i> Source Code</a></center></div></tr></tbody></table><a href="https://amicitia.github.io/tag/Scripts"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">Scripts</p></div></a><a href="https://amicitia.github.io/tag/Gameplay"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> Gameplay</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4g-epic-bgm"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://cdn.discordapp.com/attachments/734503344499851388/797266876518498304/Preview.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">An EPIC Persona 4 Golden Music Mod</font></b><br>P4G mod by <a href="https://amicitia.github.io/author/Century_">Century_</a></font></td><td width='25%'><center>12/31/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This music mod includes tracks from Persona 4 Dancing, Persona 4 Reincarnation, The Persona 4 Animes, Persona 3(FES/Portable) Persona Q, Persona Q2, Super Smash Bros. Ultimate and even some Fan-Made music from Ode Imaginations and from the Re: Brilliance album.<br><a href=""https://shrinefox.com/forum/viewtopic.php?f=19&t=519"">Tracklist</a></td><td><center><font size="4"><a href="https://mega.nz/file/YGxQnToA#mFuZYvbgs8o0yt1dAYOtVExZVtKewfM55q1kd9wHSm8"><i class="fas fa-folder-open" aria-hidden="true"></i> Download (PC, Aemulus)</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=19&t=519"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/BGM"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">BGM</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5-spanish-port"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><a href="https://www.youtube.com/watch?v=_GR1cryHqJY"><img src="https://img.youtube.com/vi/_GR1cryHqJY/default.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">P5 Spanish Backport From Royal</font></b><br>P5 mod by <a href="https://amicitia.github.io/author/SeppNel">SeppNel</a></font></td><td width='25%'><center>12/31/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Backport of P5 Royal spanish language files to the P5</td><td><center><font size="4"><a href="https://gamebanana.com/gamefiles/13691"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=15&t=786"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/BMD"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">BMD</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5-persona-backport"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://cdn.discordapp.com/attachments/698069141210398751/791143382721495080/Persosna.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Big Personas Backport Mod</font></b><br>P5 mod by <a href="https://amicitia.github.io/author/Magatsu">Magatsu</a></font></td><td width='25%'><center>12/26/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Backports Personas from P5R and other games. Includes:<br>-The new Arcanas from Royal<br>- New Custom Personas<br>- New skills<br>- Royal Personas now in their original slots<br><div class="update"><b>Update 4:</b> <br>- P3/P4/Scramble/SMT III/Imagine Personas/Demons<br>- Fixed some issues<br>- Added more skills<br>- Quick names fix<br>- And other many things</div></td><td><center><font size="4"><a href="https://mega.nz/file/wShSjB6K#EwCXmSPgJ9qxJZuKtdCH5VxwfEKDf3ZfYMfgkGAAUTM"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br><a href="https://shrinefox.com/forum/viewtopic.php?f=15&t=464"><i class="fas fa-code" aria-hidden="true"></i> Download Required EBOOT Patch</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=15&t=464"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/TBL"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">TBL</p></div></a><a href="https://amicitia.github.io/tag/Persona"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> Persona</p></div></a><a href="https://amicitia.github.io/tag/Port"><div class="tag" style="border-left: 4px solid #F3D979; "><p class="noselect"> Port</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5r-patches"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><a href="https://www.youtube.com/watch?v=4o2ImqfICig"><img src="https://img.youtube.com/vi/4o2ImqfICig/default.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Persona 5 Royal Patches</font></b><br>P5R mod by <a href="https://amicitia.github.io/author/lipsum">lipsum</a></font></td><td width='25%'><center>12/25/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>A set of Persona 5 Royal patches</td><td><center><font size="4"><a href="https://mega.nz/folder/njgmwKZB#Cr0gFPXsbhUyNKDWsxhQzg"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=29&p=2967#p2967"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/CPK"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">CPK</p></div></a><a href="https://amicitia.github.io/tag/EBOOT"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect">EBOOT</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3-font-p5r"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/Q0G6jsN.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">P3FES Font</font></b><br>P5R mod by <a href="https://amicitia.github.io/author/Alan3D">Alan3D</a></font></td><td width='25%'><center>12/20/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Replaces the main font of the game with P3FES's.</td><td><center><font size="4"><a href="https://i.imgur.com/XPKKI66.png"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div></tr></tbody></table><a href="https://amicitia.github.io/tag/FNT"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">FNT</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5-color-cutin"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><a href="https://youtu.be/FB5fG_CIYQ8"><img src="https://img.youtube.com/vi/ttps://youtu.be/FB5fG_CIYQ8/default.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Colorful Cutins</font></b><br>P5 mod by <a href="https://amicitia.github.io/author/AnotherNicholas">AnotherNicholas</a></font></td><td width='25%'><center>12/20/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Adds each characters thematic color to the background of their own cutin portraits. Inspired by and based off of theflightofarobyn's video.</td><td><center><font size="4"><a href="https://drive.google.com/file/d/1UFEDvzH0VbAmiYdM8vRzLmuzwTqZSXOs/view?usp=sharing"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=15&p=2948#p2948"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/DDS"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">DDS</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5-catherine-font"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://cdn.discordapp.com/attachments/715292143442460704/778694856167653437/Screenshot_437.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Catherine Font Mod for Persona 5</font></b><br>P5 mod by <a href="https://amicitia.github.io/author/Century_">Century_</a></font></td><td width='25%'><center>12/20/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Catherine font ported to P5 and P5R</td><td><center><font size="4"><a href="https://cdn.discordapp.com/attachments/715292143442460704/778694735488483328/Catherine_Font.7z"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod (P5)</a><br><a href="https://drive.google.com/file/d/1xJqJm1yH1vonWlGo_cLcCDccxxyvRNVv/view?usp=sharing"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod (P5R)</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=15&p=2784#p2784"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/FNT"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">FNT</p></div></a></div></div></div><table><tr><td><a href="https:\\amicitia.github.io\index\2"><div class="unhide"><i class="fa fa-angle-double-left"></i> Previous Page</div></a></td><td><a href="https:\\amicitia.github.io\index\4"><div class="unhide">Next Page <i class="fa fa-angle-double-right"></i></div></a></td></tr></table><br>    <br>
-    <br>
-    <p style="font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;">
-        We are NOT affiliated, associated, authorized, endorsed by, or in any way
-        <br>officially connected with ATLUS, SEGA, or any of its subsidiaries or its affiliates.
-            <br>The official ATLUS website can be found at <a href="https://atlus.com">https://atlus.com</a>.
-            <br>ATLUS and SEGA are registered in the U.S. Patent and Trademark Office. ATLUS and PERSONA are
-            <br>either registered trademarks or trademarks of ATLUS Co., Ltd. or its affiliates.
-        </p>
+(364 results)<br><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/modcompendium"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/Ndhy2ai.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Mod Compendium</font></b><br>P3FES tool by <a href="https://amicitia.github.io/author/TGE">TGE</a>, <a href="https://amicitia.github.io/author/ShrineFox">ShrineFox</a>, <a href="https://amicitia.github.io/author/lipsum">lipsum</a></font></td><td width='25%'><center>1/11/2021</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Easily create, combine and install multiple mods for Persona 3, 4, 5, P3P, P4G, P5R, PQ, PQ2, Catherine Full Body and the Dancing games.<br><div class="update"><b>Update 1/11/2021:</b> Add P5R EUR support, add patches by lipsum for USA mod support and JP/USA intro skip<b>Update 12/20/2020</b>: Add P5R USA support<br><b>Update 9/30/2020</b>: Add P5R Update PKG Creation<br><b>Update 6/22/2020</b>: Add P4G PC Support<br><b>Update 4/12/2020</b>: Fix P3/4 patching, add HostFS output, add option to sort mods by subfolder</div></td><td><center><font size="4"><a href="https://github.com/TGEnigma/Mod-Compendium/releases/"><i class="fas fa-file" aria-hidden="true"></i> Download Application</a><br><a href="https://github.com/TGEnigma/Mod-Compendium"><i class="fas fa-file-code" aria-hidden="true"></i> Source Code</a></center></div><br><center><a href="https://shrinefox.com/guides/persona-5-rpcs3-modding-guide-2-creating-and-installing-mods"><i class="fas fa-info-circle" aria-hidden="true"></i> Creating and Installing Mods</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/CPK"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">CPK</p></div></a><a href="https://amicitia.github.io/tag/CVM"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> CVM</p></div></a><a href="https://amicitia.github.io/tag/SLUS"><div class="tag" style="border-left: 4px solid #F3D979; "><p class="noselect"> SLUS</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3fes-p3p-cutins"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://imgur.com/a/owP53qV" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">P3P Cut-Ins</font></b><br>P3FES mod by <a href="https://amicitia.github.io/author/ghxzt">ghxzt</a></font></td><td width='25%'><center>1/11/2021</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Replaces the cut-ins in P3Fes with the cut-ins from P3</td><td><center><font size="4"><a href="https://drive.google.com/file/d/1gDqlEzpFSasFlBnGy-U7to2D97cnVGmF/view?usp=sharing"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod (Regular)</a><br><a href="https://drive.google.com/file/d/1SfN0HFp8fEcahWqdO2IEHuMrOe4Y39ZL/view"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod (Blue Outlines)</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=11&p=3025#p3025"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/TMX"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">TMX</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3deinterlaced"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://screenshots.gamebanana.com/img/ss/wips/5fe5a6744ca55.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Deinterlaced Cutscenes (The Second?)</font></b><br>P3FES mod by <a href="https://amicitia.github.io/author/ARandomGuy231">ARandomGuy231</a></font></td><td width='25%'><center>1/11/2021</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This mod replaces the FMVs in the game with Deinterlaced ones.</td><td><center><font size="4"><a href="https://gamebanana.com/wips/52854"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=11&p=3026#p3026"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/FMV"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">FMV</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5r-modding-guide"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/5I5Vos8.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Modding Persona 5 Royal on PS4 FW 5.05, 6.72 & 7.02</font></b><br>P5R guide by <a href="https://amicitia.github.io/author/ShrineFox">ShrineFox</a></font></td><td width='25%'><center>1/11/2021</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>A full walkthrough for generate modded P5R Updates using the Mod Compendium and exploiting the PS4 to install them.</td><td><br><center><a href="https://shrinefox.com/guides/2020/09/30/modding-persona-5-royal-jp-on-ps4-fw-6-72/"><i class="fas fa-info-circle" aria-hidden="true"></i> Modding P5R on PS4</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/PKG"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">PKG</p></div></a><a href="https://amicitia.github.io/tag/CPK"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> CPK</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3fes-p3d-tracks"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://lh3.googleusercontent.com/CKgmXjF5EZfcCqerABjWO1FoA5THFilezsZi0f1drCFm6o2RqFHlmAdqeVNEn1VXxAxkwyHaWb6GWp_86jXB=w880-h660-rw" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Persona 3 Dancing Tracks for Persona 3 FES</font></b><br>P3FES mod by <a href="https://amicitia.github.io/author/ghxzt">ghxzt</a></font></td><td width='25%'><center>1/7/2021</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Replaces some of the tracks with the versions that play in Persona 3 Dancing in Moonlight</td><td><center><font size="4"><a href="https://drive.google.com/file/d/13vR2UszAMwXxeFz1eiotAgPMPQGJ7RXG/view"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=11&p=3001#p3001"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/ADX"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">ADX</p></div></a><a href="https://amicitia.github.io/tag/BGM"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> BGM</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/P3FES-HQMusic"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/7nuaDT5.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">High Quality Soundtrack Mod</font></b><br>P3FES mod by <a href="https://amicitia.github.io/author/ShiningRed">ShiningRed</a></font></td><td width='25%'><center>1/4/2021</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>High Quality Music replacement mod for Persona 3 FES.</td><td><center><font size="4"><a href="https://mega.nz/file/HT5QgSbS#R9JWCj3-cuzjfYtvNvvjPY25gljnHcnQZmUXo-3g1h8"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=11&t=789"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/BGM"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">BGM</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3-master-chief"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/820Us2s.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">P3 Master Chief</font></b><br>P3FES mod by <a href="https://amicitia.github.io/author/Pioziomgames">Pioziomgames</a></font></td><td width='25%'><center>1/4/2021</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Replaces mc battle models with Low-poly Chief</td><td><center><font size="4"><a href="https://drive.google.com/drive/folders/17SA6xHYks6iupXqoRLfvLMxBzZSdx5Fj?usp=sharing"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=11&t=790"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/RMD"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">RMD</p></div></a><a href="https://amicitia.github.io/tag/PAC"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> PAC</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5r-mod-menu"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://cdn.discordapp.com/attachments/428021649246388224/447597680018063372/unknown.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Persona 5 Royal Mod Menu</font></b><br>P5R mod by <a href="https://amicitia.github.io/author/ShrineFox">ShrineFox</a>, <a href="https://amicitia.github.io/author/TGE">TGE</a>, <a href="https://amicitia.github.io/author/CaptainSwag101">CaptainSwag101</a>, <a href="https://amicitia.github.io/author/RayFireFist">RayFireFist</a></font></td><td width='25%'><center>1/4/2021</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>A multi-purpose custom menu that gets loaded when you press the Square button. Edit cameras, flags, the calendar, player stats, personas and skills-- as well as view animations, models, fields, events and more.<br><div class="update"><b>Update 1.1</b>: Adds English UI and uses English field/dungeon text. Descriptions don't match at the moment, will be fixed in the next update</div></td><td><center><font size="4"><a href="https://github.com/Amicitia/Persona-5-Royal-Mod-Menu/releases"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br><a href="https://github.com/Amicitia/Persona-5-Royal-Mod-Menu"><i class="fas fa-file-code" aria-hidden="true"></i> Source Code</a></center></div></tr></tbody></table><a href="https://amicitia.github.io/tag/Scripts"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">Scripts</p></div></a><a href="https://amicitia.github.io/tag/Gameplay"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> Gameplay</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p4g-epic-bgm"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://cdn.discordapp.com/attachments/734503344499851388/797266876518498304/Preview.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">An EPIC Persona 4 Golden Music Mod</font></b><br>P4G mod by <a href="https://amicitia.github.io/author/Century_">Century_</a></font></td><td width='25%'><center>12/31/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>This music mod includes tracks from Persona 4 Dancing, Persona 4 Reincarnation, The Persona 4 Animes, Persona 3(FES/Portable) Persona Q, Persona Q2, Super Smash Bros. Ultimate and even some Fan-Made music from Ode Imaginations and from the Re: Brilliance album.<br><a href=""https://shrinefox.com/forum/viewtopic.php?f=19&t=519"">Tracklist</a></td><td><center><font size="4"><a href="https://mega.nz/file/YGxQnToA#mFuZYvbgs8o0yt1dAYOtVExZVtKewfM55q1kd9wHSm8"><i class="fas fa-folder-open" aria-hidden="true"></i> Download (PC, Aemulus)</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=19&t=519"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/BGM"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">BGM</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5-spanish-port"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><a href="https://www.youtube.com/watch?v=_GR1cryHqJY"><img src="https://img.youtube.com/vi/_GR1cryHqJY/default.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">P5 Spanish Backport From Royal</font></b><br>P5 mod by <a href="https://amicitia.github.io/author/SeppNel">SeppNel</a></font></td><td width='25%'><center>12/31/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Backport of P5 Royal spanish language files to the P5</td><td><center><font size="4"><a href="https://gamebanana.com/gamefiles/13691"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=15&t=786"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/BMD"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">BMD</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5-persona-backport"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://cdn.discordapp.com/attachments/698069141210398751/791143382721495080/Persosna.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Big Personas Backport Mod</font></b><br>P5 mod by <a href="https://amicitia.github.io/author/Magatsu">Magatsu</a></font></td><td width='25%'><center>12/26/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Backports Personas from P5R and other games. Includes:<br>-The new Arcanas from Royal<br>- New Custom Personas<br>- New skills<br>- Royal Personas now in their original slots<br><div class="update"><b>Update 4:</b> <br>- P3/P4/Scramble/SMT III/Imagine Personas/Demons<br>- Fixed some issues<br>- Added more skills<br>- Quick names fix<br>- And other many things</div></td><td><center><font size="4"><a href="https://mega.nz/file/wShSjB6K#EwCXmSPgJ9qxJZuKtdCH5VxwfEKDf3ZfYMfgkGAAUTM"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br><a href="https://shrinefox.com/forum/viewtopic.php?f=15&t=464"><i class="fas fa-code" aria-hidden="true"></i> Download Required EBOOT Patch</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=15&t=464"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/TBL"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">TBL</p></div></a><a href="https://amicitia.github.io/tag/Persona"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect"> Persona</p></div></a><a href="https://amicitia.github.io/tag/Port"><div class="tag" style="border-left: 4px solid #F3D979; "><p class="noselect"> Port</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5r-patches"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><a href="https://www.youtube.com/watch?v=4o2ImqfICig"><img src="https://img.youtube.com/vi/4o2ImqfICig/default.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Persona 5 Royal Patches</font></b><br>P5R mod by <a href="https://amicitia.github.io/author/lipsum">lipsum</a></font></td><td width='25%'><center>12/25/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>A set of Persona 5 Royal patches</td><td><center><font size="4"><a href="https://mega.nz/folder/njgmwKZB#Cr0gFPXsbhUyNKDWsxhQzg"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=29&p=2967#p2967"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/CPK"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">CPK</p></div></a><a href="https://amicitia.github.io/tag/EBOOT"><div class="tag" style="border-left: 4px solid #F3BF79; "><p class="noselect">EBOOT</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p3-font-p5r"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://i.imgur.com/Q0G6jsN.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">P3FES Font</font></b><br>P5R mod by <a href="https://amicitia.github.io/author/Alan3D">Alan3D</a></font></td><td width='25%'><center>12/20/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Replaces the main font of the game with P3FES's.</td><td><center><font size="4"><a href="https://i.imgur.com/XPKKI66.png"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div></tr></tbody></table><a href="https://amicitia.github.io/tag/FNT"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">FNT</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5-color-cutin"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><a href="https://youtu.be/FB5fG_CIYQ8"><img src="https://img.youtube.com/vi/ttps://youtu.be/FB5fG_CIYQ8/default.jpg" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Colorful Cutins</font></b><br>P5 mod by <a href="https://amicitia.github.io/author/AnotherNicholas">AnotherNicholas</a></font></td><td width='25%'><center>12/20/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Adds each characters thematic color to the background of their own cutin portraits. Inspired by and based off of theflightofarobyn's video.</td><td><center><font size="4"><a href="https://drive.google.com/file/d/1UFEDvzH0VbAmiYdM8vRzLmuzwTqZSXOs/view?usp=sharing"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=15&p=2948#p2948"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/DDS"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">DDS</p></div></a></div></div></div><div class="toggle"><div class="toggle-title"><table><tbody><tr><td width='25%'><a href="https://amicitia.github.io/post/p5-catherine-font"><div class="getlink"><i class="fas fa-link" aria-hidden="true"></i></div></a><img src="https://cdn.discordapp.com/attachments/715292143442460704/778694856167653437/Screenshot_437.png" height="auto" width="auto"></td><td width='50%'><font size="3"><b><font size="5">Catherine Font Mod for Persona 5</font></b><br>P5 mod by <a href="https://amicitia.github.io/author/Century_">Century_</a></font></td><td width='25%'><center>12/20/2020</center></td></tr></tbody></table></div><div class="toggle-inner"><div class="cheat"><table><tbody><tr><td>Catherine font ported to P5 and P5R</td><td><center><font size="4"><a href="https://cdn.discordapp.com/attachments/715292143442460704/778694735488483328/Catherine_Font.7z"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod (P5)</a><br><a href="https://drive.google.com/file/d/1xJqJm1yH1vonWlGo_cLcCDccxxyvRNVv/view?usp=sharing"><i class="fas fa-folder-open" aria-hidden="true"></i> Download Mod (P5R)</a><br></center></div><center><a href="https://shrinefox.com/forum/viewtopic.php?f=15&p=2784#p2784"><i class="fas fa-comment" aria-hidden="true"></i> Feedback</a></center></tr></tbody></table><a href="https://amicitia.github.io/tag/FNT"><div class="tag" style="border-left: 4px solid #F37E79; "><p class="noselect">FNT</p></div></a></div></div></div><table><tr><td><a href="https:\\amicitia.github.io\index\2"><div class="unhide"><i class="fa fa-angle-double-left"></i></div></a></td><td><a href="https:\\amicitia.github.io\index\4"><div class="unhide"> <i class="fa fa-angle-double-right"></i></div></a></td></tr></table><br><br>
+<br>
+<p style="font-size: 12px;line-height: 0.9;text-align:right;padding-right:10px;color:#fff;">
+    We are NOT affiliated, associated, authorized, endorsed by, or in any way
+    <br>officially connected with ATLUS, SEGA, or any of its subsidiaries or its affiliates.
+    <br>The official ATLUS website can be found at <a href="https://atlus.com">https://atlus.com</a>.
+    <br>ATLUS and SEGA are registered in the U.S. Patent and Trademark Office. ATLUS and PERSONA are
+    <br>either registered trademarks or trademarks of ATLUS Co., Ltd. or its affiliates.
+</p>
         </table>
-        <br>
-        <br>
-        <br>
-        <br>
-        <center>© ShrineFox 2020 - 2021. Last updated 2/23/2021. <a href="https://github.com/Amicitia/Amicitia.github.io"><i class="fa fa-github"></i> Source available on Github</a>.<br><a href="https://twitter.com/AmicitiaTeam"><i class="fa fa-twitter"></i> Follow</a> for updates! <a href="https://ko-fi.com/shrinefox"><i class="fa fa-coffee" aria-hidden="true"></i> Support</a></center>
-        <br>
+<br>
+<br>
+<br>
+<br>
+<center>© ShrineFox 2020 - 2021. Last updated 2/28/2021. <a href="https://github.com/Amicitia/Amicitia.github.io"><i class="fa fa-github"></i> Source available on Github</a>.<br><a href="https://twitter.com/AmicitiaTeam"><i class="fa fa-twitter"></i> Follow</a> for updates! <a href="https://ko-fi.com/shrinefox"><i class="fa fa-coffee" aria-hidden="true"></i> Support</a></center>
+<br>
     </div>
-    <!--Content End-->
-    <div class="footer"></div>
-    <!--Footer End-->
+<!--Content End-->
+<div class="footer"></div>
+<!--Footer End-->
+		</article>
+		</form>
+	</main>
 </div>

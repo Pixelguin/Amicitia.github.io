@@ -1,79 +1,236 @@
-@import url('https://fonts.googleapis.com/css?family=Varela+Round');
-
-.active {
-    background-color: #111;
+:root {
+    --space: 2rem;
+    --space-xs: calc(var(--space) / 3);
+    --space-sm: calc(var(--space) / 2);
+    --space-md: 0;
+    --color-primary: lightgray;
+    --color-accent: whitesmoke;
+    --color-dark: black;
+    --color-mid: gray;
+    --color-light: white;
+    --color-highlight: dodgerblue;
+    --radius: 0.125rem;
 }
 
-.inactive {
-    background-color: transparent;
+/* Here are the base styles for the main layout and sticky component */
+* {
+    box-sizing: border-box;
 }
 
-.active:hover, .inactive:hover {
-    background-color: #FFF;
-    color: #111;
+.article {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 40%;
 }
 
-.sidebarMenuInner p {
-    color: #FFFFFF7F;
-    padding-left: 14px;
-}
-
-#sidebarMenu {
-    z-index: 99;
-    height: 100%;
+.sidebar {
+    --offset: var(--space);
+    flex-grow: 1;
+    flex-basis: 300px;
+    align-self: start;
     position: fixed;
-    left: 0;
-    width: 250px;
-    margin-top: 60px;
-    transform: translateX(-250px);
-    transition: transform 250ms ease-in-out;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 15%, rgba(0,0,0,0.8) 100%);
+    min-width: 25%;
+    top: var(--offset);
+    transform: translateX(-9999px);
+    z-index: 19;
 }
 
-.sidebarMenuInner{
-    margin:0;
-    padding:0;
+.component {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
-.sidebarMenuInner li {
-    list-style: none;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 10px;
-    padding-left: 20px;
+.component .contents {
+    max-height: 500px;
+    overflow-y: auto;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+}
+.component .contents::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+.sidebar .component {
+    max-height: calc(100vh - var(--offset) * 2);
+}
+
+/*
+ * Other styles
+**/
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* Until flexbox gap is supported in all modern browsers, we use the negative margin trick to create space between the children elements */
+main {
+    margin-bottom: 0;
+    margin-left: calc(var(--space-md) * -1);
+}
+
+main > * {
+    margin-bottom: 0;
+    margin-left: var(--space-md);
+}
+
+.component {
+    position: relative;
+    border: 0px;
+}
+
+    .component .sidebarheader,
+    .component .footer {
+        padding: var(--space-sm);
+        text-align: center;
+    }
+
+    .component .sidebarheader {
+        border-bottom: inherit;
+    }
+
+    .component .footer {
+        display: flex;
+        justify-content: space-between;
+        border-top: inherit;
+    }
+
+    .component .contents {
+        padding: var(--space-sm);
+        max-height: 500px;
+        overflow-y: auto;
+        color: #FFF;
+    }
+
+.empty-text {
+    padding: var(--space);
+    text-align: center;
+    color: var(--color-primary);
+}
+
+.item {
+    position: relative;
+    appearance: none;
+    display: flex;
+    align-items: center;
+    padding: var(--space);
+    outline: none;
+    width: 100%;
+    background-color: #000000CF;
+    border: 0px;
+    border-radius: var(--radius);
     cursor: pointer;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    color: #FFFFFF7F;
+    font-size: 12pt;
 }
 
-.sidebarMenuInner li span{
-    display: block;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.50);
+    .item:active {
+        transform: translateY(1px);
+    }
+
+    .item:focus {
+        outline: 2px solid var(--color-highlight);
+    }
+
+    .item > * {
+        pointer-events: none;
+    }
+
+.info {
+    width: 100%;
+    margin-left: 20px;
 }
 
-.sidebarMenuInner li a{
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
+.title,
+.subtitle {
+    width: 100%;
+    height: 0.5rem;
+    border-radius: var(--radius);
+}
+
+.title {
+    margin-bottom: var(--space-xs);
+}
+
+.subtitle {
+    font-size: 8pt;
+}
+
+.thumbnail {
+    flex-shrink: 0;
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--radius);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: var(--space-sm);
+}
+
+    .grid .item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .grid .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grid .thumbnail {
+        --size: 100px;
+        margin-bottom: var(--space);
+    }
+
+.list > * + * {
+    margin-top: var(--space-xs);
+}
+
+.list .item {
+    padding: var(--space-sm);
+}
+
+.list .thumbnail {
+    --size: 50px;
+    font-size: xxx-large;
+}
+
+.button {
+    appearance: none;
+    padding: var(--space-xs) var(--space-sm);
+    font-family: inherit;
+    font-size: 1rem;
+    color: white;
     cursor: pointer;
-    text-decoration: none;
+    border-radius: var(--radius);
+    box-shadow: rgba(black, 0.1) 4px 4px;
 }
 
-.sidebarMenuInner li a:hover {
-    background: #FFF;
+.item:hover {
+    background-color: #000;
+    color: #FFF;
 }
 
-.sidebarMenuInner li a:hover {
-    color: #111;
+.button:active {
+    transform: translateY(1px);
+    box-shadow: none;
 }
 
-input[type="checkbox"]:checked ~ #sidebarMenu {
+/* Toggle */
+input[type="checkbox"]:checked ~ .sidebar {
     transform: translateX(0);
+    transition: all 0.25s;
 }
 
 input[type=checkbox] {
-    transition: all 0.3s;
+    transition: all 0.25s;
     box-sizing: border-box;
 }
 
@@ -82,16 +239,16 @@ input[type=checkbox] {
     box-sizing: border-box;
     cursor: pointer;
     position: fixed;
-    z-index: 99;
+    z-index: 20;
+    top: 48px;
     width: 50px;
-    top: 22px;
-    left: 15px;
-    height: 22px;
+    left: 5%;
+    height: auto;
 }
 
 .spinner {
-    height: 3px;
-    width: 100%;
+    height: 2px;
+    width: 140%;
     background-color: #fff;
 }
 
@@ -137,24 +294,8 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 }
 
 /*Shrinking for mobile*/
-@media (max-width: 768px) {
-    .sidebarMenuInner li {
-        font-size: 8pt;
-        padding: 4px;
-        padding-left: 12px;
+@media (max-width: 900px) {
+    .sidebar {
+        min-width: 50%;
     }
-
-    .sidebarIconToggle {
-        top: 4px;
-        width: 38px;
-    }
-	
-	#sidebarMenu {
-	    margin-top: 44px;
-        width: 25%;
-	}
-	
-	.sidebarMenuInner p {
-		margin: 0;
-	}
 }

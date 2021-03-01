@@ -83,9 +83,9 @@ namespace Amicitia.github.io.PageCreator
             if (pageNumber > 1)
             {
                 if (pageNumber == 2)
-                    paginaion += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", "")}\"><div class=\"unhide\"><i class=\"fa fa-angle-double-left\"></i> Previous Page</div></a></td>";
+                    paginaion += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", "")}\"><div class=\"unhide\"><i class=\"fa fa-angle-double-left\"></i></div></a></td>";
                 else
-                    paginaion += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", $"\\{pageNumber - 1}")}\"><div class=\"unhide\"><i class=\"fa fa-angle-double-left\"></i> Previous Page</div></a></td>";
+                    paginaion += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", $"\\{pageNumber - 1}")}\"><div class=\"unhide\"><i class=\"fa fa-angle-double-left\"></i></div></a></td>";
             }
             else
                 paginaion += "<td></td>";
@@ -93,9 +93,9 @@ namespace Amicitia.github.io.PageCreator
             if (morePages)
             {
                 if (pageNumber == 1)
-                    paginaion += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2 + $"\\{pageNumber + 1}"}\"><div class=\"unhide\">Next Page <i class=\"fa fa-angle-double-right\"></i></div></a></td>";
+                    paginaion += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2 + $"\\{pageNumber + 1}"}\"><div class=\"unhide\"> <i class=\"fa fa-angle-double-right\"></i></div></a></td>";
                 else
-                    paginaion += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", $"\\{pageNumber + 1}")}\"><div class=\"unhide\">Next Page <i class=\"fa fa-angle-double-right\"></i></div></a></td>";
+                    paginaion += $"<td><a href=\"https:\\\\amicitia.github.io\\{url2.Replace($"\\{pageNumber}", $"\\{pageNumber + 1}")}\"><div class=\"unhide\"> <i class=\"fa fa-angle-double-right\"></i></div></a></td>";
             }
             else
                 paginaion += "<td></td>";
