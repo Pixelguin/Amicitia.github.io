@@ -242,7 +242,7 @@ input[type=checkbox] {
     z-index: 20;
     top: 48px;
     width: 50px;
-    left: 5%;
+    left: var(--space-md);
     height: auto;
 }
 
