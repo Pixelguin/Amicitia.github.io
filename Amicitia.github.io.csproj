@@ -84,10 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\amicitia.css" />
-    <Content Include="css\index.css" />
     <Content Include="css\select.css" />
-    <Content Include="css\sidebar.css" />
-    <Content Include="css\waves.css" />
     <Content Include="Templates\compiling.html" />
     <Content Include="Templates\decompiling.html" />
     <Content Include="Templates\flowscript.html" />

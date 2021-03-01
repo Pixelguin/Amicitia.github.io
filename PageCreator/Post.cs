@@ -128,7 +128,7 @@ namespace Amicitia.github.io.PageCreator
                 result += "<img src=\"https://i.imgur.com/5I5Vos8.png\" height=\"auto\" width=\"auto\"></td>";
 
             //Visible Post Details
-            result += $"<td width='50%'><font size=\"3\"><b><font size=\"5\">{post.Title}</font></b><br>{post.Games.First()} {post.Type} by ";
+            result += $"<td width='50%'><h2>{post.Title}</h2><h5>{post.Games.First()} {post.Type} by ";
             //Author
             foreach (string author in post.Authors.Where(x => !x.Equals("Unknown Author") && !String.IsNullOrWhiteSpace(x)))
             {
@@ -136,7 +136,7 @@ namespace Amicitia.github.io.PageCreator
                 if (post.Authors.IndexOf(author) != post.Authors.Count() - 1)
                     result += ", ";
             }
-            result += $"</font></td><td width='25%'><center>{post.Date}</center></td></tr></tbody></table></div>";
+            result += $"</h5></td><td width='25%'><center><h5>{post.Date}</h5></center></td></tr></tbody></table></div>";
             //Hidden Post Details
             if (!single)
                 result += $"<div class=\"toggle-inner\">";
